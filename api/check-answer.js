@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
   const { spoken, question, expectedConcept } = req.body;
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
     const keywords = expectedConcept.toLowerCase().split(' ');
@@ -10,20 +10,20 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+      headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
+        model: 'llama-3.3-70b-versatile',
         max_tokens: 150,
-        messages: [{
-          role: 'user',
-          content: `Question: "${question}"\nExpected concept: "${expectedConcept}"\nStudent said: "${spoken}"\n\nIs the student's answer conceptually correct? Reply with JSON only: {"correct": true/false, "feedback": "one encouraging sentence"}`
-        }]
+        messages: [
+          { role: 'system', content: 'You are a helpful, encouraging language coach. Reply only with valid JSON.' },
+          { role: 'user', content: `Question: "${question}"\nExpected concept: "${expectedConcept}"\nStudent said: "${spoken}"\n\nIs the student's answer conceptually correct? Reply with JSON only: {"correct": true/false, "feedback": "one encouraging sentence"}` }
+        ]
       })
     });
     const data = await response.json();
-    const text = data.content?.[0]?.text || '{}';
+    const text = data.choices?.[0]?.message?.content || '{}';
     const json = JSON.parse(text.match(/\{.*\}/s)?.[0] || '{"correct":true,"feedback":"Good answer!"}');
     res.json(json);
   } catch {
