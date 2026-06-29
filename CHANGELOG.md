@@ -1,5 +1,14 @@
 # Work Ready — Changelog
 
+## v1.0.1 — 2026-06-29 — Desktop fixes + SW cache bust
+
+### Fixes
+- Desktop/laptop: lesson header and Aria header no longer stuck to top of browser chrome (added top padding in desktop media query)
+- Service worker bumped to `work-ready-v5` — forces all users to receive fresh CSS/JS on next visit
+- CSS cache buster bumped to `?v=10`
+
+---
+
 ## v1.0.0 — 2026-06-29 — Phase 1 Launch
 
 ### New features
