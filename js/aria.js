@@ -85,9 +85,13 @@ const Aria = (() => {
 
   async function fetchWeather() {
     try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 4000);
       const res = await fetch(
-        'https://api.open-meteo.com/v1/forecast?latitude=51.98&longitude=5.91&current=temperature_2m,weathercode&timezone=Europe/Amsterdam'
+        'https://api.open-meteo.com/v1/forecast?latitude=51.98&longitude=5.91&current=temperature_2m,weathercode&timezone=Europe/Amsterdam',
+        { signal: controller.signal }
       );
+      clearTimeout(timeout);
       const data = await res.json();
       const temp = Math.round(data.current.temperature_2m);
       const code = data.current.weathercode;
@@ -215,7 +219,12 @@ const Aria = (() => {
 
   async function greet(name) {
     const h = new Date().getHours();
-    const timeGreet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : h < 21 ? 'Good evening' : 'Good night';
+    const timeGreet = h < 5 ? 'Good night' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : h < 21 ? 'Good evening' : 'Good night';
+
+    const fallbackWeatherLines = [
+      "I couldn't check the weather in Arnhem right now, but whatever it's like outside - you're in the right place!",
+      "Not sure what the weather is doing in Arnhem today, but rain or shine, you're here learning. That's what counts.",
+    ];
 
     const weather = await fetchWeather();
     let weatherLine = '';
@@ -228,6 +237,8 @@ const Aria = (() => {
       else if (temp > 22) bucket = 'warm';
       else bucket = 'cloudy';
       weatherLine = ' ' + pick(lines.weatherGreets[bucket]);
+    } else {
+      weatherLine = ' ' + pick(fallbackWeatherLines);
     }
 
     const fullGreeting = `${timeGreet}, ${name}!${weatherLine}`;
