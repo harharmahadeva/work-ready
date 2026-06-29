@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function show(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.toggle('hidden', s.id !== 'screen-' + id));
     currentScreen = id;
-    const showNav = ['home', 'aria-chat'].includes(id);
+    const showNav = ['home', 'aria-chat', 'lesson'].includes(id);
     document.getElementById('bottom-nav').style.display = showNav ? 'flex' : 'none';
   }
 
@@ -155,6 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!u) return;
     document.getElementById('home-name').textContent = u.name;
     document.getElementById('home-version').textContent = 'v' + APP_VERSION;
+
+    const hr = new Date().getHours();
+    const greet = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : hr < 21 ? 'Good evening' : 'Good night';
+    document.getElementById('home-greeting').textContent = greet;
 
     const pct = Storage.getTotalPercent(MODULES);
     document.getElementById('home-prog-fill').style.width = pct + '%';

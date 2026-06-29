@@ -1,5 +1,11 @@
 # Work Ready — Changelog
 
+## v1.0.2 — 2026-06-29 — Nav + greeting fixes
+
+### Fixes
+- Bottom nav (Home / Aria) now visible during lessons so Chhaya can navigate without going back first
+- Home screen greeting is now time-aware: Good morning / Good afternoon / Good evening / Good night
+
 ## v1.0.1 — 2026-06-29 — Desktop fixes + SW cache bust
 
 ### Fixes
