@@ -47,7 +47,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .pin-key:hover { background: rgba(79,110,247,0.15); border-color: rgba(79,110,247,0.4); }
 .pin-key:active { transform: scale(0.91); background: var(--accent); border-color: var(--accent); box-shadow: 0 0 16px rgba(79,110,247,0.5); }
 .pin-key.del { font-size: 18px; color: var(--text2); }
-.pin-key.empty { background: transparent; border: none; cursor: default; pointer-events: none; }
+.pin-key.hash { color: var(--text2); font-size: 20px; cursor: default; pointer-events: none; }
 .login-error { font-size: 12px; color: var(--red); text-align: center; margin-top: 10px; min-height: 18px; }
 
 /* ── ONBOARDING ── */

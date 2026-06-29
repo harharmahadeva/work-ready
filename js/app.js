@@ -1,4 +1,4 @@
-// Work Ready — Main App
+// Work Ready - Main App
 document.addEventListener('DOMContentLoaded', () => {
   Speech.init();
   Aria.init();
@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
         pinError.textContent = '';
         Storage.getOnboarded() ? goHome() : goOnboard();
       } else {
-        pinError.textContent = 'Incorrect PIN — try again';
+        pinError.textContent = 'Incorrect PIN - try again';
         pinEntry = '';
         updatePinDots();
         setTimeout(() => { pinError.textContent = ''; }, 2000);
       }
     }).catch(() => {
-      pinError.textContent = 'Could not connect — check your internet and try again';
+      pinError.textContent = 'Could not connect - check your internet and try again';
       pinEntry = '';
       updatePinDots();
     });
@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       emoji: '👋',
       title: 'Welcome, Chhaya!',
-      text: "I'm Aria, your personal work coach. I'll be with you every step of the way — teaching, encouraging, and cheering you on.",
+      text: "I'm Aria, your personal work coach. I'll be with you every step of the way - teaching, encouraging, and cheering you on.",
     },
     {
       emoji: '🎯',
       title: 'What we\'ll cover',
-      text: 'Computer skills, Microsoft Office, Dutch workplace culture, public transport, job search — everything you need to walk into any Dutch office with confidence.',
+      text: 'Computer skills, Microsoft Office, Dutch workplace culture, public transport, job search - everything you need to walk into any Dutch office with confidence.',
     },
     {
       emoji: '🎤',
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('ob-title').textContent = s.title;
     document.getElementById('ob-text').textContent = s.text;
     document.querySelectorAll('.onboard-dot').forEach((d, i) => d.classList.toggle('on', i === obIdx));
-    document.getElementById('ob-next').textContent = obIdx < onboardSlides.length - 1 ? 'Next →' : "Let's start! 🚀";
+    document.getElementById('ob-next').textContent = obIdx < onboardSlides.length - 1 ? 'Next' : "Let's start! 🚀";
   }
 
   document.getElementById('ob-next').addEventListener('click', () => {
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ${listHtml}
       </div>
       ${dutchHtml}
-      <button class="btn btn-primary btn-block" onclick="nextStep()">Continue →</button>
+      <button class="btn btn-primary btn-block" onclick="nextStep()">Continue</button>
     `;
   }
 
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="play-btn" onclick="Aria.speak('${step.text.replace(/'/g, "\\'")}')">🔊 Play again</div>
         </div>
       </div>
-      <button class="btn btn-primary btn-block" onclick="nextStep()">Got it →</button>
+      <button class="btn btn-primary btn-block" onclick="nextStep()">Got it</button>
     `;
     Aria.speak(step.text);
   }
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="quiz-options">${optHtml}</div>
         <div class="quiz-feedback" id="quiz-feedback" style="display:none"></div>
       </div>
-      <button class="btn btn-primary btn-block" id="quiz-next" style="display:none" onclick="nextStep()">Continue →</button>
+      <button class="btn btn-primary btn-block" id="quiz-next" style="display:none" onclick="nextStep()">Continue</button>
     `;
   }
 
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ${step.phraseNl ? `<div class="phrase-nl">🇳🇱 ${step.phraseNl}</div>` : ''}
         </div>
         <div style="text-align:center">
-          <div class="text-sm mt-8">Aria says it first — then tap the mic and say it yourself</div>
+          <div class="text-sm mt-8">Aria says it first - then tap the mic and say it yourself</div>
           <button class="mic-btn" id="mic-btn" onclick="startMic('${step.phrase.replace(/'/g, "\\'")}','${step.lang || 'en-US'}')">🎤</button>
           <div class="mic-waves" id="mic-waves" style="display:none">
             ${[...Array(7)].map((_, i) => `<div class="mic-wave-bar" style="height:${4 + Math.random() * 14}px;animation-delay:${i * 0.08}s"></div>`).join('')}
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="mic-result" id="mic-result" style="display:none"></div>
         </div>
       </div>
-      <button class="btn btn-primary btn-block" id="mic-next" style="display:none" onclick="nextStep()">Continue →</button>
+      <button class="btn btn-primary btn-block" id="mic-next" style="display:none" onclick="nextStep()">Continue</button>
       <button class="btn btn-ghost btn-block mt-8" onclick="nextStep()">Skip for now</button>
     `;
     // Aria models the phrase first
@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (score >= 60) {
         result.className = 'mic-result good';
-        result.textContent = `✓ "${spoken}" — Score: ${score}% — Well done!`;
+        result.textContent = `✓ "${spoken}" - Score: ${score}% - Well done!`;
         Storage.addXP(15);
         Aria.speak(Aria.lines.micGood);
         document.getElementById('mic-next').style.display = 'block';
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         micAttempts++;
         result.className = 'mic-result retry';
-        result.textContent = `You said: "${spoken}" — Try once more!`;
+        result.textContent = `You said: "${spoken}" - Try once more!`;
         if (micAttempts >= 3) {
           Aria.speak(Aria.lines.pronunciation3fail);
           document.getElementById('mic-next').style.display = 'block';
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = '🎤';
       result.style.display = 'block';
       result.className = 'mic-result retry';
-      result.textContent = err === 'timeout' ? 'No speech detected — tap mic and speak' : 'Microphone error — tap Skip for now';
+      result.textContent = err === 'timeout' ? 'No speech detected - tap mic and speak' : 'Microphone error - tap Skip for now';
       document.getElementById('mic-next').style.display = 'block';
     }
   };
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="ss-steps">
           <div class="ss-step"><span>1.</span>Do the task on your laptop</div>
           <div class="ss-step"><span>2.</span>Press Win+Shift+S to take a screenshot</div>
-          <div class="ss-step"><span>3.</span>Upload it below — I'll check your work!</div>
+          <div class="ss-step"><span>3.</span>Upload it below - I'll check your work!</div>
         </div>
         <label class="ss-upload" onclick="document.getElementById('ss-input').click()">
           <div class="up-icon">📷</div>
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="loading" id="ss-loading" style="display:none"><div class="spinner"></div> Aria is checking your work...</div>
         <div class="ss-feedback" id="ss-feedback"></div>
       </div>
-      <button class="btn btn-primary btn-block" id="ss-next" style="display:none" onclick="nextStep()">Continue →</button>
+      <button class="btn btn-primary btn-block" id="ss-next" style="display:none" onclick="nextStep()">Continue</button>
       <button class="btn btn-ghost btn-block mt-8" onclick="nextStep()">Skip exercise</button>
     `;
     Aria.speak("Now try this on your actual computer. When you're done, take a screenshot and upload it here. I'll check your work!");
@@ -536,8 +536,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getNextLessonLabel() {
     const next = activeLessonIdx + 1;
-    if (next < activeModule.lessons.length) return 'Next lesson →';
-    return 'Back to modules 🏠';
+    if (next < activeModule.lessons.length) return 'Next lesson';
+    return 'Back to home';
   }
 
   window.goNextLesson = function() {
@@ -569,8 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBody.innerHTML = '';
 
     if (hist.length === 0) {
-      addBubble('aria', "Hi! I'm Aria 👋 I'm here whenever you need me — ask me anything about lessons, office life in the Netherlands, or just have a chat. What's on your mind?");
-      Aria.speak("Hi! I'm here. Ask me anything — about lessons, work, or just to talk. What's on your mind?");
+      addBubble('aria', "Hi! I'm Aria 👋 I'm here whenever you need me - ask me anything about lessons, office life in the Netherlands, or just have a chat. What's on your mind?");
+      Aria.speak("Hi! I'm here. Ask me anything - about lessons, work, or just to talk. What's on your mind?");
     } else {
       hist.slice(-10).forEach(m => addBubble(m.role === 'user' ? 'user' : 'aria', m.text));
     }

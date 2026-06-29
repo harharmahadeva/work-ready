@@ -1,4 +1,4 @@
-// Aria — Chhaya's AI voice coach
+// Aria - Chhaya's AI voice coach
 const Aria = (() => {
   let synth = window.speechSynthesis;
   let voice = null;
@@ -61,22 +61,22 @@ const Aria = (() => {
   // ── Scripted motivational lines ──
   const lines = {
     welcome: "Hi Chhaya! I'm Aria, your personal work coach. I'm so happy you're here. Together we're going to build all the skills you need to walk into any office with confidence. Are you ready? Let's do this!",
-    firstLesson: "You just finished your very first lesson. That means you've already started — and most people never even begin. You are not most people, Chhaya.",
-    wrongAnswer: "That one was tricky! Don't worry at all — getting it wrong now means you'll remember it forever. Let me explain it a different way.",
+    firstLesson: "You just finished your very first lesson. That means you've already started - and most people never even begin. You are not most people, Chhaya.",
+    wrongAnswer: "That one was tricky! Don't worry at all - getting it wrong now means you'll remember it forever. Let me explain it a different way.",
     rightAnswer: "That's exactly right! Well done!",
     allRight: "Perfect score! You really understood that. Brilliant!",
     moduleComplete: (name) => `You just completed the ${name} module! That is a real achievement. Every lesson you finish brings you one step closer to that job. I'm so proud of you.`,
     comeback: (name) => `Welcome back, ${name}! I missed you. You were doing so well. Shall we pick up exactly where you left off?`,
-    pronunciation3fail: "This one is genuinely hard — even Dutch people find it tricky to explain! Let's move on and come back to it. Your effort is what matters, not perfection.",
-    screenshotGood: "I can see your work on screen — and you did it correctly! That's exactly what an employer would want to see. You're building real skills now.",
+    pronunciation3fail: "This one is genuinely hard - even Dutch people find it tricky to explain! Let's move on and come back to it. Your effort is what matters, not perfection.",
+    screenshotGood: "I can see your work on screen - and you did it correctly! That's exactly what an employer would want to see. You're building real skills now.",
     streakDay: (n) => `${n} days in a row! That kind of consistency is exactly what successful people do. You should be really proud of yourself.`,
-    allDone: "Chhaya. You did it. Every single module. You came here knowing very little about computers and the Dutch workplace — and look at you now. You are ready. Go get that job. I believe in you completely.",
-    encourageStart: (lesson) => `Today we're learning ${lesson}. By the end of this lesson you'll know exactly what to do — and you'll feel so much more confident. Let's go!`,
-    micGood: "That sounded great! Clear and confident — just like that at work.",
-    micRetry: "Almost there! Try once more — just a little slower and clearer.",
+    allDone: "Chhaya. You did it. Every single module. You came here knowing very little about computers and the Dutch workplace - and look at you now. You are ready. Go get that job. I believe in you completely.",
+    encourageStart: (lesson) => `Today we're learning ${lesson}. By the end of this lesson you'll know exactly what to do - and you'll feel so much more confident. Let's go!`,
+    micGood: "That sounded great! Clear and confident - just like that at work.",
+    micRetry: "Almost there! Try once more - just a little slower and clearer.",
     xpEarned: (n) => `You earned ${n} experience points! You're growing every single day.`,
     goodMorning: "Good morning! What a great day to learn something new. What shall we work on today?",
-    goodAfternoon: "Good afternoon! You're here — that means you're serious about your future. Let's make the most of today.",
+    goodAfternoon: "Good afternoon! You're here - that means you're serious about your future. Let's make the most of today.",
     goodEvening: "Good evening! Even in the evening you're here learning. That dedication will absolutely pay off.",
   };
 
@@ -102,7 +102,7 @@ const Aria = (() => {
       Storage.addChatMsg('assistant', reply);
       return reply;
     } catch {
-      return "I'm here! Tell me more — what's on your mind?";
+      return "I'm here! Tell me more - what's on your mind?";
     }
   }
 
