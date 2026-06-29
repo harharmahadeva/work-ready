@@ -34,7 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (user) {
         Storage.setUser(user);
         pinError.textContent = '';
-        Storage.getOnboarded() ? goHome() : goOnboard();
+        if (Storage.getOnboarded()) {
+          goHome();
+        } else {
+          Storage.setOnboarded(); // mark now so re-login never shows it again
+          goOnboard();
+        }
       } else {
         pinError.textContent = 'Incorrect PIN - try again';
         pinEntry = '';
@@ -97,6 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.onboard-dot').forEach((d, i) => d.classList.toggle('on', i === obIdx));
     document.getElementById('ob-next').textContent = obIdx < onboardSlides.length - 1 ? 'Next' : "Let's start! 🚀";
   }
+
+  document.getElementById('ob-skip').addEventListener('click', () => {
+    Storage.setOnboarded();
+    Aria.stop();
+    goHome();
+  });
 
   document.getElementById('ob-next').addEventListener('click', () => {
     if (obIdx < onboardSlides.length - 1) {

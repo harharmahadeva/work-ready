@@ -95,7 +95,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .onboard-emoji { font-size: 64px; margin-bottom: 20px; }
 .onboard-title { font-size: 24px; font-weight: 800; line-height: 1.3; margin-bottom: 12px; }
 .onboard-text { font-size: 15px; color: var(--text2); line-height: 1.6; max-width: 320px; }
-.onboard-nav { display: flex; gap: 10px; padding: 20px 28px 36px; }
+.onboard-nav { display: flex; flex-direction: column; gap: 10px; padding: 20px 28px 36px; }
+.btn-skip { background: none; border: none; color: var(--text2); font-size: 13px; cursor: pointer; padding: 6px; text-align: center; text-decoration: underline; text-underline-offset: 3px; }
 .btn { padding: 14px 20px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 700; border: none; cursor: pointer; transition: all 0.15s; }
 .btn:active { transform: scale(0.96); }
 .btn-primary { background: var(--accent); color: white; flex: 1; }
