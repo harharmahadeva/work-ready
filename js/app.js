@@ -124,15 +124,138 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('bottom-nav').style.display = showNav ? 'flex' : 'none';
   }
 
+  // ── Mood theme ──
+  const MOOD_EMOJIS = { energised: '⚡', okay: '😊', stressed: '😤', sad: '💙', overwhelmed: '🌊' };
+  const MOOD_LABELS = { energised: 'Energised', okay: 'Feeling good', stressed: 'A bit stressed', sad: 'Feeling low', overwhelmed: 'Overwhelmed' };
+
+  function applyMoodTheme(mood) {
+    document.documentElement.setAttribute('data-mood', mood === 'energised' ? '' : mood);
+    Storage.setMood(mood);
+  }
+
+  function shouldCheckIn() {
+    const { lastCheck } = Storage.getMood();
+    const today = new Date().toDateString();
+    if (lastCheck === today) return false;
+    // 70% chance if last check was >20hrs ago
+    return Math.random() < 0.70;
+  }
+
+  function renderCheckIn() {
+    const el = document.getElementById('checkin-card');
+    if (!el) return;
+    el.style.display = 'block';
+    el.innerHTML = `
+      <div class="checkin-card">
+        <div class="checkin-top">
+          <div class="checkin-avatar">🎙️</div>
+          <div class="checkin-question">
+            <strong>Hey Chhaya, how are you feeling today?</strong>
+            Tell me anything — good day, tough day, nervous, excited. I'm here.
+          </div>
+        </div>
+        <div class="checkin-input-row">
+          <textarea class="checkin-text" id="checkin-text" placeholder="Type how you're feeling... or tap the mic" rows="2"></textarea>
+          <button class="checkin-mic" id="checkin-mic">🎤</button>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+          <button class="checkin-send" id="checkin-send">Share with Aria</button>
+          <button class="checkin-dismiss" id="checkin-dismiss">Skip for now</button>
+        </div>
+      </div>`;
+
+    document.getElementById('checkin-dismiss').onclick = () => {
+      el.style.display = 'none';
+      Storage.setMood(Storage.getMood().current); // mark today checked so no repeat
+    };
+
+    document.getElementById('checkin-send').onclick = () => submitCheckIn();
+
+    document.getElementById('checkin-text').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitCheckIn(); }
+    });
+
+    // Mic for check-in
+    const micBtn = document.getElementById('checkin-mic');
+    let micActive = false;
+    micBtn.onclick = () => {
+      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+        alert('Speech not supported on this browser'); return;
+      }
+      if (micActive) return;
+      micActive = true;
+      micBtn.classList.add('listening');
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const rec = new SR();
+      rec.lang = 'en-GB';
+      rec.interimResults = false;
+      rec.onresult = e => {
+        document.getElementById('checkin-text').value = e.results[0][0].transcript;
+        micBtn.classList.remove('listening');
+        micActive = false;
+        submitCheckIn();
+      };
+      rec.onerror = () => { micBtn.classList.remove('listening'); micActive = false; };
+      rec.onend = () => { micBtn.classList.remove('listening'); micActive = false; };
+      rec.start();
+    };
+  }
+
+  async function submitCheckIn() {
+    const text = document.getElementById('checkin-text')?.value?.trim();
+    if (!text) return;
+    const el = document.getElementById('checkin-card');
+    el.innerHTML = `<div class="checkin-card"><div class="loading"><div class="spinner"></div> Aria is listening...</div></div>`;
+
+    try {
+      const res = await fetch('/api/mood', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      const { mood, reply, suggestion, suggestionText } = data;
+
+      applyMoodTheme(mood);
+
+      el.innerHTML = `
+        <div class="checkin-card">
+          <div class="checkin-top">
+            <div class="checkin-avatar">🎙️</div>
+            <div style="flex:1">
+              <div class="mood-badge">${MOOD_EMOJIS[mood] || '💫'} ${MOOD_LABELS[mood] || mood}</div>
+              <div class="checkin-reply" style="margin-top:8px">${reply}</div>
+              <div class="checkin-suggestion" style="margin-top:8px">→ ${suggestionText}</div>
+            </div>
+          </div>
+          <button class="checkin-dismiss" id="checkin-close" style="text-align:right">Got it, let's go ›</button>
+        </div>`;
+
+      document.getElementById('checkin-close').onclick = () => { el.style.display = 'none'; };
+      setTimeout(() => Aria.speak(reply), 300);
+
+    } catch {
+      el.style.display = 'none';
+    }
+  }
+
   function goHome() {
     show('home');
     renderHome();
+    // Restore saved mood theme
+    const { current } = Storage.getMood();
+    if (current) applyMoodTheme(current);
+
     const streak = Storage.updateStreak();
-    if (streak > 1) setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 1000);
-    else {
+    if (streak > 1) {
+      setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 1000);
+    } else {
       const u = Storage.getUser();
       if (u) setTimeout(() => Aria.greet(u.name), 800);
     }
+
+    // Check-in (after a short delay so greeting plays first)
+    if (shouldCheckIn()) setTimeout(() => renderCheckIn(), 3500);
   }
 
   function goOnboard() {

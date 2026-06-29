@@ -55,6 +55,9 @@ const Storage = (() => {
       const d = load(); d.lastLesson = { moduleId, lessonIdx, lessonTitle, moduleName }; save(d);
     },
 
+    getMood() { return load().mood || { lastCheck: null, current: 'energised' }; },
+    setMood(mood) { const d = load(); d.mood = { lastCheck: new Date().toDateString(), current: mood }; save(d); },
+
     getStreak() { return load().streak || { count: 0, last: null }; },
     updateStreak() {
       const d = load();

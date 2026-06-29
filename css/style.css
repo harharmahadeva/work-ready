@@ -18,7 +18,46 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; overflow: hidden; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; transition: background 1.2s ease; }
+
+/* ── MOOD THEMES ── */
+/* energised = default purple/blue */
+[data-mood="okay"] {
+  --bg: #0a1a1f;
+  --surface: #112028;
+  --surface2: #183038;
+  --border: #1e4050;
+  --accent: #0ea5c0;
+  --accent2: #0d7a8a;
+  --text2: #7abece;
+}
+[data-mood="stressed"] {
+  --bg: #091a14;
+  --surface: #0f2318;
+  --surface2: #163020;
+  --border: #1a4030;
+  --accent: #10b981;
+  --accent2: #059669;
+  --text2: #6bbfa0;
+}
+[data-mood="sad"] {
+  --bg: #1a1008;
+  --surface: #261a0e;
+  --surface2: #342212;
+  --border: #4a3018;
+  --accent: #f59e0b;
+  --accent2: #d97706;
+  --text2: #c4956a;
+}
+[data-mood="overwhelmed"] {
+  --bg: #110f1e;
+  --surface: #1a1730;
+  --surface2: #231f40;
+  --border: #332e58;
+  --accent: #a78bfa;
+  --accent2: #7c3aed;
+  --text2: #9d8fd4;
+}
 
 /* ── SCREENS ── */
 .screen { position: fixed; inset: 0; display: flex; flex-direction: column; overflow: hidden; transition: opacity 0.3s, transform 0.3s; }
@@ -319,3 +358,31 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   #screen-aria-chat .chat-suggestions,
   #screen-aria-chat .chat-input-row { max-width: 620px; }
 }
+
+/* ── CHECK-IN CARD ── */
+.checkin-card {
+  background: linear-gradient(135deg, rgba(79,110,247,0.12), rgba(124,58,237,0.08));
+  border: 1px solid rgba(79,110,247,0.25);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideDown 0.4s ease;
+}
+@keyframes slideDown { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+.checkin-top { display: flex; align-items: flex-start; gap: 10px; }
+.checkin-avatar { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.checkin-question { font-size: 13px; color: var(--text); line-height: 1.5; flex: 1; }
+.checkin-question strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+.checkin-input-row { display: flex; gap: 8px; align-items: center; }
+.checkin-text { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 13px; padding: 8px 12px; font-family: inherit; resize: none; outline: none; }
+.checkin-text:focus { border-color: var(--accent); }
+.checkin-mic { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); border: none; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.15s; }
+.checkin-mic:active { transform: scale(0.9); }
+.checkin-mic.listening { background: var(--red); animation: pulse 1s infinite; }
+.checkin-send { background: var(--accent); border: none; border-radius: 10px; color: #fff; font-size: 13px; font-weight: 700; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+.checkin-dismiss { background: none; border: none; color: var(--text2); font-size: 11px; cursor: pointer; text-align: right; padding: 0; }
+.checkin-reply { font-size: 13px; color: var(--text); line-height: 1.6; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 10px 12px; border-left: 3px solid var(--accent); }
+.checkin-suggestion { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 4px; }
+.mood-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(79,110,247,0.15); color: var(--accent); margin-top: 2px; align-self: flex-start; }

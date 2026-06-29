@@ -1,5 +1,23 @@
 # Work Ready — Changelog
 
+## v1.0.4 — 2026-06-30 — Mood check-in + dynamic themes
+
+### New
+- Daily check-in card (4-5×/week, 70% chance if not checked in today): Aria asks how Chhaya is feeling
+- Mic or text input for check-in response
+- Groq AI reads the mood: energised / okay / stressed / sad / overwhelmed
+- Aria speaks a personal, empathetic reply + lesson suggestion
+- Entire app theme shifts dynamically based on mood:
+  - **Energised** — default purple/blue (sharp, energetic)
+  - **Okay** — teal/cyan (calm, focused)
+  - **Stressed** — mint green (soothing)
+  - **Sad** — warm amber/orange (cosy, comforting)
+  - **Overwhelmed** — soft lavender (quiet, gentle)
+- Mood theme persists across sessions via localStorage
+- Check-in appears 3.5s after greeting so Aria's voice plays first
+
+---
+
 ## v1.0.3 — 2026-06-29 — Weather + varied Aria messages
 
 ### New
