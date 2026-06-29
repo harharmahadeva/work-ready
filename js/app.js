@@ -42,15 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { pinError.textContent = ''; }, 2000);
       }
     }).catch(() => {
-      // Dev fallback: any 4-digit PIN works
-      if (pinEntry === '1234') {
-        Storage.setUser({ id: 'chhaya', name: 'Chhaya', lang: 'en' });
-        Storage.getOnboarded() ? goHome() : goOnboard();
-      } else {
-        pinError.textContent = 'Incorrect PIN — try again';
-        pinEntry = '';
-        updatePinDots();
-      }
+      pinError.textContent = 'Could not connect — check your internet and try again';
+      pinEntry = '';
+      updatePinDots();
     });
   }
 
