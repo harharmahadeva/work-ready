@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#1a1a2e">
   <title>Work Ready</title>
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/css/style.css?v=7">
+  <link rel="stylesheet" href="/css/style.css?v=8">
 </head>
 <body>
 
@@ -27,9 +27,13 @@
 
 <!-- ══════════════ LOGIN ══════════════ -->
 <div class="screen" id="screen-login">
-  <div class="login-logo">💼</div>
-  <div class="login-title">Work Ready</div>
-  <div class="login-sub">Your personal coach for the Dutch workplace</div>
+  <div class="login-hero">
+    <div class="login-icon-wrap">
+      <img src="/icons/icon-192.png" alt="Work Ready">
+    </div>
+    <div class="login-title">Work Ready</div>
+    <div class="login-sub">Your personal coach for the Dutch workplace</div>
+  </div>
 
   <div class="login-card">
     <div class="pin-label">Enter your PIN</div>
@@ -49,7 +53,8 @@
       <div class="pin-key" data-val="7">7</div>
       <div class="pin-key" data-val="8">8</div>
       <div class="pin-key" data-val="9">9</div>
-      <div class="pin-key" data-val="0" style="grid-column:2">0</div>
+      <div class="pin-key empty" data-val=""></div>
+      <div class="pin-key" data-val="0">0</div>
       <div class="pin-key del" data-val="del">⌫</div>
     </div>
     <div class="login-error" id="pin-error"></div>
@@ -171,10 +176,10 @@
   </div>
 </div>
 
-<script src="/js/storage.js?v=7"></script>
-<script src="/js/aria.js?v=7"></script>
-<script src="/js/speech.js?v=7"></script>
-<script src="/js/lessons.js?v=7"></script>
-<script src="/js/app.js?v=7"></script>
+<script src="/js/storage.js?v=8"></script>
+<script src="/js/aria.js?v=8"></script>
+<script src="/js/speech.js?v=8"></script>
+<script src="/js/lessons.js?v=8"></script>
+<script src="/js/app.js?v=8"></script>
 </body>
 </html>
