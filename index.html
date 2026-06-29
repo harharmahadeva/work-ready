@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#1a1a2e">
   <title>Work Ready</title>
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/css/style.css?v=13">
+  <link rel="stylesheet" href="/css/style.css?v=14">
 </head>
 <body>
 
@@ -24,6 +24,17 @@
 
 <!-- ── TOAST ── -->
 <div class="toast" id="toast"></div>
+
+<!-- ── LATE NIGHT MODAL ── -->
+<div class="modal-overlay hidden" id="latenight-modal">
+  <div class="modal-card">
+    <div class="modal-emoji" id="latenight-emoji">🌙</div>
+    <div class="modal-title" id="latenight-title">Hey, it's late!</div>
+    <div class="modal-text" id="latenight-text"></div>
+    <button class="btn btn-primary" id="latenight-continue">I want to continue anyway</button>
+    <button class="btn-skip" id="latenight-close" style="margin-top:8px">Ok Aria, I'll rest now 😊</button>
+  </div>
+</div>
 
 <!-- ══════════════ LOGIN ══════════════ -->
 <div class="screen" id="screen-login">
@@ -182,9 +193,9 @@
 </div>
 
 <script src="/js/storage.js?v=11"></script>
-<script src="/js/aria.js?v=13"></script>
+<script src="/js/aria.js?v=14"></script>
 <script src="/js/speech.js?v=11"></script>
 <script src="/js/lessons.js?v=11"></script>
-<script src="/js/app.js?v=13"></script>
+<script src="/js/app.js?v=14"></script>
 </body>
 </html>

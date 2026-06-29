@@ -1,4 +1,4 @@
-const CACHE = 'work-ready-v6';
+const CACHE = 'work-ready-v7';
 const ASSETS = ['/', '/index.html', '/css/style.css?v=9', '/js/app.js?v=9', '/js/aria.js?v=9', '/js/speech.js?v=9', '/js/lessons.js?v=9', '/js/storage.js?v=9', '/data/users.json', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', e => {

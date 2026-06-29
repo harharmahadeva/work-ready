@@ -139,6 +139,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const MOOD_EMOJIS = { energised: '⚡', okay: '😊', stressed: '😤', sad: '💙', overwhelmed: '🌊' };
   const MOOD_LABELS = { energised: 'Energised', okay: 'Feeling good', stressed: 'A bit stressed', sad: 'Feeling low', overwhelmed: 'Overwhelmed' };
 
+  // ── Late night / early morning check ──
+  const lateNightMessages = [
+    { emoji: '🌙', title: "It's quite late, Chhaya!", text: "It's past 11pm and your brain needs rest to remember what you learn. Sleep is actually part of learning — your mind processes everything while you sleep. Can I ask you to rest tonight and come back tomorrow? I'll be here." },
+    { emoji: '🌛', title: "Still up, Chhaya?", text: "It's late in Arnhem! I love that you're dedicated — truly. But a tired brain learns slower and forgets faster. Your future employer needs the best version of you, and that version needs sleep. Rest up, okay?" },
+    { emoji: '💤', title: "Your brain needs rest!", text: "Learning late at night can feel productive but the memory doesn't stick as well. I care about your progress AND your wellbeing. Please consider getting some sleep — we can pick this up fresh tomorrow morning!" },
+  ];
+  const earlyMorningMessages = [
+    { emoji: '🌅', title: "You're up early, Chhaya!", text: "It's very early — are you okay? Whether you couldn't sleep or you're just super motivated, I'm proud of you. Just make sure you're getting enough rest overall. Your health comes first. Want to do a short lesson or just chat?" },
+    { emoji: '🌄', title: "Early bird!", text: "Good morning! You're up before the sun — that's dedication! Just checking — are you getting enough sleep? Rest is essential for learning and for showing up well at job interviews. Take care of yourself first." },
+  ];
+
+  function checkLateNight() {
+    const h = new Date().getHours();
+    const isLate = h >= 23;
+    const isEarly = h >= 0 && h < 5;
+    if (!isLate && !isEarly) return;
+
+    const pool = isLate ? lateNightMessages : earlyMorningMessages;
+    const msg = pool[Math.floor(Math.random() * pool.length)];
+
+    document.getElementById('latenight-emoji').textContent = msg.emoji;
+    document.getElementById('latenight-title').textContent = msg.title;
+    document.getElementById('latenight-text').textContent = msg.text;
+    document.getElementById('latenight-modal').classList.remove('hidden');
+
+    setTimeout(() => Aria.speak(msg.text), 300);
+
+    document.getElementById('latenight-continue').onclick = () => {
+      document.getElementById('latenight-modal').classList.add('hidden');
+      Aria.stop();
+    };
+    document.getElementById('latenight-close').onclick = () => {
+      document.getElementById('latenight-modal').classList.add('hidden');
+      Aria.stop();
+      // Don't navigate away — let her choose
+    };
+  }
+
   function applyMoodTheme(mood) {
     document.documentElement.setAttribute('data-mood', mood === 'energised' ? '' : mood);
     Storage.setMood(mood);
@@ -265,8 +303,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (u) setTimeout(() => Aria.greet(u.name), 800);
     }
 
-    // Check-in (after a short delay so greeting plays first)
-    if (shouldCheckIn()) setTimeout(() => renderCheckIn(), 3500);
+    // Late night / early morning check (shows after greeting)
+    setTimeout(() => checkLateNight(), 2000);
+
+    // Check-in (after a short delay so greeting plays first, skip if late-night modal showing)
+    if (shouldCheckIn()) setTimeout(() => {
+      const h = new Date().getHours();
+      if (h >= 23 || (h >= 0 && h < 5)) return; // late night modal takes priority
+      renderCheckIn();
+    }, 3500);
   }
 
   function goOnboard() {
