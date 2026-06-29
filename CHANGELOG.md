@@ -1,5 +1,14 @@
 # Work Ready — Changelog
 
+## v1.0.3 — 2026-06-29 — Weather + varied Aria messages
+
+### New
+- Live Arnhem weather on home screen (temp + condition via Open-Meteo, no API key needed)
+- Aria spoken greeting now includes a weather-aware line (sunny/cloudy/rain/cold/warm buckets)
+- All motivational lines (right answer, wrong answer, mic feedback, module complete, etc.) now pick randomly from multiple variants — no more repeating the same line
+
+---
+
 ## v1.0.2 — 2026-06-29 — Nav + greeting fixes
 
 ### Fixes

@@ -160,6 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const greet = hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : hr < 21 ? 'Good evening' : 'Good night';
     document.getElementById('home-greeting').textContent = greet;
 
+    // Weather (async, updates when ready)
+    const weatherEl = document.getElementById('home-weather');
+    if (weatherEl) {
+      weatherEl.textContent = '';
+      Aria.fetchWeather().then(w => {
+        if (w) weatherEl.textContent = `${w.emoji} ${w.temp}°C · ${w.label} in Arnhem`;
+      });
+    }
+
     const pct = Storage.getTotalPercent(MODULES);
     document.getElementById('home-prog-fill').style.width = pct + '%';
     document.getElementById('home-prog-pct').textContent = pct + '%';
@@ -361,11 +370,11 @@ document.addEventListener('DOMContentLoaded', () => {
       fb.className = 'quiz-feedback good';
       fb.textContent = '✓ ' + step.feedback;
       Storage.addXP(10);
-      Aria.speak(Aria.lines.rightAnswer);
+      Aria.speak(Aria.pick(Aria.lines.rightAnswer));
     } else {
       fb.className = 'quiz-feedback bad';
       fb.textContent = '💡 ' + step.feedback;
-      Aria.speak(Aria.lines.wrongAnswer);
+      Aria.speak(Aria.pick(Aria.lines.wrongAnswer));
     }
     document.getElementById('quiz-next').style.display = 'block';
   };
@@ -432,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
         result.className = 'mic-result good';
         result.textContent = `✓ "${spoken}" - Score: ${score}% - Well done!`;
         Storage.addXP(15);
-        Aria.speak(Aria.lines.micGood);
+        Aria.speak(Aria.pick(Aria.lines.micGood));
         document.getElementById('mic-next').style.display = 'block';
         micAttempts = 0;
       } else {
@@ -440,10 +449,10 @@ document.addEventListener('DOMContentLoaded', () => {
         result.className = 'mic-result retry';
         result.textContent = `You said: "${spoken}" - Try once more!`;
         if (micAttempts >= 3) {
-          Aria.speak(Aria.lines.pronunciation3fail);
+          Aria.speak(Aria.pick(Aria.lines.pronunciation3fail));
           document.getElementById('mic-next').style.display = 'block';
         } else {
-          Aria.speak(Aria.lines.micRetry);
+          Aria.speak(Aria.pick(Aria.lines.micRetry));
         }
       }
     } catch (err) {
@@ -501,9 +510,10 @@ document.addEventListener('DOMContentLoaded', () => {
       fb.style.display = 'block';
       if (result.correct || result.feedback) {
         fb.className = 'ss-feedback good';
-        fb.textContent = '✓ ' + (result.feedback || Aria.lines.screenshotGood);
+        const ssGood = Aria.pick(Aria.lines.screenshotGood);
+        fb.textContent = '✓ ' + (result.feedback || ssGood);
         Storage.addXP(20);
-        Aria.speak(result.feedback || Aria.lines.screenshotGood);
+        Aria.speak(result.feedback || ssGood);
       } else {
         fb.className = 'ss-feedback bad';
         fb.textContent = '💡 ' + (result.feedback || 'Good try! Check the instructions and try again.');
@@ -534,7 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <button class="btn btn-ghost btn-block mt-8" onclick="goHomeFromLesson()">Back to home</button>
     `;
 
-    const msg = allModDone ? Aria.lines.moduleComplete(activeModule.name) : (isFirst ? Aria.lines.firstLesson : step.ariaMsg);
+    const msg = allModDone ? Aria.lines.moduleComplete(activeModule.name) : (isFirst ? Aria.pick(Aria.lines.firstLesson) : step.ariaMsg);
     setTimeout(() => Aria.speak(msg), 300);
   }
 
