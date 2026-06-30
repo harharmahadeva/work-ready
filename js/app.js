@@ -296,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function goHome() {
+    Aria.stop();
     const u = Storage.getUser();
     if (u?.role === 'admin') { renderAdminDashboard(); return; }
     show('home');
