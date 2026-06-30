@@ -1,5 +1,5 @@
 // All module + lesson content
-const APP_VERSION = '2.0.0';
+const APP_VERSION = '2.1.0';
 
 const MODULES = [
   // ═══════════════════════════════════════════
@@ -263,6 +263,373 @@ const MODULES = [
           {
             type: 'complete', xp: 30,
             ariaMsg: "You now know what to do when your computer has problems. At work, staying calm and following these steps will make you look completely professional. Your colleagues will be impressed that you don't panic - you just fix it!"
+          }
+        ]
+      },
+
+      // ─────────────────────────────────────────
+      {
+        title: 'Using a web browser',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "The web browser is your window to almost everything at work - Outlook Web, Teams, SharePoint, LinkedIn, job portals, government websites. Knowing how to use it efficiently will save you time every single day."
+          },
+          {
+            type: 'learn', icon: '🌐',
+            title: 'Chrome vs Edge - which one to use',
+            body: 'Windows comes with Microsoft Edge pre-installed. Google Chrome is also very common. Both work fine.',
+            list: [
+              'Edge (blue swirl icon) - pre-installed on all Windows computers',
+              'Chrome (coloured circle icon) - download from google.com/chrome',
+              'At work: use whichever your company has set as default',
+              'Both have the same features - tabs, bookmarks, downloads, history',
+              'For Microsoft 365 apps (Teams, Outlook Web, SharePoint): Edge works best'
+            ],
+            dutch: [{ nl: 'Browser', en: 'Web browser' }, { nl: 'Adresbalk', en: 'Address bar' }, { nl: 'Tabblad', en: 'Tab' }, { nl: 'Startpagina', en: 'Homepage' }]
+          },
+          {
+            type: 'learn', icon: '🗂️',
+            title: 'Tabs - working with multiple pages at once',
+            body: 'Tabs let you have several websites open at the same time without opening multiple windows.',
+            list: [
+              'Ctrl+T - open a New Tab (Nieuw tabblad)',
+              'Ctrl+W - close the current tab',
+              'Ctrl+Tab - switch to the next tab (right)',
+              'Ctrl+Shift+Tab - switch to the previous tab (left)',
+              'Click a tab to switch to it · Drag tabs to reorder them',
+              'Middle-click a link - opens it in a new tab automatically'
+            ],
+            dutch: [{ nl: 'Nieuw tabblad', en: 'New tab (Ctrl+T)' }, { nl: 'Tabblad sluiten', en: 'Close tab (Ctrl+W)' }]
+          },
+          {
+            type: 'learn', icon: '📥',
+            title: 'Downloads - finding files you downloaded',
+            body: 'When you click a file link in a browser, it downloads to your computer.',
+            list: [
+              'Files go to your Downloads folder (Downloadmap) automatically',
+              'A download bar appears at the bottom of the browser when complete',
+              'Ctrl+J - opens the Downloads page to see all recent downloads',
+              'Open File Explorer → Downloads to find any file',
+              'Tip: do not leave everything in Downloads - move files to proper folders',
+              'Tip: be careful with unknown file downloads - only from trusted sources'
+            ],
+            dutch: [{ nl: 'Downloadmap', en: 'Downloads folder' }, { nl: 'Bestand openen', en: 'Open file' }, { nl: 'Opslaan als', en: 'Save as' }]
+          },
+          {
+            type: 'learn', icon: '⭐',
+            title: 'Bookmarks - save websites you visit often',
+            body: 'Bookmarks save the address of a website so you can return with one click.',
+            list: [
+              'Ctrl+D - Bookmark (Bladwijzer) the current page',
+              'Show bookmarks bar: Ctrl+Shift+B (your saved sites appear at the top)',
+              'Click a bookmark to go straight to that site',
+              'Bookmark work sites you use every day: Outlook, Teams, company intranet',
+              'Zoom in/out on any page: Ctrl+Plus (+) / Ctrl+Minus (-) / Ctrl+0 (reset)'
+            ],
+            dutch: [{ nl: 'Bladwijzer', en: 'Bookmark (Ctrl+D)' }, { nl: 'Bladwijzerbalk', en: 'Bookmarks bar' }, { nl: 'Zoomen', en: 'Zoom in/out' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You downloaded a PDF from email but cannot find it. Where do you look first?',
+            options: ['The Desktop', 'The Downloads folder (Ctrl+J in browser)', 'My Documents', 'The Recycle Bin'],
+            correct: 1,
+            feedback: 'Downloads go to the Downloads folder by default. Press Ctrl+J in your browser to see a list of recent downloads, or open File Explorer → Downloads.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Browser skills done! Tabs, downloads, bookmarks - you can now navigate the web efficiently. These habits will make everything from reading emails online to finding job listings so much faster."
+          }
+        ]
+      },
+
+      // ─────────────────────────────────────────
+      {
+        title: 'Switching programs, split screen & screenshots',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "At work you will have multiple programs open at the same time - Outlook, Teams, Word, Excel, a browser. Switching between them quickly is a skill that makes you look fast and confident. And screenshots? You will need them more than you think."
+          },
+          {
+            type: 'learn', icon: '🔄',
+            title: 'Switching between open programs',
+            body: 'These are the fastest ways to jump between programs without touching the mouse.',
+            list: [
+              'Alt+Tab - switch between open programs (hold Alt, press Tab to cycle through)',
+              'Win+Tab - opens Task View - see all open windows as thumbnails',
+              'Click on a program in the Taskbar at the bottom to switch to it',
+              'Win+D - show Desktop (minimises all windows) - press again to restore',
+              'Alt+F4 - close the current window',
+              'Tip: keep only the programs you need open - too many slows everything down'
+            ],
+            dutch: [{ nl: 'Schakelen', en: 'Switch between programs' }, { nl: 'Taakweergave', en: 'Task View (Win+Tab)' }, { nl: 'Bureaublad weergeven', en: 'Show Desktop (Win+D)' }]
+          },
+          {
+            type: 'learn', icon: '⬛⬛',
+            title: 'Split screen - two programs side by side',
+            body: 'Snap lets you see two programs at the same time on one screen. Perfect for comparing documents or reading email while typing in Word.',
+            list: [
+              'Win+Left arrow - snap current window to the LEFT half of the screen',
+              'Win+Right arrow - snap current window to the RIGHT half',
+              'Windows then asks you to choose a second program for the other half',
+              'Win+Up - maximise the window (full screen)',
+              'Win+Down - minimise / restore the window',
+              'To exit split: click the maximise button (square icon, top right of any window)'
+            ],
+            dutch: [{ nl: 'Venster vastzetten', en: 'Snap window' }, { nl: 'Maximaliseren', en: 'Maximise' }, { nl: 'Minimaliseren', en: 'Minimise' }, { nl: 'Herstellen', en: 'Restore' }]
+          },
+          {
+            type: 'learn', icon: '📸',
+            title: 'Screenshots - capture what is on your screen',
+            body: 'Screenshots are used to share what you see, report a problem to IT, or complete exercises in this app.',
+            list: [
+              'Win+Shift+S - Snipping Tool: drag to select any area of the screen',
+              '  → Copies to clipboard automatically → paste into email or Teams with Ctrl+V',
+              '  → A notification appears - click it to open and save the screenshot',
+              'PrtScn (Print Screen) - captures the whole screen to clipboard',
+              'Alt+PrtScn - captures only the active window (not the whole screen)',
+              'Saved screenshots go to: Pictures → Screenshots folder'
+            ],
+            dutch: [{ nl: 'Schermafbeelding', en: 'Screenshot' }, { nl: 'Knipprogramma', en: 'Snipping Tool' }, { nl: 'Klembord', en: 'Clipboard' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You want to see your email and a Word document at the same time on screen. What do you do?',
+            options: ['Open two separate monitors', 'Press Win+Left on one window, then choose the other program', 'Resize both windows manually', 'You cannot do this on one screen'],
+            correct: 1,
+            feedback: 'Win+Left snaps one window to the left half. Windows then shows your other open programs so you can snap a second one to the right. Two programs side by side - instantly!'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Switching, split screen, screenshots - done! Alt+Tab and Win+Left/Right will save you so much time every day. And Win+Shift+S is one of those shortcuts that once you know it, you wonder how you ever managed without it."
+          }
+        ]
+      },
+
+      // ─────────────────────────────────────────
+      {
+        title: 'Printing, Print to PDF & connecting a printer',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Printing is still a daily reality in Dutch offices - contracts, reports, meeting documents. And Print to PDF is something every professional uses constantly. Let me show you how to do both confidently."
+          },
+          {
+            type: 'learn', icon: '🖨️',
+            title: 'Printing from any program',
+            body: 'Ctrl+P opens the print dialog in almost every program - Word, Excel, browser, PDF viewer.',
+            list: [
+              'Ctrl+P - opens the Print dialog (Afdrukken) in any program',
+              'Select your printer from the dropdown at the top',
+              'Pages: All pages, Current page, or specific pages (e.g. 2-5)',
+              'Copies (Exemplaren): how many copies to print',
+              'Colour: choose Black and White (Zwart-wit) to save ink',
+              'Orientation: Portrait (Staand) or Landscape (Liggend)',
+              'Always preview before printing - check it looks right!'
+            ],
+            dutch: [{ nl: 'Afdrukken', en: 'Print (Ctrl+P)' }, { nl: 'Printer', en: 'Printer (same)' }, { nl: 'Exemplaren', en: 'Copies' }, { nl: 'Zwart-wit', en: 'Black and white' }, { nl: 'Afdrukvoorbeeld', en: 'Print preview' }]
+          },
+          {
+            type: 'learn', icon: '🔌',
+            title: 'Connecting to a printer at work',
+            body: 'At a Dutch company you will usually connect to a shared network printer.',
+            list: [
+              'Wired printer: plug in the USB cable - Windows installs it automatically',
+              'Network/WiFi printer: Settings → Bluetooth & devices → Printers → Add a printer',
+              'Type the printer name if it does not appear - ask your IT helpdesk for the name',
+              'Set as default printer: right-click the printer → Set as default',
+              'Printer not responding? Check it is switched on and has paper',
+              'Still stuck? IT helpdesk is for exactly this - do not hesitate to ask'
+            ],
+            dutch: [{ nl: 'Printer toevoegen', en: 'Add a printer' }, { nl: 'Standaardprinter', en: 'Default printer' }, { nl: 'Afdrukwachtrij', en: 'Print queue' }]
+          },
+          {
+            type: 'learn', icon: '📄',
+            title: 'Print to PDF - without a printer',
+            body: 'Print to PDF saves any document as a PDF file on your computer - no printer needed.',
+            list: [
+              'Press Ctrl+P in any program',
+              'From the printer dropdown - select "Microsoft Print to PDF"',
+              'Click Print - a Save dialog appears, choose where to save your PDF',
+              'Give it a clear name: "Invoice_June2026.pdf"',
+              'Use this to: save webpages as PDF, convert Word/Excel to PDF, save receipts',
+              'Alternative in Word/Excel: File → Save As → choose PDF from the format dropdown'
+            ],
+            dutch: [{ nl: 'Afdrukken naar PDF', en: 'Print to PDF' }, { nl: 'PDF-bestand', en: 'PDF file' }, { nl: 'Opslaan als', en: 'Save as' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You want to save a webpage as a PDF to share with a colleague. What do you do?',
+            options: ['Take a screenshot of the whole page', 'Press Ctrl+P, select "Microsoft Print to PDF", click Print', 'Copy the text and paste into Word', 'Right-click the page and click Save'],
+            correct: 1,
+            feedback: 'Ctrl+P → select Microsoft Print to PDF → Print. This saves the page as a proper PDF with all formatting preserved. Perfect for invoices, confirmations, and webpages you need to share.'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice asking about the office printer - you may need this on day one:',
+            phrase: 'Excuse me, can you show me how to connect to the printer here?',
+            phraseNl: 'Excuseert u mij, kunt u mij laten zien hoe ik verbinding maak met de printer hier?',
+            lang: 'en-US'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Printing done! Ctrl+P and Print to PDF are tools you will use every week. Knowing how to connect to a network printer on your first day - without asking IT for help - will make a great first impression."
+          }
+        ]
+      },
+
+      // ─────────────────────────────────────────
+      {
+        title: 'Connecting to an external screen or projector',
+        time: '4 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "In a Dutch office you will regularly need to connect your laptop to a screen in a meeting room, or project your screen during a presentation. This is one of those things that causes panic if you have never done it before - and takes 10 seconds once you know how."
+          },
+          {
+            type: 'learn', icon: '🖥️',
+            title: 'Connecting the cable',
+            body: 'Before anything else, you need the right cable between your laptop and the screen or projector.',
+            list: [
+              'HDMI cable - most common in Dutch office meeting rooms (looks like a wide USB)',
+              'USB-C to HDMI adapter - if your laptop only has USB-C ports (most modern laptops)',
+              'DisplayPort - less common but similar to HDMI',
+              'Ask IT for an adapter if your laptop does not have HDMI directly',
+              'Plug in the cable first, then press Win+P to choose how to display',
+              'Wireless (Miracast): Settings → System → Display → Connect to a wireless display'
+            ],
+            dutch: [{ nl: 'Beeldscherm', en: 'Screen / Monitor' }, { nl: 'Projector', en: 'Projector (same)' }, { nl: 'Kabel', en: 'Cable' }, { nl: 'Adapter', en: 'Adapter (same)' }]
+          },
+          {
+            type: 'learn', icon: '📺',
+            title: 'Win+P - choose your display mode',
+            body: 'Press Win+P to open the projection menu. It appears on the right side of your screen.',
+            list: [
+              'PC screen only - only your laptop screen is on. External screen is blank.',
+              'Duplicate (Dupliceren) - same image on both screens. Use for presenting to others.',
+              'Extend (Uitbreiden) - two separate screens. Extra space for your work. Best for daily use.',
+              'Second screen only - only the external screen. Your laptop screen turns off.',
+              'For a presentation: choose Duplicate so everyone sees what you see',
+              'For daily work at a desk: choose Extend to have two screens of workspace'
+            ],
+            dutch: [{ nl: 'Dupliceren', en: 'Duplicate (same on both)' }, { nl: 'Uitbreiden', en: 'Extend (two separate screens)' }, { nl: 'Tweede scherm', en: 'Second screen only' }]
+          },
+          {
+            type: 'learn', icon: '💡',
+            title: 'Tips for presenting in a meeting room',
+            body: 'Common issues and how to avoid them.',
+            list: [
+              'Screen not detected: unplug the cable, wait 5 seconds, plug back in',
+              'Wrong resolution: right-click Desktop → Display Settings → adjust resolution',
+              'Laptop goes to sleep during presentation: Settings → Power → disable sleep for presentations',
+              'Before presenting: close personal emails and browser tabs',
+              'Teams video call: use Share Screen in Teams instead of Win+P for online meetings',
+              'Always test the projector connection 5 minutes before your presentation starts'
+            ],
+            dutch: [{ nl: 'Beeldschermresolutie', en: 'Display resolution' }, { nl: 'Weergave-instellingen', en: 'Display settings' }, { nl: 'Energiebeheer', en: 'Power settings' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You are presenting in a meeting room. You connect your laptop to the projector. What mode do you select with Win+P?',
+            options: ['PC screen only', 'Extend', 'Duplicate (Dupliceren)', 'Second screen only'],
+            correct: 2,
+            feedback: 'Duplicate shows the same image on your laptop AND the projector screen. Your audience sees exactly what you see. Extend would give you extra desktop space but the projector would show a blank extended screen, not your presentation.'
+          },
+          {
+            type: 'complete', xp: 25,
+            ariaMsg: "External screen and projector - done! Win+P and Duplicate are all you need to remember. Test the connection before any presentation and you will never have that panicked moment of a black projector screen while everyone waits."
+          }
+        ]
+      },
+
+      // ─────────────────────────────────────────
+      {
+        title: 'Command Prompt (CMD) basics',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "The Command Prompt is a text-based window where you type commands directly. IT departments use it every day. When IT asks you to run a command to diagnose a problem, you will know exactly what to do. It looks intimidating but the basics are very simple."
+          },
+          {
+            type: 'learn', icon: '⬛',
+            title: 'Opening Command Prompt',
+            body: 'There are a few ways to open CMD. Here are the two fastest.',
+            list: [
+              'Method 1: Press Win key, type "cmd", press Enter',
+              'Method 2: Win+R → type "cmd" → press Enter (Run dialog)',
+              'A black window with white text appears - this is Command Prompt',
+              'You see your current location: C:\\Users\\YourName>',
+              'This is called the prompt - type your command after the > symbol',
+              'To run as Administrator: right-click cmd → Run as administrator (for IT tasks)'
+            ],
+            dutch: [{ nl: 'Opdrachtprompt', en: 'Command Prompt (CMD)' }, { nl: 'Uitvoeren als beheerder', en: 'Run as administrator' }, { nl: 'Opdracht', en: 'Command' }]
+          },
+          {
+            type: 'learn', icon: '🌐',
+            title: 'Network commands - most useful for daily use',
+            body: 'These are the commands IT will ask you to run most often.',
+            list: [
+              'ipconfig - shows your IP address, WiFi connection details, default gateway',
+              'ipconfig /all - shows full network details (IT often asks for this)',
+              'ping google.com - tests if your internet connection is working',
+              '  → If you get replies: internet is working ✓',
+              '  → If you get "Request timed out": no internet connection ✗',
+              'ping 8.8.8.8 - pings Google\'s DNS server directly (another internet test)'
+            ],
+            dutch: [{ nl: 'IP-adres', en: 'IP address' }, { nl: 'Standaardgateway', en: 'Default gateway' }, { nl: 'Verbindingstest', en: 'Connection test (ping)' }]
+          },
+          {
+            type: 'learn', icon: '📁',
+            title: 'File and folder commands',
+            body: 'These commands let you navigate folders and see files without using File Explorer.',
+            list: [
+              'dir - list files and folders in the current location',
+              'cd [folder name] - change to that folder (cd = change directory)',
+              '  → Example: cd Documents (moves into the Documents folder)',
+              'cd .. - go up one level (back to the parent folder)',
+              'cd \\ - go all the way back to the root (C:\\)',
+              'cls - clear the screen (tidy up the window)',
+              'exit - close the Command Prompt window'
+            ],
+            dutch: [{ nl: 'Map', en: 'Directory / Folder' }, { nl: 'Map wijzigen', en: 'Change directory (cd)' }, { nl: 'Scherm wissen', en: 'Clear screen (cls)' }]
+          },
+          {
+            type: 'learn', icon: '🔧',
+            title: 'Useful system commands',
+            body: 'These commands help you check and manage your computer quickly.',
+            list: [
+              'tasklist - shows all running programs (like Task Manager but in text)',
+              'hostname - shows your computer\'s name (IT needs this sometimes)',
+              'systeminfo - shows full Windows version, RAM, and system details',
+              'shutdown /r /t 0 - restart immediately (use only when needed!)',
+              'Up arrow key - brings back the last command you typed (saves retyping)',
+              'Tab key - auto-completes folder or file names as you type'
+            ],
+            dutch: [{ nl: 'Computernaam', en: 'Computer name (hostname)' }, { nl: 'Systeeminformatie', en: 'System information' }, { nl: 'Opnieuw opstarten', en: 'Restart' }]
+          },
+          {
+            type: 'exercise',
+            title: '💻 Try it on your laptop!',
+            task: 'Open Command Prompt (Win key → type cmd → Enter). Type: ipconfig and press Enter. You will see your network details. Then type: ping google.com and press Enter. You will see if your internet is working. Take a screenshot of the results.',
+            screenshotTask: 'Upload a screenshot showing the CMD window with ipconfig or ping results.',
+            checkDescription: 'Screenshot shows a black Command Prompt window with ipconfig or ping output visible'
+          },
+          {
+            type: 'quiz',
+            question: 'IT asks you to check your IP address. Which command do you type in CMD?',
+            options: ['hostname', 'ipconfig', 'tasklist', 'ping'],
+            correct: 1,
+            feedback: 'ipconfig shows your IP address, subnet mask, default gateway, and WiFi adapter details. It is the first command IT helpdesks ask for when diagnosing network problems. Now you can do it yourself!'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Command Prompt - done! ipconfig, ping, dir, cd, cls - you now know the commands that IT professionals use every day. When your IT helpdesk asks you to run a command, you will know exactly what to do. That confidence is worth a lot."
           }
         ]
       }

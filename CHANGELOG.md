@@ -1,5 +1,20 @@
 # Work Ready — Changelog
 
+## v2.1.0 — 2026-06-30 — Windows Basics expanded (10 lessons)
+
+### New lessons added to Windows Basics module
+- **Using a web browser** (lesson 6): Chrome vs Edge, tabs (Ctrl+T/W), downloads folder, bookmarks, zoom — covers daily browser use for Outlook Web, Teams, SharePoint, LinkedIn
+- **Switching programs, split screen & screenshots** (lesson 7): Alt+Tab, Win+Tab, Win+Left/Right snap to split screen, Win+Shift+S snipping tool, PrtScn
+- **Printing, Print to PDF & connecting a printer** (lesson 8): Ctrl+P, print settings (copies/colour/orientation), connecting to network printer, Microsoft Print to PDF workflow
+- **Connecting to external screen or projector** (lesson 9): HDMI/USB-C cables, Win+P display modes (Duplicate/Extend/Second screen only), presentation tips, troubleshooting black screen
+- **Command Prompt (CMD) basics** (lesson 10): opening CMD, ipconfig/ping for network diagnosis, dir/cd/cd../cls for navigation, hostname/tasklist/systeminfo, using Up arrow to repeat commands
+
+### Version bumps
+- lessons.js v21 → v22, APP_VERSION 2.0.0 → 2.1.0
+- SW cache work-ready-v23 → work-ready-v24
+
+---
+
 ## v2.0.0 — 2026-06-30 — Phase 2: Full Professional Curriculum
 
 ### New modules (6 modules, 17 lessons, ~90 minutes of content)
