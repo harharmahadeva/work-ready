@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#1a1a2e">
   <title>Work Ready</title>
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/css/style.css?v=24">
+  <link rel="stylesheet" href="/css/style.css?v=25">
 </head>
 <body>
 
@@ -26,6 +26,36 @@
 
 <!-- ── TOAST ── -->
 <div class="toast" id="toast"></div>
+
+<!-- ── REVIEWER FEEDBACK BUTTON ── -->
+<button class="fb-trigger hidden" id="fb-trigger" title="Leave feedback">💬</button>
+
+<!-- ── FEEDBACK MODAL ── -->
+<div class="modal-overlay hidden" id="fb-modal">
+  <div class="modal-card fb-card">
+    <div class="fb-header">
+      <div class="fb-title">Reviewer Feedback</div>
+      <button class="fb-close" id="fb-close">✕</button>
+    </div>
+    <div class="fb-type-row">
+      <button class="fb-type-btn active" data-type="content">📚 Content</button>
+      <button class="fb-type-btn" data-type="ui">🎨 UI/UX</button>
+      <button class="fb-type-btn" data-type="bug">🐛 Bug</button>
+      <button class="fb-type-btn" data-type="general">💬 General</button>
+    </div>
+    <div class="fb-stars" id="fb-stars">
+      <span class="fb-star" data-val="1">★</span>
+      <span class="fb-star" data-val="2">★</span>
+      <span class="fb-star" data-val="3">★</span>
+      <span class="fb-star" data-val="4">★</span>
+      <span class="fb-star" data-val="5">★</span>
+    </div>
+    <textarea class="fb-text" id="fb-text" placeholder="Describe the issue or suggestion in detail..." rows="4"></textarea>
+    <div class="fb-screen-tag" id="fb-screen-tag"></div>
+    <button class="btn btn-primary btn-block" id="fb-submit">Send Feedback</button>
+    <div class="fb-status" id="fb-status"></div>
+  </div>
+</div>
 
 <!-- ── LATE NIGHT MODAL ── -->
 <div class="modal-overlay hidden" id="latenight-modal">
@@ -212,6 +242,6 @@
 <script src="/js/aria.js?v=19"></script>
 <script src="/js/speech.js?v=11"></script>
 <script src="/js/lessons.js?v=19"></script>
-<script src="/js/app.js?v=21"></script>
+<script src="/js/app.js?v=22"></script>
 </body>
 </html>

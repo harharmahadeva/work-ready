@@ -423,3 +423,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .checkin-reply { font-size: 13px; color: var(--text); line-height: 1.6; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 10px 12px; border-left: 3px solid var(--accent); }
 .checkin-suggestion { font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 4px; }
 .mood-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(79,110,247,0.15); color: var(--accent); margin-top: 2px; align-self: flex-start; }
+
+/* ── REVIEWER FEEDBACK ── */
+.fb-trigger { position: fixed; bottom: 90px; right: 16px; width: 48px; height: 48px; border-radius: 50%; background: var(--accent2); border: none; font-size: 20px; cursor: pointer; z-index: 300; box-shadow: 0 4px 16px rgba(124,58,237,0.5); transition: transform 0.15s; }
+.fb-trigger:hover { transform: scale(1.1); }
+.fb-trigger.hidden { display: none; }
+.fb-card { max-width: 400px; width: 100%; align-items: stretch; gap: 14px; padding: 20px; }
+.fb-header { display: flex; align-items: center; justify-content: space-between; }
+.fb-title { font-size: 16px; font-weight: 800; }
+.fb-close { background: none; border: none; color: var(--text2); font-size: 16px; cursor: pointer; padding: 0; line-height: 1; }
+.fb-type-row { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.fb-type-btn { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 8px; color: var(--text2); font-size: 12px; font-weight: 700; padding: 8px 6px; cursor: pointer; transition: all 0.15s; text-align: center; }
+.fb-type-btn.active { background: rgba(79,110,247,0.15); border-color: var(--accent); color: var(--text); }
+.fb-stars { display: flex; gap: 6px; justify-content: center; }
+.fb-star { font-size: 28px; color: var(--border); cursor: pointer; transition: color 0.1s; line-height: 1; }
+.fb-star.on { color: var(--gold); }
+.fb-text { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; color: var(--text); font-size: 13px; padding: 10px 12px; font-family: inherit; resize: none; outline: none; width: 100%; }
+.fb-text:focus { border-color: var(--accent); }
+.fb-screen-tag { font-size: 11px; color: var(--text2); opacity: 0.6; }
+.fb-status { font-size: 13px; text-align: center; min-height: 18px; }
+.fb-status.ok { color: var(--green); }
+.fb-status.err { color: var(--red); }

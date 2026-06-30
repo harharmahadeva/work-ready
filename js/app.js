@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (user) {
         Storage.setUser(user);
         pinError.textContent = '';
+        initFeedback(user);
         if (Storage.getOnboarded()) {
           goHome();
         } else {
@@ -392,7 +393,90 @@ document.addEventListener('DOMContentLoaded', () => {
     show('login');
     pinEntry = '';
     updatePinDots();
+    document.getElementById('fb-trigger').classList.add('hidden');
   };
+
+  // ── Reviewer Feedback ──
+  let fbRating = 0;
+  let fbType = 'content';
+
+  function initFeedback(user) {
+    if (user.role !== 'reviewer') return;
+    document.getElementById('fb-trigger').classList.remove('hidden');
+
+    document.getElementById('fb-trigger').onclick = () => {
+      const tag = document.getElementById('fb-screen-tag');
+      tag.textContent = 'Screen: ' + (currentScreen || 'home');
+      document.getElementById('fb-modal').classList.remove('hidden');
+      document.getElementById('fb-status').textContent = '';
+      document.getElementById('fb-text').value = '';
+      fbRating = 0;
+      updateStars(0);
+    };
+
+    document.getElementById('fb-close').onclick = () =>
+      document.getElementById('fb-modal').classList.add('hidden');
+
+    document.querySelectorAll('.fb-type-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.fb-type-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        fbType = btn.dataset.type;
+      };
+    });
+
+    document.querySelectorAll('.fb-star').forEach(star => {
+      star.onclick = () => { fbRating = parseInt(star.dataset.val); updateStars(fbRating); };
+      star.onmouseover = () => updateStars(parseInt(star.dataset.val));
+      star.onmouseout = () => updateStars(fbRating);
+    });
+
+    document.getElementById('fb-submit').onclick = submitFeedback;
+  }
+
+  function updateStars(n) {
+    document.querySelectorAll('.fb-star').forEach((s, i) =>
+      s.classList.toggle('on', i < n));
+  }
+
+  async function submitFeedback() {
+    const comment = document.getElementById('fb-text').value.trim();
+    const status = document.getElementById('fb-status');
+    if (!comment) { status.textContent = 'Please write something first.'; status.className = 'fb-status err'; return; }
+
+    const btn = document.getElementById('fb-submit');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    status.textContent = ''; status.className = 'fb-status';
+
+    const u = Storage.getUser();
+    const lessonEl = document.getElementById('lesson-title');
+
+    try {
+      const res = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reviewer: u?.name || 'Dinesh',
+          type: fbType,
+          screen: currentScreen,
+          rating: fbRating,
+          comment,
+          lesson: lessonEl?.textContent || '',
+          timestamp: new Date().toLocaleString('en-NL', { timeZone: 'Europe/Amsterdam' })
+        })
+      });
+      if (res.ok) {
+        status.textContent = 'Feedback sent! Thank you.'; status.className = 'fb-status ok';
+        document.getElementById('fb-text').value = '';
+        setTimeout(() => document.getElementById('fb-modal').classList.add('hidden'), 1800);
+      } else {
+        throw new Error();
+      }
+    } catch {
+      status.textContent = 'Failed to send. Please try again.'; status.className = 'fb-status err';
+    }
+    btn.textContent = 'Send Feedback'; btn.disabled = false;
+  }
 
   // ── Home screen ──
   function renderHome() {
