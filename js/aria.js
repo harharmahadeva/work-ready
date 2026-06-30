@@ -242,6 +242,18 @@ const Aria = (() => {
       `${n} more XP in the bank! You're making real progress, Chhaya.`
     ]),
 
+    laptopModule: (name) => pick([
+      `Quick heads up - this is the ${name} module and you will need your Windows laptop to practice properly. If you're on your phone right now, open Chrome on your laptop and go to work-ready dot vercel dot app. Your progress is saved and ready for you there!`,
+      `For ${name} lessons, you really want to be on your laptop so you can try everything as we go. If you're on your phone, hop onto your laptop and go to work-ready dot vercel dot app - I'll be right here waiting!`,
+      `Hey - just to let you know, ${name} is a hands-on module and you'll need your laptop open alongside me. If you're on your phone, that's okay for now - but switch to your laptop when you can. The address is work-ready dot vercel dot app.`
+    ]),
+
+    laptopExercise: [
+      "Now it's time to try this on your actual laptop! Pause here, open your laptop, and follow the steps. When you're done, come back and upload your screenshot so I can check your work.",
+      "This is a hands-on exercise - you'll need your laptop for this one. Do it now while it's fresh. Come back here when you're ready to upload your screenshot!",
+      "Practice time! Open your laptop and try what we just learned. Don't skip this - doing it yourself is how it really sticks. I'll be here when you come back with your screenshot."
+    ],
+
     weatherGreets: {
       sunny: [
         "What a beautiful sunny day in Arnhem! Perfect energy for learning something new.",

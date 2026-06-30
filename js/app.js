@@ -329,6 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || window.innerWidth < 768;
   }
 
+  // Speak a line then call a callback when it finishes
+  function speakThen(text, onEnd) {
+    Aria.speak(text, { onEnd });
+  }
+
   function shouldShowNudge() {
     if (!isMobile()) return false;
     const last = localStorage.getItem('nudge-dismissed');
@@ -504,9 +509,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderStep();
 
-    // Aria intro
+    // Aria intro — if mobile + laptop module, add laptop reminder after intro
     const introLine = Aria.lines.encourageStart(lesson.title);
-    setTimeout(() => Aria.speak(introLine), 500);
+    if (isMobile() && LAPTOP_MODULES.includes(activeModule.id)) {
+      // Speak intro first, then laptop nudge after it finishes
+      setTimeout(() => {
+        speakThen(introLine, () => {
+          setTimeout(() => Aria.speak(Aria.lines.laptopModule(activeModule.name)), 600);
+        });
+      }, 500);
+    } else {
+      setTimeout(() => Aria.speak(introLine), 500);
+    }
   }
 
   function renderStep() {
@@ -719,6 +733,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function renderExercise(step, body) {
+    // Aria speaks a laptop reminder for exercise steps on mobile
+    const exerciseAriaLine = isMobile() && LAPTOP_MODULES.includes(activeModule.id)
+      ? Aria.pick(Aria.lines.laptopExercise)
+      : "Now try this on your actual computer. When you're done, take a screenshot and upload it here. I'll check your work!";
+    setTimeout(() => Aria.speak(exerciseAriaLine), 400);
+
     body.innerHTML = `
       <div class="ss-card">
         <h3>${step.title}</h3>
