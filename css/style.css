@@ -350,7 +350,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   .nav-item { max-width: 120px; }
 
   /* Aria speaking indicator */
-  .aria-speaking { bottom: 80px; }
+  .aria-speaking { bottom: 110px; }
 }
 
 @media (min-width: 900px) {
