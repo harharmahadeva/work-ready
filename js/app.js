@@ -710,8 +710,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderLearnCard(step, body) {
+    const u = Storage.getUser();
+    const userName = u?.name || 'your name';
     let listHtml = '';
-    if (step.list) listHtml = `<ul>${step.list.map(l => `<li>${l}</li>`).join('')}</ul>`;
+    if (step.list) listHtml = `<ul>${step.list.map(l => `<li>${l.replace(/\{name\}/g, userName)}</li>`).join('')}</ul>`;
 
     let dutchHtml = '';
     if (step.dutch && step.dutch.length) {
@@ -740,17 +742,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderAriaMsg(step, body) {
+    const u = Storage.getUser();
+    const text = step.text.replace(/\{name\}/g, u?.name || 'you');
     body.innerHTML = `
       <div class="aria-msg">
         <div class="aria-msg-avatar">🎙️</div>
         <div class="aria-msg-body">
-          <p>"${step.text}"</p>
-          <div class="play-btn" onclick="Aria.speak('${step.text.replace(/'/g, "\\'")}')">🔊 Play again</div>
+          <p>"${text}"</p>
+          <div class="play-btn" onclick="Aria.speak('${text.replace(/'/g, "\\'")}')">🔊 Play again</div>
         </div>
       </div>
       <button class="btn btn-primary btn-block" onclick="nextStep()">Got it</button>
     `;
-    Aria.speak(step.text);
+    Aria.speak(text);
   }
 
   function renderQuiz(step, body) {
@@ -799,17 +803,21 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function renderMic(step, body) {
+    const u = Storage.getUser();
+    const userName = u?.name || 'your name';
+    const phrase = step.phrase.replace(/\{name\}/g, userName);
+    const phraseNl = (step.phraseNl || '').replace(/\{name\}/g, userName);
     body.innerHTML = `
       <div class="mic-card">
         <h3>🎤 Speaking Practice</h3>
         <p class="text-sm" style="margin-bottom:8px">${step.instruction}</p>
         <div class="target-phrase">
-          ${step.phrase}
-          ${step.phraseNl ? `<div class="phrase-nl">🇳🇱 ${step.phraseNl}</div>` : ''}
+          ${phrase}
+          ${phraseNl ? `<div class="phrase-nl">🇳🇱 ${phraseNl}</div>` : ''}
         </div>
         <div style="text-align:center">
           <div class="text-sm mt-8">Aria says it first - then tap the mic and say it yourself</div>
-          <button class="mic-btn" id="mic-btn" onclick="startMic('${step.phrase.replace(/'/g, "\\'")}','${step.lang || 'en-US'}')">🎤</button>
+          <button class="mic-btn" id="mic-btn" onclick="startMic('${phrase.replace(/'/g, "\\'")}','${step.lang || 'en-US'}')">🎤</button>
           <div class="mic-waves" id="mic-waves" style="display:none">
             ${[...Array(7)].map((_, i) => `<div class="mic-wave-bar" style="height:${4 + Math.random() * 14}px;animation-delay:${i * 0.08}s"></div>`).join('')}
           </div>
@@ -822,9 +830,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aria models the phrase first
     const lang = step.lang || 'en-US';
     if (lang.startsWith('nl')) {
-      Aria.speakDutch(step.phrase);
+      Aria.speakDutch(phrase);
     } else {
-      Aria.speak(step.phrase);
+      Aria.speak(phrase);
     }
   }
 

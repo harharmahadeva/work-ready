@@ -1,5 +1,5 @@
-const CACHE = 'work-ready-v19';
-const ASSETS = ['/', '/index.html', '/css/style.css?v=26', '/js/app.js?v=27', '/js/aria.js?v=21', '/js/speech.js?v=11', '/js/lessons.js?v=19', '/js/storage.js?v=11', '/data/users.json', '/icons/icon-192.png', '/icons/icon-512.png'];
+const CACHE = 'work-ready-v20';
+const ASSETS = ['/', '/index.html', '/css/style.css?v=26', '/js/app.js?v=28', '/js/aria.js?v=22', '/js/speech.js?v=11', '/js/lessons.js?v=20', '/js/storage.js?v=11', '/data/users.json', '/icons/icon-192.png', '/icons/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

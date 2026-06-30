@@ -160,10 +160,10 @@ const Aria = (() => {
 
   // ── Scripted motivational lines (arrays for variety) ──
   const lines = {
-    welcome: "Hi Chhaya! I'm Aria, your personal work coach. I'm so happy you're here. Together we're going to build all the skills you need to walk into any office with confidence. Are you ready? Let's do this!",
+    welcome: (name) => `Hi ${name}! I'm Aria, your personal work coach. I'm so happy you're here. Together we're going to build all the skills you need to walk into any office with confidence. Are you ready? Let's do this!`,
 
     firstLesson: [
-      "You just finished your very first lesson. That means you've already started - and most people never even begin. You are not most people, Chhaya.",
+      "You just finished your very first lesson. That means you've already started - and most people never even begin. You are not most people.",
       "First lesson done! You know what? The hardest step is always the first one - and you just took it. I'm so proud of you.",
       "Look at you - one lesson down! That might seem small, but it's how every great journey begins. Keep going!"
     ],
@@ -185,7 +185,7 @@ const Aria = (() => {
 
     allRight: [
       "Perfect score! You really understood that. Brilliant!",
-      "Full marks! That was impressive, Chhaya.",
+      "Full marks! That was impressive. Really well done.",
       "Everything correct! You are on fire today.",
       "One hundred percent! That confidence is going to serve you so well at work."
     ],
@@ -193,7 +193,7 @@ const Aria = (() => {
     moduleComplete: (name) => pick([
       `You just completed the ${name} module! That is a real achievement. Every lesson you finish brings you one step closer to that job. I'm so proud of you.`,
       `The ${name} module - finished! You should feel genuinely good about yourself right now. That took real commitment.`,
-      `${name} - done! Chhaya, you are building something real here. One module at a time, you are becoming job-ready.`
+      `${name} - done! You are building something real here. One module at a time, you are becoming job-ready.`
     ]),
 
     comeback: (name) => pick([
@@ -217,10 +217,10 @@ const Aria = (() => {
     streakDay: (n) => pick([
       `${n} days in a row! That kind of consistency is exactly what successful people do. You should be really proud of yourself.`,
       `${n} days straight! Do you know how rare that is? Most people give up. You just keep showing up. Amazing.`,
-      `${n} day streak! Your future employer is going to get someone who never gives up. That's you, Chhaya.`
+      `${n} day streak! Your future employer is going to get someone who never gives up. That's you.`
     ]),
 
-    allDone: "Chhaya. You did it. Every single module. You came here knowing very little about computers and the Dutch workplace - and look at you now. You are ready. Go get that job. I believe in you completely.",
+    allDone: (name) => `${name}. You did it. Every single module. You came here knowing very little about computers and the Dutch workplace - and look at you now. You are ready. Go get that job. I believe in you completely.`,
 
     encourageStart: (lesson) => pick([
       `Today we're learning ${lesson}. By the end of this lesson you'll know exactly what to do - and you'll feel so much more confident. Let's go!`,
@@ -243,7 +243,7 @@ const Aria = (() => {
     xpEarned: (n) => pick([
       `You earned ${n} experience points! You're growing every single day.`,
       `${n} XP! Every point is proof that you showed up and did the work.`,
-      `${n} more XP in the bank! You're making real progress, Chhaya.`
+      `${n} more XP in the bank! You're making real progress. Keep going!`
     ]),
 
     laptopModule: (name) => pick([

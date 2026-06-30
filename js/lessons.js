@@ -412,7 +412,7 @@ const MODULES = [
             type: 'learn', icon: '📄',
             title: 'Saving as PDF - the professional format',
             body: 'Always send documents as PDF, not Word. PDF looks the same on every computer and cannot be accidentally edited.',
-            list: ['File → Save As → change "Word Document" to "PDF"', 'Or: File → Export → Create PDF/XPS', 'Name your PDF clearly: "CV_Chhaya_June2026.pdf"', 'A PDF opened in the browser or Adobe Reader is perfect for emailing'],
+            list: ['File → Save As → change "Word Document" to "PDF"', 'Or: File → Export → Create PDF/XPS', 'Name your PDF clearly: "CV_YourName_June2026.pdf"', 'A PDF opened in the browser or Adobe Reader is perfect for emailing'],
             dutch: [{ nl: 'PDF-bestand', en: 'PDF file' }, { nl: 'Exporteren', en: 'Export' }, { nl: 'Bijlage', en: 'Attachment (email)' }]
           },
           {
@@ -471,7 +471,7 @@ const MODULES = [
             type: 'learn', icon: '👋',
             title: 'Introducing yourself',
             body: 'Dutch introductions are short and direct - not long and formal like in India.',
-            list: ['Say your first name and a one-line background', '"Hi, I\'m Chhaya. I\'m the new assistant."', 'Shake hands firmly - one shake, not multiple', 'Dutch people use first names immediately - even with the director'],
+            list: ['Say your first name and a one-line background', '"Hi, I\'m {name}. I\'m the new assistant." — say this with your own name!', 'Shake hands firmly - one shake, not multiple', 'Dutch people use first names immediately - even with the director'],
             dutch: [{ nl: 'Aangenaam', en: 'Pleased to meet you' }, { nl: 'Mijn naam is...', en: 'My name is...' }, { nl: 'Ik ben nieuw hier', en: 'I am new here' }]
           },
           {
@@ -484,8 +484,8 @@ const MODULES = [
           {
             type: 'speak',
             instruction: 'Practice your introduction:',
-            phrase: 'Hello, my name is Chhaya. I am the new team member. I am very happy to be here.',
-            phraseNl: 'Hallo, mijn naam is Chhaya. Ik ben het nieuwe teamlid. Ik ben erg blij om hier te zijn.',
+            phrase: 'Hello, my name is {name}. I am the new team member. I am very happy to be here.',
+            phraseNl: 'Hallo, mijn naam is {name}. Ik ben het nieuwe teamlid. Ik ben erg blij om hier te zijn.',
             lang: 'en-US'
           },
           {
@@ -1082,14 +1082,14 @@ const MODULES = [
               'Will we be discussing the budget report? I want to make sure I prepare the right information.',
               'Thank you for your time.',
               'Kind regards,',
-              'Chhaya'
+              '{name}'
             ]
           },
           {
             type: 'speak',
             instruction: 'Practice reading a professional email closing out loud:',
-            phrase: 'I look forward to hearing from you. Kind regards, Chhaya.',
-            phraseNl: 'Ik zie uw reactie met belangstelling tegemoet. Met vriendelijke groet, Chhaya.',
+            phrase: 'I look forward to hearing from you. Kind regards, {name}.',
+            phraseNl: 'Ik zie uw reactie met belangstelling tegemoet. Met vriendelijke groet, {name}.',
             lang: 'en-US'
           },
           {
@@ -1499,7 +1499,7 @@ const MODULES = [
         steps: [
           {
             type: 'aria',
-            text: "Chhaya, you have a Masters in Finance. Excel is the tool of your field. Every finance team, every admin role, every office job in the Netherlands uses Excel. After this module, Excel will feel like home - and you will realise how much of your degree prepared you for this."
+            text: "Excel is the tool of finance, admin, and every office job in the Netherlands. Whether you have a finance background or are starting fresh, after this module Excel will feel like home. This is one of the most in-demand skills Dutch employers test for - let's make sure you have it."
           },
           {
             type: 'learn', icon: '📊',
@@ -1788,7 +1788,7 @@ const MODULES = [
           },
           {
             type: 'complete', xp: 45,
-            ariaMsg: "Excel module complete! Chhaya, you have just built skills that Finance departments actively look for. Expense reports, team lists, formulas, charts - you can do all of this. Your Masters degree and now your Excel skills are a powerful combination. You are so ready."
+            ariaMsg: "Excel module complete! You have just built skills that Finance and Admin departments actively look for. Expense reports, team lists, formulas, charts - you can do all of this now. These are real, job-ready skills. You are so ready."
           }
         ]
       }
@@ -1796,7 +1796,206 @@ const MODULES = [
   },
 
   // ═══════════════════════════════════════════
-  //  9. DUTCH LANGUAGE EXPANDED
+  //  9. MICROSOFT POWERPOINT
+  // ═══════════════════════════════════════════
+  {
+    id: 'powerpoint',
+    icon: '📽️',
+    name: 'PowerPoint',
+    phase: 'Office',
+    color: '#c43e1c',
+    lessons: [
+      {
+        title: 'Creating your first presentation',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "PowerPoint is how Dutch offices present ideas, reports, and plans. Whether it is a team update or a management presentation, knowing how to build a clean, professional slide deck will make you stand out. Let me show you exactly how."
+          },
+          {
+            type: 'learn', icon: '📽️',
+            title: 'Opening PowerPoint and starting a presentation',
+            body: 'Press the Windows key, type "PowerPoint" and press Enter. Or click the PowerPoint icon on your taskbar.',
+            list: [
+              'PowerPoint opens with a Start screen - choose Blank Presentation',
+              'Or choose a Theme - these give your slides a professional look instantly',
+              'The first slide is the Title Slide - click to add your title',
+              'Click "Click to add subtitle" for your name, date, or department',
+              'Ctrl+S to save your file immediately - name it clearly'
+            ],
+            dutch: [{ nl: 'Presentatie', en: 'Presentation' }, { nl: 'Dia', en: 'Slide' }, { nl: 'Thema', en: 'Theme / Design' }, { nl: 'Titeldia', en: 'Title slide' }]
+          },
+          {
+            type: 'learn', icon: '➕',
+            title: 'Adding and organising slides',
+            body: 'A presentation is a series of slides. Here is how to add and manage them.',
+            list: [
+              'Add a new slide: Home tab → New Slide (or Ctrl+M)',
+              'Choose a layout: Title and Content, Two Content, Blank, etc.',
+              'Left panel (Slide panel) - see all your slides in order',
+              'Drag slides up or down in the left panel to reorder them',
+              'Right-click a slide → Delete Slide to remove it',
+              'Keep it concise: most Dutch work presentations are 5-10 slides'
+            ],
+            dutch: [{ nl: 'Nieuwe dia', en: 'New slide (Ctrl+M)' }, { nl: 'Indeling', en: 'Layout' }, { nl: 'Diavenster', en: 'Slide panel' }, { nl: 'Verwijderen', en: 'Delete' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You want to add a new slide to your PowerPoint. What do you press?',
+            options: ['Ctrl+N', 'Ctrl+M', 'Ctrl+S', 'Ctrl+P'],
+            correct: 1,
+            feedback: 'Ctrl+M adds a New Slide (Nieuwe dia). Ctrl+N would open a brand new PowerPoint file. Think: M for More slides!'
+          },
+          {
+            type: 'exercise',
+            title: '💻 Try it on your laptop!',
+            task: 'Open PowerPoint. Choose a theme. Create a title slide with "My Presentation" as title and your name as subtitle. Add 2 more slides. Take a screenshot showing the slide panel on the left.',
+            screenshotTask: 'Upload a screenshot showing PowerPoint open with at least 3 slides in the left panel.',
+            checkDescription: 'Screenshot shows PowerPoint with at least 3 slides visible in the left slide panel'
+          },
+          {
+            type: 'complete', xp: 25,
+            ariaMsg: "First presentation created! You know how to open PowerPoint, pick a theme, and build a slide structure. A clean structure is the foundation of every great presentation."
+          }
+        ]
+      },
+      {
+        title: 'Text, images and professional design',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "The difference between an amateur slide and a professional one is usually very simple: less text, better visuals, more white space. Dutch colleagues are direct - they want your key point immediately, not a wall of text to read."
+          },
+          {
+            type: 'learn', icon: '✍️',
+            title: 'Working with text on slides',
+            body: 'Every slide has text boxes. Click to select, click inside to type.',
+            list: [
+              'Click any text area to select it - click again inside to type',
+              'Format: Bold (Ctrl+B), Italic (Ctrl+I), change font size in the Home tab',
+              'The 6x6 rule: maximum 6 bullet points per slide, 6 words per bullet',
+              'Never paste full paragraphs onto a slide - your audience reads instead of listening',
+              'Use slide titles as clear labels - "Q3 Results" not "Slide 3"'
+            ],
+            dutch: [{ nl: 'Tekstvak', en: 'Text box' }, { nl: 'Opsommingsteken', en: 'Bullet point' }, { nl: 'Lettergrootte', en: 'Font size' }, { nl: 'Diatitel', en: 'Slide title' }]
+          },
+          {
+            type: 'learn', icon: '🖼️',
+            title: 'Adding images and icons',
+            body: 'One strong image beats ten bullet points. Images make slides memorable.',
+            list: [
+              'Insert tab → Pictures → This Device (from your computer)',
+              'Insert tab → Online Pictures → search for professional stock images',
+              'Insert tab → Icons → clean simple visuals for any topic',
+              'Click an image to select it - drag corners to resize proportionally',
+              'Right-click → Send to Back / Bring to Front to control layering',
+              'Tip: image on the right, text on the left is the standard Dutch layout'
+            ],
+            dutch: [{ nl: 'Afbeelding', en: 'Image / Picture' }, { nl: 'Invoegen', en: 'Insert tab' }, { nl: 'Formaat wijzigen', en: 'Resize' }, { nl: 'Pictogram', en: 'Icon' }]
+          },
+          {
+            type: 'learn', icon: '🎨',
+            title: 'Professional design rules',
+            body: 'Follow these rules and your slides will immediately look professional.',
+            list: [
+              '1. ONE idea per slide - if you have two ideas, use two slides',
+              '2. White space is intentional - do not fill every corner of the slide',
+              '3. Maximum two fonts - one for headings, one for content',
+              '4. Use your company template if one exists - always ask for it',
+              '5. Dark text on light background - never coloured text on coloured background',
+              '6. Consistent alignment - use View → Guides to line things up perfectly'
+            ]
+          },
+          {
+            type: 'quiz',
+            question: 'Your colleague has 15 bullet points on one slide. What is the correct advice?',
+            options: ['Make the font smaller to fit it all', 'Split it into 2-3 slides with fewer points', 'That is fine for detailed topics', 'Remove all bullet points'],
+            correct: 1,
+            feedback: 'Split long slides! The 6x6 rule: max 6 bullets, max 6 words each. Audiences cannot read and listen at the same time. Less text = more impact = more professional.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Design skills done! You now know the professional rules most people never learn. Clean slides, one idea per slide, good images. Your presentations are going to stand out."
+          }
+        ]
+      },
+      {
+        title: 'Presenting - slideshow, shortcuts and Teams',
+        time: '4 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Knowing your slides is only half of presenting. The other half is running the slideshow confidently - switching slides smoothly, handling questions, and sharing your screen in Teams without any technical panic. Let me cover all of that now."
+          },
+          {
+            type: 'learn', icon: '▶️',
+            title: 'Running the slideshow',
+            body: 'When you are ready to present, start the slideshow. Your slides fill the whole screen.',
+            list: [
+              'F5 - start slideshow from the beginning',
+              'Shift+F5 - start from the current slide (useful mid-edit)',
+              'Right arrow or spacebar - next slide',
+              'Left arrow - go back one slide',
+              'B - black out the screen (focus shifts to you during discussion)',
+              'Escape - exit the slideshow at any time'
+            ],
+            dutch: [{ nl: 'Diavoorstelling', en: 'Slideshow' }, { nl: 'Vanaf het begin', en: 'From the beginning (F5)' }, { nl: 'Volgende dia', en: 'Next slide' }, { nl: 'Afsluiten', en: 'Exit (Escape)' }]
+          },
+          {
+            type: 'learn', icon: '💻',
+            title: 'Presenting in Teams - share your screen',
+            body: 'In a Teams video call, share your PowerPoint so everyone sees it.',
+            list: [
+              'Option 1: In the Teams call → Share Screen → choose the PowerPoint window → F5',
+              'Option 2 (better): Share → PowerPoint Live → select your file',
+              'PowerPoint Live shows you a presenter view - audience sees only your slides',
+              'You can see your notes and the next slide while presenting',
+              'Always close personal emails and browser tabs before sharing!',
+              'Click Stop Sharing in Teams when done to return to camera view'
+            ],
+            dutch: [{ nl: 'Scherm delen', en: 'Share screen' }, { nl: 'Dianotities', en: 'Slide notes' }, { nl: 'Presentatorweergave', en: 'Presenter view' }, { nl: 'Stoppen met delen', en: 'Stop sharing' }]
+          },
+          {
+            type: 'learn', icon: '📝',
+            title: 'Speaker notes - your secret tool',
+            body: 'Notes are visible to you on screen but invisible to your audience.',
+            list: [
+              'Click Notes at the bottom of the screen to show the notes panel',
+              'Or: View tab → Notes',
+              'Type key statistics, talking points, or reminders',
+              'In Presenter View (two screens): you see notes, audience sees slides only',
+              'Keep notes as bullet points - things you can glance at quickly',
+              'Practice until you can speak naturally without reading word for word'
+            ],
+            dutch: [{ nl: 'Notities', en: 'Notes (speaker notes)' }, { nl: 'Presentatorweergave', en: 'Presenter view' }, { nl: 'Tweede scherm', en: 'Second screen' }]
+          },
+          {
+            type: 'quiz',
+            question: 'During your presentation, you want the audience to focus on a discussion, not your slides. What do you press?',
+            options: ['Escape to close PowerPoint', 'B to show a black screen', 'F5 to restart the slideshow', 'Delete the slide'],
+            correct: 1,
+            feedback: 'Press B during a slideshow for a black screen. Your audience focuses on you and the conversation. Press B again or any key to return to your slides. Perfect for Q&A moments!'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice opening a presentation confidently:',
+            phrase: 'Good afternoon everyone. Thank you for joining. I will take you through our key points today.',
+            phraseNl: 'Goedemiddag allemaal. Bedankt voor uw komst. Ik neem u mee door onze belangrijkste punten.',
+            lang: 'en-US'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "PowerPoint complete! You can create a professional presentation, design clean slides, and run a confident slideshow in person or in Teams. This is a skill Dutch employers test for and value every single day."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  10. DUTCH LANGUAGE EXPANDED
   // ═══════════════════════════════════════════
   {
     id: 'dutch-expanded',
@@ -1941,14 +2140,14 @@ const MODULES = [
               'Alvast bedankt voor uw reactie.',
               '',
               'Met vriendelijke groet,',
-              'Chhaya'
+              '{name}'
             ]
           },
           {
             type: 'speak',
             instruction: 'Practice the Dutch email closing - say it clearly:',
-            phrase: 'Thank you in advance. Kind regards, Chhaya.',
-            phraseNl: 'Alvast bedankt. Met vriendelijke groet, Chhaya.',
+            phrase: 'Thank you in advance. Kind regards, {name}.',
+            phraseNl: 'Alvast bedankt. Met vriendelijke groet, {name}.',
             lang: 'en-US'
           },
           {
@@ -1963,12 +2162,155 @@ const MODULES = [
             ariaMsg: "Dutch email writing - done! Even sending one email with a correct Dutch opening and closing will make employers and colleagues remember you positively. This small effort signals that you are serious about integrating into Dutch professional life."
           }
         ]
+      },
+      {
+        title: 'Survival Dutch - everyday office sentences',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "These are the Dutch sentences you will actually use in your first weeks at work - in the corridor, the kitchen, meetings, and on the phone. You do not need to be fluent. Knowing these phrases will make your Dutch colleagues genuinely warm to you."
+          },
+          {
+            type: 'learn', icon: '🗣️',
+            title: 'Sentences for every day at the office',
+            body: 'Learn these and you can handle most everyday situations in a Dutch workplace.',
+            list: [
+              'Kan ik je even storen? - Can I disturb you for a moment?',
+              'Heb je even tijd? - Do you have a moment?',
+              'Ik ben er zo - I will be right there',
+              'Dat klopt - That is correct / That is right',
+              'Geen probleem - No problem',
+              'Dat weet ik niet zeker - I am not sure about that',
+              'Ik zal het nakijken - I will check on that',
+              'Ik snap het - I understand (informal)',
+              'Tot later! - See you later!'
+            ],
+            dutch: [{ nl: 'Kan ik je even storen?', en: 'Can I disturb you a moment?' }, { nl: 'Dat klopt', en: 'That is correct' }, { nl: 'Geen probleem', en: 'No problem' }, { nl: 'Tot later!', en: 'See you later!' }]
+          },
+          {
+            type: 'learn', icon: '☕',
+            title: 'Kitchen and break room Dutch',
+            body: 'The break room is where Dutch workplace relationships are built. These phrases help you join.',
+            list: [
+              'Wil je ook koffie? - Do you want coffee too?',
+              'Ja graag! / Nee dank je - Yes please! / No thank you',
+              'Ik trakteer - It is my treat (when you bring coffee for the whole team)',
+              'Lekker! - Delicious / Nice! (used all the time for food AND good news)',
+              'Smakelijk eten - Enjoy your meal (say this to anyone who is eating)',
+              'Wat eet jij? - What are you eating?'
+            ],
+            dutch: [{ nl: 'Wil je ook koffie?', en: 'Do you want coffee too?' }, { nl: 'Ik trakteer', en: 'It is my treat' }, { nl: 'Lekker!', en: 'Delicious / Nice!' }, { nl: 'Smakelijk eten', en: 'Enjoy your meal' }]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice offering coffee - Aria says it first:',
+            phrase: 'I am making coffee. Would you like one too?',
+            phraseNl: 'Ik ga koffie zetten. Wil jij ook?',
+            lang: 'en-US'
+          },
+          {
+            type: 'speak',
+            instruction: 'Now try it in Dutch:',
+            phrase: 'Ik ga koffie zetten. Wil jij ook?',
+            phraseNl: 'I am making coffee. Would you like one?',
+            lang: 'nl-NL'
+          },
+          {
+            type: 'quiz',
+            question: 'Your colleague has just been served their lunch. What do you say in Dutch?',
+            options: ['Dank u wel', 'Smakelijk eten', 'Lekker!', 'Tot ziens'],
+            correct: 1,
+            feedback: '"Smakelijk eten" is what you say when someone is about to eat or has just been served - the Dutch equivalent of "bon appétit". Your colleagues will be genuinely impressed you know this one!'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Survival Dutch - done! These sentences will carry you through your first weeks at any Dutch company. Offering coffee alone will make you instantly likeable. Small Dutch efforts go an enormous way."
+          }
+        ]
+      },
+      {
+        title: 'Reading Dutch documents at work',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "You will receive Dutch documents at work - letters, contracts, payslips, memos, forms. Even with limited Dutch, knowing the key words lets you understand what you are reading without translating everything. Let me give you the most important ones right now."
+          },
+          {
+            type: 'learn', icon: '📋',
+            title: 'Common words in Dutch work documents',
+            body: 'These words appear in almost every official Dutch document you will receive.',
+            list: [
+              'Betreft / Onderwerp - Subject / Regarding (at the top of letters and emails)',
+              'Datum - Date',
+              'Hierbij ontvangt u - Hereby you receive...',
+              'Bijlage / Bijlagen - Attachment / Attachments',
+              'Handtekening vereist - Signature required',
+              'Uiterlijk - At the latest (deadline word - very important!)',
+              'Geldig tot - Valid until',
+              'Persoonsgegevens - Personal details / Personal data',
+              'In afwachting van uw reactie - Awaiting your response'
+            ],
+            dutch: [{ nl: 'Betreft', en: 'Subject / Regarding' }, { nl: 'Uiterlijk', en: 'At the latest (deadline!)' }, { nl: 'Handtekening', en: 'Signature' }, { nl: 'Geldig tot', en: 'Valid until' }]
+          },
+          {
+            type: 'learn', icon: '💶',
+            title: 'Reading your payslip (loonstrook)',
+            body: 'Every month you receive a loonstrook. Here is what the key lines mean.',
+            list: [
+              'Bruto salaris - Your gross salary (before deductions)',
+              'Loonheffing - Income tax withheld by your employer (completely normal)',
+              'Werknemersverzekeringen - Employee insurance contributions (also normal)',
+              'Netto salaris - What you actually receive in your bank account',
+              'Vakantiegeld opbouw - Holiday pay accumulating (paid out in May/June)',
+              'Verlofuren - Leave hours you have built up',
+              'Periode - The pay period this loonstrook covers'
+            ],
+            dutch: [{ nl: 'Loonstrook', en: 'Payslip' }, { nl: 'Bruto salaris', en: 'Gross salary (before tax)' }, { nl: 'Netto salaris', en: 'Net salary (what you receive)' }, { nl: 'Vakantiegeld', en: 'Holiday pay (8% bonus)' }]
+          },
+          {
+            type: 'learn', icon: '📝',
+            title: 'Key fields on Dutch forms',
+            body: 'When filling in Dutch forms at work or government offices, you will see these fields.',
+            list: [
+              'Achternaam - Surname / Family name',
+              'Voornaam - First name / Given name',
+              'Geboortedatum - Date of birth',
+              'Geboorteplaats - Place of birth',
+              'Nationaliteit - Nationality',
+              'BSN-nummer - Citizen service number (essential for employment)',
+              'IBAN - Your bank account number (for salary payment)',
+              'Handtekening - Signature',
+              'Datum - Date'
+            ],
+            dutch: [{ nl: 'Achternaam', en: 'Surname' }, { nl: 'Voornaam', en: 'First name' }, { nl: 'Geboortedatum', en: 'Date of birth (dd-mm-yyyy)' }, { nl: 'BSN-nummer', en: 'Citizen service number' }]
+          },
+          {
+            type: 'quiz',
+            question: 'Your Dutch letter says "Uiterlijk 15 juli". What does this mean?',
+            options: ['The letter was written on 15 July', 'You must respond by 15 July at the latest', 'The office is closed on 15 July', 'The offer expires on 16 July'],
+            correct: 1,
+            feedback: '"Uiterlijk" means "at the latest" — it is a deadline word! "Uiterlijk 15 juli" = by 15 July at the latest. This word appears in contracts, invoices and all official letters. Now you will never miss a Dutch deadline.'
+          },
+          {
+            type: 'quiz',
+            question: 'Your loonstrook shows Bruto €2,400 and Netto €1,750. Is something wrong?',
+            options: ['Yes - you should receive the full €2,400', 'No - tax and insurance deductions reduce gross to net', 'Yes - the employer made an error', 'Only temp workers have deductions'],
+            correct: 1,
+            feedback: 'Completely normal! Loonheffing (income tax) and insurance contributions are deducted from your bruto salary. Netto is what arrives in your bank. Check the figures are consistent each month, but deductions are expected and legal.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Reading Dutch documents - done! Loonstrook, forms, official letters - you now know the key words that unlock almost every Dutch document you will receive at work. This knowledge will make you feel settled and in control from day one."
+          }
+        ]
       }
     ]
   },
 
   // ═══════════════════════════════════════════
-  //  10. COVER LETTER
+  //  11. COVER LETTER
   // ═══════════════════════════════════════════
   {
     id: 'cover-letter',
@@ -2044,7 +2386,7 @@ const MODULES = [
             type: 'speak',
             instruction: 'Practice this closing sentence - it ends every strong cover letter:',
             phrase: 'I would welcome the opportunity to discuss my application further. I look forward to hearing from you.',
-            phraseNl: 'Ik zie uw uitnodiging voor een gesprek graag tegemoet. Met vriendelijke groet, Chhaya.',
+            phraseNl: 'Ik zie uw uitnodiging voor een gesprek graag tegemoet. Met vriendelijke groet, {name}.',
             lang: 'en-US'
           },
           {
@@ -2167,8 +2509,8 @@ const MODULES = [
           {
             type: 'speak',
             instruction: 'Practice calling in sick - Aria will say it, then you repeat:',
-            phrase: 'Good morning, this is Chhaya. I am not feeling well today and I am not able to come in. I will keep you updated.',
-            phraseNl: 'Goedemorgen, u spreekt met Chhaya. Ik ben ziek en kan vandaag niet komen. Ik houd u op de hoogte.',
+            phrase: 'Good morning, this is {name}. I am not feeling well today and I am not able to come in. I will keep you updated.',
+            phraseNl: 'Goedemorgen, u spreekt met {name}. Ik ben ziek en kan vandaag niet komen. Ik houd u op de hoogte.',
             lang: 'en-US'
           },
           {
