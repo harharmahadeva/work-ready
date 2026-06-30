@@ -141,13 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Late night / early morning check ──
   const lateNightMessages = [
-    { emoji: '🌙', title: "It's quite late, Chhaya!", text: "It's past 11pm and your brain needs rest to remember what you learn. Sleep is actually part of learning — your mind processes everything while you sleep. Can I ask you to rest tonight and come back tomorrow? I'll be here." },
-    { emoji: '🌛', title: "Still up, Chhaya?", text: "It's late in Arnhem! I love that you're dedicated — truly. But a tired brain learns slower and forgets faster. Your future employer needs the best version of you, and that version needs sleep. Rest up, okay?" },
-    { emoji: '💤', title: "Your brain needs rest!", text: "Learning late at night can feel productive but the memory doesn't stick as well. I care about your progress AND your wellbeing. Please consider getting some sleep — we can pick this up fresh tomorrow morning!" },
+    { emoji: '🌙', title: "It's quite late, Chhaya!", text: "It's past 11pm and your brain needs rest to remember what you learn. Sleep is actually part of learning - your mind processes everything while you sleep. Can I ask you to rest tonight and come back tomorrow? I'll be here." },
+    { emoji: '🌛', title: "Still up, Chhaya?", text: "It's late in Arnhem! I love that you're dedicated - truly. But a tired brain learns slower and forgets faster. Your future employer needs the best version of you, and that version needs sleep. Rest up, okay?" },
+    { emoji: '💤', title: "Your brain needs rest!", text: "Learning late at night can feel productive but the memory doesn't stick as well. I care about your progress AND your wellbeing. Please consider getting some sleep - we can pick this up fresh tomorrow morning!" },
   ];
   const earlyMorningMessages = [
-    { emoji: '🌅', title: "You're up early, Chhaya!", text: "It's very early — are you okay? Whether you couldn't sleep or you're just super motivated, I'm proud of you. Just make sure you're getting enough rest overall. Your health comes first. Want to do a short lesson or just chat?" },
-    { emoji: '🌄', title: "Early bird!", text: "Good morning! You're up before the sun — that's dedication! Just checking — are you getting enough sleep? Rest is essential for learning and for showing up well at job interviews. Take care of yourself first." },
+    { emoji: '🌅', title: "You're up early, Chhaya!", text: "It's very early - are you okay? Whether you couldn't sleep or you're just super motivated, I'm proud of you. Just make sure you're getting enough rest overall. Your health comes first. Want to do a short lesson or just chat?" },
+    { emoji: '🌄', title: "Early bird!", text: "Good morning! You're up before the sun - that's dedication! Just checking - are you getting enough sleep? Rest is essential for learning and for showing up well at job interviews. Take care of yourself first." },
   ];
 
   function checkLateNight() {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="checkin-avatar">🎙️</div>
           <div class="checkin-question">
             <strong>Hey Chhaya, how are you feeling today?</strong>
-            Tell me anything — good day, tough day, nervous, excited. I'm here.
+            Tell me anything - good day, tough day, nervous, excited. I'm here.
           </div>
         </div>
         <div class="checkin-input-row">

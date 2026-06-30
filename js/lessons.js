@@ -1076,7 +1076,7 @@ const MODULES = [
             body: 'Study this template. You can adapt it for most emails at work.',
             list: [
               'Subject: Question about the team meeting - Tuesday',
-              '---',
+              '- - - - - - - - - - - - - - -',
               'Hi Sandra,',
               'I hope you are well. I have a quick question about Tuesday\'s meeting.',
               'Will we be discussing the budget report? I want to make sure I prepare the right information.',
@@ -1932,7 +1932,7 @@ const MODULES = [
             body: 'Read this example out loud. You can use this as a template.',
             list: [
               'Onderwerp: Vraag over vergadering woensdag',
-              '---',
+              '- - - - - - - - - - - - - - -',
               'Beste Sandra,',
               '',
               'Ik heb een vraag over de vergadering op woensdag.',

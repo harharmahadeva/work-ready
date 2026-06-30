@@ -101,7 +101,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .btn { padding: 14px 20px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 700; border: none; cursor: pointer; transition: all 0.15s; }
 .btn:active { transform: scale(0.96); }
 .btn-primary { background: var(--accent); color: white; flex: 1; }
-.btn-ghost { background: var(--surface2); color: var(--text2); border: 1.5px solid var(--border); }
+.btn-ghost { background: var(--surface2); color: var(--text); border: 1.5px solid var(--border); }
+.btn-ghost:hover { background: var(--border); color: var(--text); }
+.btn-ghost:active { transform: scale(0.96); }
 .onboard-dots { display: flex; gap: 6px; justify-content: center; padding-top: 12px; }
 .onboard-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
 .onboard-dot.on { background: var(--accent); width: 20px; border-radius: 4px; }
@@ -163,7 +165,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 /* ── LESSON SCREEN ── */
 #screen-lesson { background: var(--bg); }
 .lesson-header { display: flex; align-items: center; gap: 12px; padding: 52px 16px 14px; background: var(--surface); border-bottom: 1px solid var(--border); }
-.back-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--surface2); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; flex-shrink: 0; }
+.back-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--surface2); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; font-weight: 700; flex-shrink: 0; transition: all 0.15s; color: var(--text); }
+.back-btn:hover { background: var(--border); border-color: var(--text2); }
+.back-btn:active { transform: scale(0.93); }
 .lesson-header-info { flex: 1; }
 .lesson-header-info h2 { font-size: 14px; font-weight: 800; }
 .lesson-header-info p { font-size: 11px; color: var(--text2); margin-top: 2px; }
