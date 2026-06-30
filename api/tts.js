@@ -10,6 +10,9 @@ export default async function handler(req, res) {
   // Rachel — warm, calm, natural female voice
   const VOICE_ID = '21m00Tcm4TlvDq8ikWAM';
 
+  // Fix pronunciation: Chhaya → "Chaaya" so ElevenLabs says it naturally
+  const processedText = text.replace(/Chhaya/g, 'Chaaya').replace(/chhaya/g, 'chaaya');
+
   try {
     const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}`, {
       method: 'POST',
@@ -19,13 +22,13 @@ export default async function handler(req, res) {
         'Accept': 'audio/mpeg',
       },
       body: JSON.stringify({
-        text,
+        text: processedText,
         model_id: 'eleven_turbo_v2',
         voice_settings: {
-          stability: 0.45,
-          similarity_boost: 0.82,
-          style: 0.35,
-          use_speaker_boost: true
+          stability: 0.65,
+          similarity_boost: 0.60,
+          style: 0.12,
+          use_speaker_boost: false
         }
       })
     });
