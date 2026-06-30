@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Navigation ──
   let currentScreen = 'login';
+  let hasGreeted = false;
 
   function show(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.toggle('hidden', s.id !== 'screen-' + id));
@@ -304,10 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current) applyMoodTheme(current);
 
     const streak = Storage.updateStreak();
-    if (u) {
-      // Always greet with time + weather first
+    if (u && !hasGreeted) {
+      hasGreeted = true;
       Aria.greet(u.name, u).then(() => {
-        // After greeting finishes, add streak message if applicable
         if (streak > 1) {
           setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 500);
         }
@@ -400,6 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = function() {
     Aria.stop();
     Aria.enable();
+    hasGreeted = false;
     Storage.clearUser();
     show('login');
     pinEntry = '';
