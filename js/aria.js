@@ -26,7 +26,50 @@ const Aria = (() => {
     voice = pickVoice();
   }
 
-  function speak(text, { rate = 0.88, pitch = 1.05, onEnd } = {}) {
+  // ElevenLabs TTS — cache blobs so repeated lines don't hit the API twice
+  const audioCache = new Map();
+  let currentAudio = null;
+
+  async function speakEL(text, { onEnd } = {}) {
+    try {
+      if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+      speaking = true;
+      if (indicator) indicator.classList.add('show');
+
+      let url = audioCache.get(text);
+      if (!url) {
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        if (!res.ok) throw new Error('tts failed');
+        const blob = await res.blob();
+        url = URL.createObjectURL(blob);
+        audioCache.set(text, url);
+      }
+
+      const audio = new Audio(url);
+      currentAudio = audio;
+      audio.onended = () => {
+        speaking = false;
+        currentAudio = null;
+        if (indicator) indicator.classList.remove('show');
+        if (onEnd) onEnd();
+      };
+      audio.onerror = () => {
+        speaking = false;
+        currentAudio = null;
+        if (indicator) indicator.classList.remove('show');
+        speakFallback(text, { onEnd });
+      };
+      audio.play();
+    } catch {
+      speakFallback(text, { onEnd });
+    }
+  }
+
+  function speakFallback(text, { rate = 0.88, pitch = 1.05, onEnd } = {}) {
     if (!synth) return;
     synth.cancel();
     const utt = new SpeechSynthesisUtterance(text);
@@ -38,6 +81,10 @@ const Aria = (() => {
     utt.onend = () => { speaking = false; if (indicator) indicator.classList.remove('show'); if (onEnd) onEnd(); };
     utt.onerror = () => { speaking = false; if (indicator) indicator.classList.remove('show'); };
     synth.speak(utt);
+  }
+
+  function speak(text, { rate = 0.88, pitch = 1.05, onEnd } = {}) {
+    speakEL(text, { onEnd }).catch(() => speakFallback(text, { rate, pitch, onEnd }));
   }
 
   function speakDutch(text, { onEnd } = {}) {
@@ -54,7 +101,12 @@ const Aria = (() => {
     synth.speak(utt);
   }
 
-  function stop() { synth.cancel(); speaking = false; if (indicator) indicator.classList.remove('show'); }
+  function stop() {
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    synth.cancel();
+    speaking = false;
+    if (indicator) indicator.classList.remove('show');
+  }
   function isSpeaking() { return speaking; }
 
   // Pick a random item from an array
