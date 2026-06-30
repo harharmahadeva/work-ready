@@ -1,5 +1,5 @@
 // All module + lesson content
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '2.0.0';
 
 const MODULES = [
   // ═══════════════════════════════════════════
@@ -951,6 +951,1229 @@ const MODULES = [
           {
             type: 'complete', xp: 40,
             ariaMsg: "You are interview-ready! You know what Dutch interviewers ask, how to introduce yourself confidently, and how to handle your career gap. You have a Masters degree, real intelligence, and genuine motivation. Any employer would be lucky to have you. Go get it!"
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  6. MICROSOFT OUTLOOK
+  // ═══════════════════════════════════════════
+  {
+    id: 'outlook',
+    icon: '📧',
+    name: 'Microsoft Outlook',
+    phase: 'Office',
+    color: '#0078d4',
+    lessons: [
+      {
+        title: 'Reading, organising and managing emails',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Email is how Dutch offices communicate. Your inbox will be busy from day one. I am going to show you how to read, organise and manage it so you always look on top of things - never overwhelmed."
+          },
+          {
+            type: 'learn', icon: '📬',
+            title: 'The Outlook layout',
+            body: 'Outlook has three main panels. Once you know what each does, everything makes sense.',
+            list: [
+              'Left panel: your folders - Inbox, Sent, Drafts, Deleted',
+              'Middle panel: list of emails in the selected folder',
+              'Right panel: the content of the selected email',
+              'At the top: the Ribbon with all your tools'
+            ],
+            dutch: [{ nl: 'Postvak IN', en: 'Inbox' }, { nl: 'Verzonden items', en: 'Sent items' }, { nl: 'Concepten', en: 'Drafts' }, { nl: 'Verwijderde items', en: 'Deleted items' }]
+          },
+          {
+            type: 'learn', icon: '📁',
+            title: 'Keeping your inbox organised',
+            body: 'A messy inbox makes you look disorganised. Here is the professional system.',
+            list: [
+              'Create folders for each project or topic (right-click Inbox → New Folder)',
+              'Drag emails into folders once you have dealt with them',
+              'Mark important emails with a flag (right-click → Flag)',
+              'Use Ctrl+F to search for any email instantly',
+              'Delete or archive anything you no longer need'
+            ],
+            dutch: [{ nl: 'Map', en: 'Folder' }, { nl: 'Markeren', en: 'Flag / Mark' }, { nl: 'Zoeken', en: 'Search' }, { nl: 'Archiveren', en: 'Archive' }]
+          },
+          {
+            type: 'learn', icon: '⚡',
+            title: 'Essential Outlook shortcuts',
+            body: 'These shortcuts will make you fast and professional.',
+            list: [
+              'Ctrl+N - New email (Nieuw e-mailbericht)',
+              'Ctrl+R - Reply (Beantwoorden)',
+              'Ctrl+Shift+R - Reply All (Allen beantwoorden)',
+              'Ctrl+F - Forward (Doorsturen)',
+              'Delete key - Delete selected email',
+              'Ctrl+Enter - Send email'
+            ],
+            dutch: [{ nl: 'Beantwoorden', en: 'Reply' }, { nl: 'Allen beantwoorden', en: 'Reply All' }, { nl: 'Doorsturen', en: 'Forward' }, { nl: 'Verzenden', en: 'Send' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You receive an email sent to you AND five colleagues. The reply is relevant to everyone. What do you use?',
+            options: ['Reply (Beantwoorden)', 'Reply All (Allen beantwoorden)', 'Forward (Doorsturen)', 'Delete it'],
+            correct: 1,
+            feedback: 'Reply All sends your reply to everyone on the original email. Use it when your answer is relevant to the whole group. Use Reply when only the sender needs your response.'
+          },
+          {
+            type: 'quiz',
+            question: 'You want to find an email from your manager from last month. What is the fastest way?',
+            options: ['Scroll through your entire inbox', 'Press Ctrl+F and search by name or subject', 'Check your Sent items', 'Ask your manager to resend it'],
+            correct: 1,
+            feedback: 'Ctrl+F opens search in Outlook. Type a name, subject, or keyword and find any email in seconds. This skill saves enormous time every day.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Outlook basics - done! An organised inbox is one of the clearest signs of a professional. Your colleagues and manager will notice how on top of things you always are."
+          }
+        ]
+      },
+      {
+        title: 'Writing professional emails in English and Dutch',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Writing a professional email is a skill that opens doors. A well-written email makes you memorable for the right reasons. A poorly written one does the opposite. Let me show you exactly how to write emails that impress Dutch colleagues."
+          },
+          {
+            type: 'learn', icon: '✍️',
+            title: 'Structure of a professional email',
+            body: 'Every professional email follows the same structure. Once you know this, writing becomes easy.',
+            list: [
+              '1. Subject line - short and specific: "Meeting request - Thursday 14:00" not "Hi"',
+              '2. Opening greeting - "Dear Sandra," or "Hi Mark," (Dutch offices are informal)',
+              '3. One sentence saying WHY you are writing',
+              '4. The main content - short paragraphs, no walls of text',
+              '5. What you need from them (if anything)',
+              '6. Closing line: "Kind regards," / "Met vriendelijke groet,"',
+              '7. Your name and job title'
+            ],
+            dutch: [{ nl: 'Onderwerp', en: 'Subject line' }, { nl: 'Geachte mevrouw/meneer', en: 'Dear Ms/Mr (formal)' }, { nl: 'Beste [naam]', en: 'Dear [name] (informal)' }, { nl: 'Met vriendelijke groet', en: 'Kind regards' }]
+          },
+          {
+            type: 'learn', icon: '🇳🇱',
+            title: 'Dutch email openings and closings',
+            body: 'Even if your email is in English, knowing these Dutch phrases shows professionalism.',
+            list: [
+              'FORMAL opening: "Geachte mevrouw [surname]," / "Geachte meneer [surname],"',
+              'INFORMAL opening: "Beste Sandra," / "Hoi Mark," (most Dutch offices)',
+              'FORMAL closing: "Met vriendelijke groet," (Kind regards)',
+              'INFORMAL closing: "Groeten," (Greetings) / "Met vriendelijke groeten," ',
+              'After the closing: your full name, job title, phone number'
+            ],
+            dutch: [{ nl: 'Geachte', en: 'Dear (formal)' }, { nl: 'Beste', en: 'Dear (informal)' }, { nl: 'Met vriendelijke groet', en: 'Kind regards' }, { nl: 'Groeten', en: 'Greetings' }]
+          },
+          {
+            type: 'learn', icon: '📝',
+            title: 'A real example - English and Dutch',
+            body: 'Study this template. You can adapt it for most emails at work.',
+            list: [
+              'Subject: Question about the team meeting - Tuesday',
+              '---',
+              'Hi Sandra,',
+              'I hope you are well. I have a quick question about Tuesday\'s meeting.',
+              'Will we be discussing the budget report? I want to make sure I prepare the right information.',
+              'Thank you for your time.',
+              'Kind regards,',
+              'Chhaya'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice reading a professional email closing out loud:',
+            phrase: 'I look forward to hearing from you. Kind regards, Chhaya.',
+            phraseNl: 'Ik zie uw reactie met belangstelling tegemoet. Met vriendelijke groet, Chhaya.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'Which is the best subject line for an email asking for a meeting?',
+            options: ['Hi!', 'Question', 'Meeting request - Budget review - Friday 10:00', 'Important!!!'],
+            correct: 2,
+            feedback: 'A good subject line is specific and actionable. The reader knows exactly what it is about before they open it. Dutch professionals appreciate clarity and efficiency.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Email writing - mastered! The template you just learned will work in almost any situation. Clear subject, short paragraphs, professional closing. You will stand out immediately."
+          }
+        ]
+      },
+      {
+        title: 'CC, BCC, attachments and email etiquette',
+        time: '5 min',
+        steps: [
+          {
+            type: 'learn', icon: '👥',
+            title: 'TO, CC and BCC - what is the difference?',
+            body: 'This is one of the most misunderstood email features - and getting it right marks you as professional.',
+            list: [
+              'TO (Aan) - the person you are directly writing to. They must respond or act.',
+              'CC (Cc) - people who need to know about the email but do not need to reply. "For your information."',
+              'BCC (Bcc) - like CC but the recipient is hidden. Other readers cannot see them. Use carefully.',
+              'Rule: Never Reply All to a CC email unless your reply is relevant to all recipients.'
+            ],
+            dutch: [{ nl: 'Aan', en: 'To' }, { nl: 'CC (Kopie)', en: 'CC - Carbon copy (for info)' }, { nl: 'BCC (Blinde kopie)', en: 'BCC - Blind carbon copy' }]
+          },
+          {
+            type: 'learn', icon: '📎',
+            title: 'Attaching files correctly',
+            body: 'Sending attachments is an everyday task at work. Do it right every time.',
+            list: [
+              'Click the paperclip icon (📎) or Insert → Attach File',
+              'Find your file and click Insert',
+              'Always mention the attachment in the email body: "Please find the report attached."',
+              'Send documents as PDF not Word (we learned this!)',
+              'Check: did you actually attach it before pressing Send?',
+              'Large files: use OneDrive link instead of attachment'
+            ],
+            dutch: [{ nl: 'Bijlage', en: 'Attachment' }, { nl: 'Bijgevoegd vindt u', en: 'Please find attached' }, { nl: 'Zie bijlage', en: 'See attachment' }]
+          },
+          {
+            type: 'learn', icon: '✅',
+            title: 'Dutch email etiquette rules',
+            body: 'These unwritten rules matter enormously in Dutch offices.',
+            list: [
+              'Reply within 24 hours - even if just to say "I received it, I will respond soon"',
+              'Keep emails short - Dutch professionals value brevity',
+              'One topic per email - easier to file and search',
+              'Never use ALL CAPS - it means you are shouting',
+              'Proofread before sending - check spelling and tone',
+              'Do NOT send work emails after 17:30 - Dutch work-life balance is strict',
+              'If an email goes back and forth more than 3 times - pick up the phone'
+            ],
+            dutch: [{ nl: 'Werktijden', en: 'Working hours' }, { nl: 'Spelfout', en: 'Spelling mistake' }, { nl: 'Reactietijd', en: 'Response time' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You are emailing your manager but also want to keep your team informed. What do you use?',
+            options: ['Put everyone in the TO field', 'Put manager in TO, team members in CC', 'Send separate emails to everyone', 'Only email the manager'],
+            correct: 1,
+            feedback: 'Manager in TO (they need to act), team in CC (they need to know). This is standard professional email practice in every Dutch company.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "CC, BCC, attachments, etiquette - you are now a professional email writer! These skills will make you stand out from the very first email you send."
+          }
+        ]
+      },
+      {
+        title: 'Calendar, meeting invites and scheduling',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "The Outlook calendar is how Dutch offices organise everything. Meetings, deadlines, reminders - all in one place. Knowing how to use it will make you look incredibly organised from day one."
+          },
+          {
+            type: 'learn', icon: '📅',
+            title: 'Navigating the Outlook Calendar',
+            body: 'The Calendar is in the bottom-left of Outlook. Click the calendar icon to switch to it.',
+            list: [
+              'Day view - see one day in detail (good for busy days)',
+              'Week view - see your full week at a glance (most useful)',
+              'Month view - plan ahead and see the big picture',
+              'Double-click any time slot to create a new appointment',
+              'Your meetings sent by others appear automatically when you accept'
+            ],
+            dutch: [{ nl: 'Agenda', en: 'Calendar' }, { nl: 'Vergadering', en: 'Meeting' }, { nl: 'Afspraak', en: 'Appointment' }, { nl: 'Herinnering', en: 'Reminder' }]
+          },
+          {
+            type: 'learn', icon: '📨',
+            title: 'Accepting and declining meeting invites',
+            body: 'When someone invites you to a meeting you get an email invite. Always respond!',
+            list: [
+              'Open the invite email - you see three buttons: Accept / Tentative / Decline',
+              'Accept (Accepteren) - adds it to your calendar automatically',
+              'Tentative (Voorlopig) - "I might come" - use when not sure',
+              'Decline (Weigeren) - politely say no - always add a brief reason',
+              'Always respond within the same day - leaving it hanging is rude in Dutch culture'
+            ],
+            dutch: [{ nl: 'Accepteren', en: 'Accept' }, { nl: 'Voorlopig', en: 'Tentative' }, { nl: 'Weigeren', en: 'Decline' }, { nl: 'Uitnodiging', en: 'Invitation' }]
+          },
+          {
+            type: 'learn', icon: '➕',
+            title: 'Sending a meeting invite',
+            body: 'You will need to organise meetings too. Here is how:',
+            list: [
+              'Click New Meeting (Nieuwe vergadering) in the Calendar',
+              'Add names in the To field - they get the invite by email',
+              'Set the date, start time and end time',
+              'Add a clear Subject: "Weekly team check-in" not just "Meeting"',
+              'Add a Teams link or room location in the body',
+              'Click Send - everyone gets the invite instantly'
+            ],
+            dutch: [{ nl: 'Nieuwe vergadering', en: 'New meeting' }, { nl: 'Vergaderruimte', en: 'Meeting room' }, { nl: 'Tijdstip', en: 'Time / Time slot' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You receive a meeting invite but you are not sure if you can attend. What do you click?',
+            options: ['Accept (Accepteren)', 'Delete the email', 'Tentative (Voorlopig)', 'Do nothing'],
+            correct: 2,
+            feedback: 'Tentative means "possibly yes" - it adds it to your calendar lightly and lets the organiser know you might come. Always respond to invites - silence is seen as unprofessional in Dutch culture.'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice this phrase for when you need to reschedule:',
+            phrase: 'I am sorry, I have a conflict on that day. Can we reschedule to Thursday afternoon?',
+            phraseNl: 'Het spijt mij, ik heb een conflict op die dag. Kunnen we het verzetten naar donderdagmiddag?',
+            lang: 'en-US'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Calendar and meetings - done! An organised calendar is one of the first things colleagues notice. You will always be on time, always prepared, and always in control of your schedule."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  7. MICROSOFT TEAMS
+  // ═══════════════════════════════════════════
+  {
+    id: 'teams',
+    icon: '💬',
+    name: 'Microsoft Teams',
+    phase: 'Office',
+    color: '#5b5fc7',
+    lessons: [
+      {
+        title: 'Getting started with Teams',
+        time: '4 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Since COVID, Microsoft Teams has become the heart of every Dutch office. Email for formal things, Teams for everything else - quick questions, team chats, video calls, file sharing. Let me show you how it all works."
+          },
+          {
+            type: 'learn', icon: '💬',
+            title: 'The Teams layout - 5 sections',
+            body: 'Teams has five icons on the left side. Each opens a different part of the app.',
+            list: [
+              'Activity (Activiteit) - your notifications, mentions, and updates',
+              'Chat - direct messages with one person or a small group',
+              'Teams - channels where your work teams communicate',
+              'Calendar (Agenda) - your meetings and video calls',
+              'Files (Bestanden) - all shared documents in one place'
+            ],
+            dutch: [{ nl: 'Activiteit', en: 'Activity / Notifications' }, { nl: 'Chat', en: 'Chat (same)' }, { nl: 'Teams', en: 'Teams (same)' }, { nl: 'Bestanden', en: 'Files' }]
+          },
+          {
+            type: 'learn', icon: '📢',
+            title: 'Teams and Channels - how they are organised',
+            body: 'At work, you will be added to Teams (groups) that have Channels (topics) inside them.',
+            list: [
+              'A Team = your department or project group (e.g. "Finance Team")',
+              'A Channel = a topic inside that team (e.g. "General", "Reports", "Planning")',
+              'General channel - the main channel, everyone can see it',
+              'Post in the right channel so the right people see it',
+              'You can be in multiple Teams at the same time'
+            ],
+            dutch: [{ nl: 'Kanaal', en: 'Channel' }, { nl: 'Bericht', en: 'Message / Post' }, { nl: 'Reactie', en: 'Reply' }, { nl: 'Vermelden', en: 'Mention (@name)' }]
+          },
+          {
+            type: 'quiz',
+            question: 'Where in Teams do you post a message for your whole team to see?',
+            options: ['In a private Chat', 'In your Team\'s General Channel', 'In the Activity tab', 'In the Files section'],
+            correct: 1,
+            feedback: 'The General Channel in your Team is where everyone in that group can see and respond. Use private Chat for one-to-one messages.'
+          },
+          {
+            type: 'complete', xp: 25,
+            ariaMsg: "Teams layout - done! Once you know where everything lives in Teams, it feels very natural. In your first week at work, Teams will be how you connect with almost everyone."
+          }
+        ]
+      },
+      {
+        title: 'Chat, messages and staying professional',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Teams chat is fast and informal - but it is still work. The way you write messages in Teams shapes how your colleagues see you every single day. Let me show you how to communicate professionally without being stiff."
+          },
+          {
+            type: 'learn', icon: '✉️',
+            title: 'Sending messages in Teams',
+            body: 'Teams messages are more like chat than email - but still professional.',
+            list: [
+              'Click someone\'s name → Chat to start a private conversation',
+              'Type your message in the box at the bottom, press Enter to send',
+              'Shift+Enter = new line without sending',
+              'Use @name to get someone\'s attention in a channel: "@Sandra can you check this?"',
+              'React to messages with emoji (hover over message → smiley face)',
+              'Edit or delete your message: hover → three dots → Edit/Delete'
+            ],
+            dutch: [{ nl: 'Versturen', en: 'Send' }, { nl: 'Bewerken', en: 'Edit' }, { nl: 'Verwijderen', en: 'Delete' }, { nl: 'Vermelden', en: 'Mention (@naam)' }]
+          },
+          {
+            type: 'learn', icon: '🟢',
+            title: 'Status settings - tell colleagues when you are available',
+            body: 'Your status dot tells colleagues if you can be disturbed. Update it daily.',
+            list: [
+              'Green dot (Beschikbaar) = Available - you can be contacted',
+              'Yellow dot (Bezet) = Busy - in a meeting or focused, prefer not to be disturbed',
+              'Red dot (Niet storen) = Do Not Disturb - urgent only',
+              'Grey dot (Afwezig) = Away - not at your desk',
+              'Click your profile photo (top right) to change status',
+              'You can also set a custom status message: "In a meeting until 14:00"'
+            ],
+            dutch: [{ nl: 'Beschikbaar', en: 'Available' }, { nl: 'Bezet', en: 'Busy' }, { nl: 'Niet storen', en: 'Do Not Disturb' }, { nl: 'Afwezig', en: 'Away' }]
+          },
+          {
+            type: 'learn', icon: '💡',
+            title: 'Professional Teams habits',
+            body: 'Small habits that mark you as a professional Teams user.',
+            list: [
+              'Reply in threads - click Reply, not a new message, to keep conversations together',
+              'Use clear message subjects for long messages: bold the first line',
+              'Do not send "Hi" then wait - say hi AND your question in one message',
+              'Acknowledge messages: a thumbs up emoji counts as "received"',
+              'Do not share personal or sensitive information in group channels',
+              'Mute notifications from busy channels: right-click channel → Mute'
+            ]
+          },
+          {
+            type: 'quiz',
+            question: 'You are in an important meeting and do not want to be disturbed. What status do you set?',
+            options: ['Available (Beschikbaar)', 'Away (Afwezig)', 'Do Not Disturb (Niet storen)', 'Offline'],
+            correct: 2,
+            feedback: '"Do Not Disturb" (Niet storen) silences notifications. Your colleagues will see the red dot and know you are unavailable for non-urgent matters.'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice this common Teams message - say it naturally:',
+            phrase: 'Hi Sandra, quick question - do you have five minutes to discuss the report today?',
+            phraseNl: 'Hoi Sandra, snelle vraag - heb je vijf minuten om vandaag over het rapport te praten?',
+            lang: 'en-US'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Teams messaging - professional and confident! The @mention and status tips alone will make a huge difference. Your colleagues will see someone who communicates clearly and respects their time."
+          }
+        ]
+      },
+      {
+        title: 'Video calls - joining, speaking and presenting',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Video calls in Teams are now a normal part of every Dutch working day. Whether it is a quick check-in or a team meeting with 20 people, I want you to feel completely comfortable and confident on camera."
+          },
+          {
+            type: 'learn', icon: '📹',
+            title: 'Joining a Teams video call',
+            body: 'There are two ways to join a Teams call:',
+            list: [
+              'From your Calendar: find the meeting → click Join',
+              'From a Teams channel: click Join next to the meeting notification',
+              'From an email invite: click the "Join Microsoft Teams Meeting" link',
+              'Before joining: check camera is ON, microphone is ON, background is tidy',
+              'You enter a lobby first - the host lets you in',
+              'Tip: join 2 minutes early - it is professional and stress-free'
+            ],
+            dutch: [{ nl: 'Deelnemen', en: 'Join' }, { nl: 'Vergadering', en: 'Meeting' }, { nl: 'Camera', en: 'Camera (same)' }, { nl: 'Microfoon', en: 'Microphone' }, { nl: 'Wachtruimte', en: 'Lobby / Waiting room' }]
+          },
+          {
+            type: 'learn', icon: '🎤',
+            title: 'During the call - the control bar',
+            body: 'At the bottom of the screen you have a control bar. Know these buttons.',
+            list: [
+              'Microphone icon - click to mute/unmute yourself (Ctrl+Shift+M)',
+              'Camera icon - click to turn camera on/off (Ctrl+Shift+O)',
+              'Raise hand (✋) - use this to indicate you want to speak without interrupting',
+              'Chat icon - type messages during the call without speaking',
+              'Reactions (👍❤️) - quick responses without unmuting',
+              'Leave (Verlaten) - red phone button to end the call'
+            ],
+            dutch: [{ nl: 'Dempen', en: 'Mute' }, { nl: 'Hand opsteken', en: 'Raise hand' }, { nl: 'Verlaten', en: 'Leave' }, { nl: 'Weergeven', en: 'Show / Display' }]
+          },
+          {
+            type: 'learn', icon: '🖥️',
+            title: 'Sharing your screen',
+            body: 'Sharing your screen lets everyone see what is on your computer. Very useful for presentations.',
+            list: [
+              'Click the Share icon (rectangle with arrow) in the control bar',
+              'Choose: your whole screen, a specific window, or a PowerPoint',
+              'Tip: close personal tabs and emails before sharing!',
+              'A red border appears around the window you are sharing',
+              'Click Stop Sharing (Stoppen met delen) when done',
+              'Sharing PowerPoint from Teams directly = smoothest option'
+            ],
+            dutch: [{ nl: 'Scherm delen', en: 'Share screen' }, { nl: 'Stoppen met delen', en: 'Stop sharing' }, { nl: 'Venster', en: 'Window' }]
+          },
+          {
+            type: 'learn', icon: '💄',
+            title: 'Looking professional on camera',
+            body: 'Video call presence matters - especially for job interviews and new colleagues.',
+            list: [
+              'Background: plain wall or use a Teams virtual background (blur is professional)',
+              'Lighting: sit facing a window or light source - not with it behind you',
+              'Camera height: camera should be at eye level - not looking up or down',
+              'Dress: dress as you would in the office - at least from the waist up!',
+              'Look at the camera when speaking, not the screen - it feels like eye contact',
+              'Mute yourself when not speaking - background noise is very distracting'
+            ]
+          },
+          {
+            type: 'quiz',
+            question: 'During a Teams meeting you want to speak but someone is already talking. What do you do?',
+            options: ['Interrupt immediately', 'Unmute and say "excuse me" loudly', 'Click the Raise Hand button and wait', 'Send a message in the chat'],
+            correct: 2,
+            feedback: 'Raise Hand (✋) is the professional way to signal you want to speak. The host will give you the floor when there is a natural pause. Interrupting is considered rude in Dutch meeting culture.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Video calls - you are ready! Camera on, background clean, raise hand to speak, mute when not talking. These habits will make you look completely at ease and professional in every Teams meeting."
+          }
+        ]
+      },
+      {
+        title: 'Sharing files and collaborating in Teams',
+        time: '4 min',
+        steps: [
+          {
+            type: 'learn', icon: '📁',
+            title: 'Sharing files in Teams',
+            body: 'Teams makes it easy to share and collaborate on files without email attachments.',
+            list: [
+              'In a chat or channel: click the paperclip icon to attach a file',
+              'Or drag and drop a file into the chat box',
+              'Shared files are stored in SharePoint automatically',
+              'Multiple people can edit the same Word/Excel file at the same time',
+              'Files tab in any channel shows all shared files for that team'
+            ],
+            dutch: [{ nl: 'Bestand delen', en: 'Share file' }, { nl: 'Samenwerken', en: 'Collaborate' }, { nl: 'Bijlage', en: 'Attachment' }, { nl: 'Bewerken', en: 'Edit' }]
+          },
+          {
+            type: 'learn', icon: '🔗',
+            title: 'Sharing a OneDrive link instead of a file',
+            body: 'For large files or files you want to control, share a link instead.',
+            list: [
+              'Open the file in OneDrive → click Share (Delen)',
+              'Copy the link and paste it in Teams chat',
+              'You can set permissions: can view / can edit',
+              '"Can view" = they can read but not change it (good for final versions)',
+              '"Can edit" = they can make changes (good for collaboration)',
+              'This avoids sending large attachments that fill up inboxes'
+            ],
+            dutch: [{ nl: 'Koppeling delen', en: 'Share link' }, { nl: 'Machtigingen', en: 'Permissions' }, { nl: 'Alleen bekijken', en: 'View only' }, { nl: 'Bewerken toegestaan', en: 'Can edit' }]
+          },
+          {
+            type: 'quiz',
+            question: 'Your team is editing the same Word document together. What is the best way to share it?',
+            options: ['Email a copy to everyone', 'Put it in a Teams channel and let everyone edit it', 'Print it and give paper copies', 'Only one person can work on it at a time'],
+            correct: 1,
+            feedback: 'Sharing a file in a Teams channel means everyone can edit it simultaneously, changes are saved automatically, and there is only ever one version. This is how modern Dutch teams work.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Teams file sharing - done! You now know how to work together with colleagues on documents in real time. This is exactly how modern Dutch teams collaborate every day."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  8. MICROSOFT EXCEL
+  // ═══════════════════════════════════════════
+  {
+    id: 'excel',
+    icon: '📊',
+    name: 'Microsoft Excel',
+    phase: 'Office',
+    color: '#217346',
+    lessons: [
+      {
+        title: 'What is Excel? Cells, rows and columns',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Chhaya, you have a Masters in Finance. Excel is the tool of your field. Every finance team, every admin role, every office job in the Netherlands uses Excel. After this module, Excel will feel like home - and you will realise how much of your degree prepared you for this."
+          },
+          {
+            type: 'learn', icon: '📊',
+            title: 'The Excel layout - the grid',
+            body: 'Excel is a grid of cells organised in rows and columns. That is the whole concept.',
+            list: [
+              'Column - a vertical line of cells, named with letters: A, B, C, D...',
+              'Row - a horizontal line of cells, named with numbers: 1, 2, 3, 4...',
+              'Cell - one single box where a column and row meet. e.g. cell A1, cell B3',
+              'Active cell - the cell you have clicked on (highlighted with a green border)',
+              'Name Box (top left) - shows which cell is selected: "A1"',
+              'Formula Bar - shows what is in the selected cell'
+            ],
+            dutch: [{ nl: 'Kolom', en: 'Column (A, B, C...)' }, { nl: 'Rij', en: 'Row (1, 2, 3...)' }, { nl: 'Cel', en: 'Cell (e.g. A1)' }, { nl: 'Werkblad', en: 'Worksheet / Sheet' }, { nl: 'Werkmap', en: 'Workbook (the file)' }]
+          },
+          {
+            type: 'learn', icon: '⌨️',
+            title: 'Moving around Excel',
+            body: 'Once you can navigate the grid quickly, Excel becomes very fast to use.',
+            list: [
+              'Click any cell to select it',
+              'Arrow keys - move one cell in any direction',
+              'Enter - move down one cell after typing',
+              'Tab - move right one cell after typing',
+              'Ctrl+Home - go to cell A1 (the beginning)',
+              'Ctrl+End - go to the last cell with data',
+              'Ctrl+Arrow - jump to the last cell in a direction with data'
+            ],
+            dutch: [{ nl: 'Navigeren', en: 'Navigate' }, { nl: 'Selecteren', en: 'Select' }, { nl: 'Begincel', en: 'Starting cell' }]
+          },
+          {
+            type: 'quiz',
+            question: 'A cell is at column C and row 5. What is its name?',
+            options: ['5C', 'C-5', 'C5', 'Column C Row 5'],
+            correct: 2,
+            feedback: 'Cell names are always column letter first, then row number: C5. This is called a cell reference and you will use it in formulas constantly.'
+          },
+          {
+            type: 'complete', xp: 25,
+            ariaMsg: "The Excel grid - understood! This is the foundation that everything else builds on. You are already thinking like a spreadsheet professional."
+          }
+        ]
+      },
+      {
+        title: 'Entering and formatting data',
+        time: '5 min',
+        steps: [
+          {
+            type: 'learn', icon: '✏️',
+            title: 'Typing data into Excel',
+            body: 'Excel handles three types of data. Understanding the difference is important.',
+            list: [
+              'Text (Tekst) - words, names, descriptions. Aligns left automatically.',
+              'Numbers (Getallen) - amounts, quantities. Aligns right automatically.',
+              'Dates (Datums) - Excel recognises dates: type 30/06/2026 or 30-06-2026',
+              'To edit a cell: double-click it or press F2',
+              'To delete a cell: select it and press Delete key',
+              'To select multiple cells: click and drag, or Shift+Click'
+            ],
+            dutch: [{ nl: 'Tekst', en: 'Text' }, { nl: 'Getal', en: 'Number' }, { nl: 'Datum', en: 'Date' }, { nl: 'Valuta', en: 'Currency (€)' }]
+          },
+          {
+            type: 'learn', icon: '🎨',
+            title: 'Formatting cells to look professional',
+            body: 'Raw data looks messy. Formatting makes it clear and professional.',
+            list: [
+              'Bold headers: select row 1 → Ctrl+B (makes column headers stand out)',
+              'Currency format: select cells → Home → Number → Currency (adds € sign)',
+              'Date format: select cells → right-click → Format Cells → Date',
+              'Align text: Home tab → alignment buttons (left, centre, right)',
+              'Column width: double-click the line between column letters to auto-fit',
+              'Background colour: Home → Fill Color (paint bucket) to highlight cells'
+            ],
+            dutch: [{ nl: 'Opmaak', en: 'Formatting' }, { nl: 'Lettertype', en: 'Font' }, { nl: 'Achtergrondkleur', en: 'Background colour' }, { nl: 'Kolombreedte', en: 'Column width' }]
+          },
+          {
+            type: 'exercise',
+            title: '💻 Try it on your laptop!',
+            task: 'Open Excel. In row 1, type these headers: Name, Department, Salary. Bold the headers. Enter 3 rows of made-up data. Format the Salary column as Currency. Auto-fit the columns. Take a screenshot.',
+            screenshotTask: 'Upload a screenshot showing your formatted Excel table.',
+            checkDescription: 'Screenshot shows an Excel spreadsheet with bold headers and at least 3 rows of data, with a Currency column'
+          },
+          {
+            type: 'quiz',
+            question: 'You type a number in Excel but it shows text and aligns to the left. What has happened?',
+            options: ['The number is correct', 'Excel has formatted it as Text, not as a Number', 'The column is too narrow', 'You need to restart Excel'],
+            correct: 1,
+            feedback: 'Numbers stored as text do not calculate correctly! Select the cells → click the warning triangle → Convert to Number. Always check that numbers align to the right.'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Data entry and formatting - excellent! A well-formatted spreadsheet is a pleasure to read. Your Finance background means you understand exactly why clean, accurate data matters."
+          }
+        ]
+      },
+      {
+        title: 'Basic formulas - SUM, AVERAGE, COUNT',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "This is where Excel becomes truly powerful. Formulas let Excel do the maths for you - instantly, accurately, and automatically when data changes. This is the skill that Finance employers test in interviews."
+          },
+          {
+            type: 'learn', icon: '➕',
+            title: 'How formulas work in Excel',
+            body: 'Every formula in Excel starts with an = sign. That is the rule.',
+            list: [
+              '= tells Excel "calculate this"',
+              '=5+3 gives you 8',
+              '=A1+B1 adds the values in cells A1 and B1',
+              '=A1*B1 multiplies them (* means multiply)',
+              '=A1/B1 divides them (/ means divide)',
+              'The result shows in the cell. The formula shows in the Formula Bar above.'
+            ],
+            dutch: [{ nl: 'Formule', en: 'Formula' }, { nl: 'Optellen', en: 'Addition (+)' }, { nl: 'Aftrekken', en: 'Subtraction (-)' }, { nl: 'Vermenigvuldigen', en: 'Multiply (*)' }, { nl: 'Delen', en: 'Divide (/)' }]
+          },
+          {
+            type: 'learn', icon: '🧮',
+            title: 'The 3 most essential functions',
+            body: 'These three functions will cover 80% of what you need in an office job.',
+            list: [
+              '=SUM(A1:A10) - adds up all cells from A1 to A10. The colon means "through".',
+              '=AVERAGE(A1:A10) - calculates the average of those cells',
+              '=COUNT(A1:A10) - counts how many cells have numbers in them',
+              'Dutch versions: =SOM(), =GEMIDDELDE(), =AANTAL() - Excel uses Dutch if set to Dutch',
+              'Tip: type =SUM( then drag to select cells, then close with )',
+              'AutoSum shortcut: select a column of numbers → press Alt+='
+            ],
+            dutch: [{ nl: '=SOM()', en: '=SUM() in Dutch Excel' }, { nl: '=GEMIDDELDE()', en: '=AVERAGE() in Dutch Excel' }, { nl: '=AANTAL()', en: '=COUNT() in Dutch Excel' }]
+          },
+          {
+            type: 'learn', icon: '🔒',
+            title: 'Absolute references - the $ sign',
+            body: 'When you copy a formula to other cells, Excel adjusts the cell references. Sometimes you do NOT want that.',
+            list: [
+              'Normal reference: =A1+B1 - when copied, adjusts to =A2+B2, =A3+B3 etc.',
+              'Absolute reference: =$A$1 - the $ locks the reference. It will NOT change when copied.',
+              'Example: tax rate in cell D1. Formula: =B2*$D$1 so tax rate stays fixed when copying down.',
+              'Press F4 while typing a cell reference to add $ signs automatically'
+            ],
+            dutch: [{ nl: 'Absolute verwijzing', en: 'Absolute reference ($A$1)' }, { nl: 'Relatieve verwijzing', en: 'Relative reference (A1)' }]
+          },
+          {
+            type: 'exercise',
+            title: '💻 Try it on your laptop!',
+            task: 'Open Excel. In column A (rows 1-5) enter 5 salary amounts (e.g. 2500, 3000, 2800, 3200, 2900). In B1 type =SUM(A1:A5). In B2 type =AVERAGE(A1:A5). In B3 type =COUNT(A1:A5). Label each in column C. Take a screenshot.',
+            screenshotTask: 'Upload a screenshot showing the SUM, AVERAGE and COUNT formulas.',
+            checkDescription: 'Screenshot shows Excel with numbers in column A and SUM/AVERAGE/COUNT formulas calculated in column B'
+          },
+          {
+            type: 'quiz',
+            question: 'You want to add all numbers in cells B2 to B20. Which formula is correct?',
+            options: ['=ADD(B2,B20)', '=SUM(B2:B20)', '=TOTAL(B2-B20)', '=B2+B20'],
+            correct: 1,
+            feedback: '=SUM(B2:B20) adds everything from B2 through B20 - all 19 cells. The colon means "through". =B2+B20 would only add those two specific cells.'
+          },
+          {
+            type: 'complete', xp: 40,
+            ariaMsg: "SUM, AVERAGE, COUNT - you have the three most powerful Excel formulas! In a Finance role, you will use these every single day. You are already thinking like a data professional."
+          }
+        ]
+      },
+      {
+        title: 'Sorting, filtering and simple charts',
+        time: '5 min',
+        steps: [
+          {
+            type: 'learn', icon: '🔤',
+            title: 'Sorting data',
+            body: 'Sorting lets you reorder your data instantly - alphabetically, by number, by date.',
+            list: [
+              'Click any cell in the column you want to sort by',
+              'Data tab → Sort A to Z (ascending) or Z to A (descending)',
+              'For numbers: Sort Smallest to Largest or Largest to Smallest',
+              'Custom sort: Data → Sort → add multiple levels (sort by Department, then by Name)',
+              'Excel sorts the whole row - all data stays together'
+            ],
+            dutch: [{ nl: 'Sorteren', en: 'Sort' }, { nl: 'Oplopend', en: 'Ascending (A-Z, 1-9)' }, { nl: 'Aflopend', en: 'Descending (Z-A, 9-1)' }]
+          },
+          {
+            type: 'learn', icon: '🔍',
+            title: 'Filtering - show only what you need',
+            body: 'Filtering hides rows that do not match your criteria, so you can focus on specific data.',
+            list: [
+              'Click any cell in your data → Data tab → Filter',
+              'Dropdown arrows appear on your header row',
+              'Click a dropdown → choose what to show (e.g. only "Finance" department)',
+              'Multiple filters work together (Department = Finance AND Salary > 3000)',
+              'Clear filter: Data → Clear to show all rows again',
+              'Filtered rows are hidden, not deleted - all data is still there'
+            ],
+            dutch: [{ nl: 'Filter', en: 'Filter (same)' }, { nl: 'Filteren', en: 'To filter' }, { nl: 'Filter wissen', en: 'Clear filter' }]
+          },
+          {
+            type: 'learn', icon: '📈',
+            title: 'Creating a simple chart',
+            body: 'Charts turn numbers into visuals. Even a simple chart makes a report look professional.',
+            list: [
+              'Select the data you want to chart (include headers)',
+              'Insert tab → Charts → choose type: Bar, Column, Pie, Line',
+              'Column chart = good for comparing items',
+              'Line chart = good for showing change over time',
+              'Pie chart = good for showing parts of a whole (percentages)',
+              'Click the chart to move it. Drag corners to resize.',
+              'Chart Title: click it to edit - give it a meaningful name'
+            ],
+            dutch: [{ nl: 'Grafiek', en: 'Chart / Graph' }, { nl: 'Kolomdiagram', en: 'Column chart' }, { nl: 'Cirkeldiagram', en: 'Pie chart' }, { nl: 'Lijngrafiek', en: 'Line chart' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You have sales data for 12 months and want to show the trend over time. Which chart type is best?',
+            options: ['Pie chart (Cirkeldiagram)', 'Line chart (Lijngrafiek)', 'Bar chart', 'No chart - just numbers'],
+            correct: 1,
+            feedback: 'A line chart is perfect for showing how something changes over time - months, quarters, years. Pie charts are for proportions. Bar charts are for comparing separate items side by side.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Sort, filter, charts - you are building a professional Excel skillset! These are exactly the tools finance teams use to present data to management. You are not just learning Excel - you are preparing for the job you deserve."
+          }
+        ]
+      },
+      {
+        title: 'Excel at work - practical scenarios',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Now let us put everything together in real work scenarios. These are the kinds of tasks you will actually get in your first weeks at a Dutch company. You already have all the skills - let us apply them."
+          },
+          {
+            type: 'learn', icon: '📋',
+            title: 'Scenario 1: Expense report',
+            body: 'Your manager asks you to create a simple expense report for the team.',
+            list: [
+              'Create columns: Date, Description, Category, Amount (€)',
+              'Enter 5-10 rows of expenses',
+              'Add a SUM formula at the bottom for the total',
+              'Format the Amount column as Currency',
+              'Bold the header row and total row',
+              'Add a filter so the manager can filter by Category',
+              'Save as PDF before sending!'
+            ]
+          },
+          {
+            type: 'learn', icon: '📊',
+            title: 'Scenario 2: Team overview list',
+            body: 'Create a list of team members with their details.',
+            list: [
+              'Columns: Name, Department, Start Date, Contract Type, Full/Part time',
+              'Sort alphabetically by last name',
+              'Use filter to show only "Full time" employees',
+              'Calculate: how many employees in total? =COUNT(A2:A20)',
+              'Format the Start Date column as a Date',
+              'Freeze the top row so headers stay visible when scrolling: View → Freeze Top Row'
+            ],
+            dutch: [{ nl: 'Rij blokkeren', en: 'Freeze row' }, { nl: 'Bovenkant blokkeren', en: 'Freeze top row' }, { nl: 'Volledig scherm', en: 'Full screen' }]
+          },
+          {
+            type: 'learn', icon: '💡',
+            title: 'Essential Excel tips for the office',
+            body: 'These small habits mark you as someone who really knows Excel.',
+            list: [
+              'Ctrl+Z - Undo! Use it fearlessly.',
+              'Ctrl+S - Save constantly! Excel does not always autosave.',
+              'Ctrl+Home - Jump back to A1 instantly.',
+              'Never merge cells - it breaks sorting and filtering.',
+              'Keep raw data in one sheet, calculations in another.',
+              'Name your sheets clearly: double-click the tab (Sheet1) to rename.',
+              'Ctrl+; (semicolon) - inserts today\'s date automatically!'
+            ]
+          },
+          {
+            type: 'exercise',
+            title: '💻 Try it on your laptop!',
+            task: "Create an expense report: columns Date, Description, Category, Amount. Enter 5 expenses. Add SUM at bottom. Format as Currency. Sort by Date. Take a screenshot.",
+            screenshotTask: 'Upload a screenshot of your completed expense report in Excel.',
+            checkDescription: 'Screenshot shows an Excel expense report with Date, Description, Category, Amount columns and a SUM total at the bottom'
+          },
+          {
+            type: 'quiz',
+            question: 'You want the header row to always stay visible as you scroll down 200 rows. What do you use?',
+            options: ['Make the font bigger', 'View → Freeze Top Row', 'Copy the header every 10 rows', 'Print the headers on each page'],
+            correct: 1,
+            feedback: 'View → Freeze Top Row locks the header so it stays visible no matter how far you scroll. Essential for any list with lots of rows!'
+          },
+          {
+            type: 'complete', xp: 45,
+            ariaMsg: "Excel module complete! Chhaya, you have just built skills that Finance departments actively look for. Expense reports, team lists, formulas, charts - you can do all of this. Your Masters degree and now your Excel skills are a powerful combination. You are so ready."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  9. DUTCH LANGUAGE EXPANDED
+  // ═══════════════════════════════════════════
+  {
+    id: 'dutch-expanded',
+    icon: '🗣️',
+    name: 'Dutch - Deeper',
+    phase: 'Language',
+    color: '#f59e0b',
+    lessons: [
+      {
+        title: 'Numbers, time, days and months',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Numbers, time and dates come up every single day at work - in meetings, schedules, emails and phone calls. Let us make sure you are completely confident with these. I will explain everything in English so it is clear."
+          },
+          {
+            type: 'learn', icon: '🔢',
+            title: 'Numbers 1 to 20 in Dutch',
+            body: 'Learn these and you can handle most workplace situations. Say each one out loud.',
+            list: [
+              '1 een, 2 twee, 3 drie, 4 vier, 5 vijf',
+              '6 zes, 7 zeven, 8 acht, 9 negen, 10 tien',
+              '11 elf, 12 twaalf, 13 dertien, 14 veertien, 15 vijftien',
+              '16 zestien, 17 zeventien, 18 achttien, 19 negentien, 20 twintig',
+              '30 dertig, 40 veertig, 50 vijftig, 100 honderd, 1000 duizend',
+              'Tip: 21 = eenentwintig (one-and-twenty), 45 = vijfenveertig'
+            ],
+            dutch: [{ nl: 'Eén', en: 'One (1)' }, { nl: 'Tien', en: 'Ten (10)' }, { nl: 'Twintig', en: 'Twenty (20)' }, { nl: 'Honderd', en: 'Hundred (100)' }]
+          },
+          {
+            type: 'learn', icon: '⏰',
+            title: 'Telling the time in Dutch',
+            body: 'Dutch time works differently from English. Here is how to understand it.',
+            list: [
+              '10:00 = tien uur (ten o\'clock)',
+              '10:15 = kwart over tien (quarter past ten)',
+              '10:30 = half elf (half eleven - means 30 mins BEFORE eleven!)',
+              '10:45 = kwart voor elf (quarter to eleven)',
+              'Important: "half elf" does NOT mean 11:30 - it means 10:30!',
+              'In work emails and schedules: use 14:00 (not 2pm) - Dutch use 24-hour time'
+            ],
+            dutch: [{ nl: 'Hoe laat is het?', en: 'What time is it?' }, { nl: 'Kwart over', en: 'Quarter past' }, { nl: 'Half [next hour]', en: 'Half past [previous hour]' }, { nl: 'Kwart voor', en: 'Quarter to' }]
+          },
+          {
+            type: 'learn', icon: '📅',
+            title: 'Days of the week and months',
+            body: 'You will use days and months every day in meetings, emails and conversations.',
+            list: [
+              'Monday = maandag, Tuesday = dinsdag, Wednesday = woensdag',
+              'Thursday = donderdag, Friday = vrijdag',
+              'Saturday = zaterdag, Sunday = zondag',
+              'January = januari, February = februari, March = maart, April = april',
+              'May = mei, June = juni, July = juli, August = augustus',
+              'September = september, October = oktober, November = november, December = december'
+            ],
+            dutch: [{ nl: 'Maandag', en: 'Monday' }, { nl: 'Vrijdag', en: 'Friday' }, { nl: 'Woensdag', en: 'Wednesday' }, { nl: 'Deze week', en: 'This week' }, { nl: 'Volgende week', en: 'Next week' }]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice saying today\'s date - Aria goes first:',
+            phrase: 'The meeting is on Wednesday the first of July at half past two.',
+            phraseNl: 'De vergadering is op woensdag de eerste juli om half drie.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'Your Dutch colleague says the meeting is at "half drie". What time is that?',
+            options: ['3:30', '2:30', '3:00', '12:30'],
+            correct: 1,
+            feedback: '"Half drie" means half past TWO - 2:30! In Dutch, "half [hour]" means 30 minutes before that hour, not after. So half drie = 30 minutes before 3 = 2:30. This confuses many people at first!'
+          },
+          {
+            type: 'complete', xp: 30,
+            ariaMsg: "Numbers, time, days - done! The 'half drie' rule catches almost every foreigner out in their first week. Now you know it, you will never miss a meeting because of a time misunderstanding."
+          }
+        ]
+      },
+      {
+        title: 'Writing emails and messages in Dutch',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Writing even a simple email in Dutch will make a huge impression. Dutch colleagues genuinely appreciate the effort. I will teach you the building blocks in English first, then show you how to put them together into a real Dutch email."
+          },
+          {
+            type: 'learn', icon: '✉️',
+            title: 'Dutch email - how to open',
+            body: 'The opening of a Dutch email depends on how formal the situation is. Here is how to choose.',
+            list: [
+              'Very formal (e.g. HR, new employer): "Geachte mevrouw [surname]," or "Geachte meneer [surname],"',
+              '  → This means: "Dear Ms/Mr [surname]" - respectful and correct',
+              'Informal (colleague, same team): "Beste [first name]," or "Hoi [first name],"',
+              '  → "Beste" means "Dear" but warmer. "Hoi" is like "Hi"',
+              'If you do not know gender: "Geachte heer of mevrouw,"',
+              '  → This means: "Dear Sir or Madam"'
+            ],
+            dutch: [{ nl: 'Geachte', en: 'Dear (formal)' }, { nl: 'Beste', en: 'Dear (informal/warm)' }, { nl: 'Hoi', en: 'Hi (casual)' }, { nl: 'Mevrouw', en: 'Ms / Madam' }, { nl: 'Meneer', en: 'Mr / Sir' }]
+          },
+          {
+            type: 'learn', icon: '📝',
+            title: 'Useful Dutch phrases for the email body',
+            body: 'You do not need to write every word in Dutch. Even a few key phrases make a great impression.',
+            list: [
+              '"Hierbij stuur ik u..." = Hereby I am sending you...',
+              '"Naar aanleiding van ons gesprek..." = Following our conversation...',
+              '"Ik heb een vraag over..." = I have a question about...',
+              '"Zou u mij kunnen helpen met...?" = Could you help me with...?',
+              '"Ik zie uw reactie graag tegemoet" = I look forward to your reply',
+              '"Heeft u nog vragen?" = Do you have any questions?',
+              '"Alvast bedankt" = Thank you in advance'
+            ],
+            dutch: [{ nl: 'Hierbij', en: 'Hereby / Please find attached' }, { nl: 'Naar aanleiding van', en: 'Following / Regarding' }, { nl: 'Alvast bedankt', en: 'Thank you in advance' }]
+          },
+          {
+            type: 'learn', icon: '🔚',
+            title: 'How to close a Dutch email',
+            body: 'The closing is the last thing people read. Get this right every time.',
+            list: [
+              'Formal: "Met vriendelijke groet," = Kind regards',
+              'Formal: "Met vriendelijke groeten," = Kind regards (plural, slightly warmer)',
+              'Informal: "Groeten," = Greetings (short and common)',
+              'Informal: "Vriendelijke groeten," = Friendly greetings',
+              'After the closing: leave one line, then type your full name',
+              'Add your phone number and job title if relevant'
+            ],
+            dutch: [{ nl: 'Met vriendelijke groet', en: 'Kind regards (standard)' }, { nl: 'Groeten', en: 'Greetings (casual)' }, { nl: 'Handtekening', en: 'Signature' }]
+          },
+          {
+            type: 'learn', icon: '📨',
+            title: 'A complete Dutch email example',
+            body: 'Read this example out loud. You can use this as a template.',
+            list: [
+              'Onderwerp: Vraag over vergadering woensdag',
+              '---',
+              'Beste Sandra,',
+              '',
+              'Ik heb een vraag over de vergadering op woensdag.',
+              'Wordt het budget ook besproken? Dan kan ik mij goed voorbereiden.',
+              '',
+              'Alvast bedankt voor uw reactie.',
+              '',
+              'Met vriendelijke groet,',
+              'Chhaya'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice the Dutch email closing - say it clearly:',
+            phrase: 'Thank you in advance. Kind regards, Chhaya.',
+            phraseNl: 'Alvast bedankt. Met vriendelijke groet, Chhaya.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'You are emailing a Dutch employer you have never met. Which opening is most appropriate?',
+            options: ['Hoi Sandra!', 'Hey!', 'Geachte mevrouw De Vries,', 'Beste allemaal,'],
+            correct: 2,
+            feedback: '"Geachte mevrouw De Vries," is the correct formal opening for someone you have not met. Use the formal "Geachte" until they respond informally - then you can match their tone.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Dutch email writing - done! Even sending one email with a correct Dutch opening and closing will make employers and colleagues remember you positively. This small effort signals that you are serious about integrating into Dutch professional life."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  10. COVER LETTER
+  // ═══════════════════════════════════════════
+  {
+    id: 'cover-letter',
+    icon: '📩',
+    name: 'Cover Letter',
+    phase: 'Career',
+    color: '#10b981',
+    lessons: [
+      {
+        title: 'Writing a Dutch cover letter (sollicitatiebrief)',
+        time: '7 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "A Dutch cover letter is your first chance to speak directly to an employer. Done well, it gets you an interview. Done badly, even a great CV does not help. The good news: it follows a clear structure that I am going to give you right now."
+          },
+          {
+            type: 'learn', icon: '📄',
+            title: 'What makes a Dutch cover letter different',
+            body: 'Dutch cover letters have very specific characteristics. Follow these and you are already ahead.',
+            list: [
+              'Maximum ONE page - Dutch employers will not read more',
+              'Three short paragraphs is the standard structure',
+              'Formal but warm tone - not stiff, not casual',
+              'Specific: mention the exact job title and company name',
+              'NO generic letters - every letter must be written for that specific job',
+              'End with a clear call to action: "I would welcome the opportunity to discuss this."',
+              'Save and send as PDF (PDF-bestand)'
+            ],
+            dutch: [{ nl: 'Sollicitatiebrief', en: 'Cover letter / Application letter' }, { nl: 'Motivatiebrief', en: 'Motivation letter (same thing)' }, { nl: 'Vacature', en: 'Job vacancy' }, { nl: 'Aanhef', en: 'Opening / Salutation' }]
+          },
+          {
+            type: 'learn', icon: '1️⃣',
+            title: 'Paragraph 1 - Why THIS company and THIS role',
+            body: 'The first paragraph explains why you are applying. Show you have done your research.',
+            list: [
+              'Mention the specific job title and where you saw the vacancy',
+              'Say one genuine thing you find interesting about the company',
+              'Example: "I am applying for the position of Finance Administrator, which I found on LinkedIn."',
+              'Example: "I am particularly drawn to [Company Name] because of your commitment to sustainability."',
+              'Keep it to 3-4 sentences',
+              'Do NOT start with "I" - start with the role or company name instead'
+            ]
+          },
+          {
+            type: 'learn', icon: '2️⃣',
+            title: 'Paragraph 2 - What you bring',
+            body: 'This is the most important paragraph. Match your skills to what the job needs.',
+            list: [
+              'Pick 2-3 skills or experiences that match the job description',
+              'Be specific - give a brief example for each skill',
+              '"My Masters degree in Finance gave me a strong analytical foundation."',
+              '"During my studies I regularly worked with Excel for data analysis and reporting."',
+              'Address the career gap confidently: "Since relocating to the Netherlands I have focused on language learning and professional development."',
+              'Frame everything as an advantage, not an apology'
+            ]
+          },
+          {
+            type: 'learn', icon: '3️⃣',
+            title: 'Paragraph 3 - The call to action',
+            body: 'The closing paragraph should be confident and invite a response.',
+            list: [
+              '"I would welcome the opportunity to discuss how I can contribute to your team."',
+              '"I am available for an interview at your convenience."',
+              '"I look forward to hearing from you."',
+              'In Dutch: "Ik zie uw uitnodiging voor een gesprek graag tegemoet."',
+              '  → This means: "I look forward to your invitation for an interview."',
+              'Then: "Met vriendelijke groet," and your full name'
+            ],
+            dutch: [{ nl: 'Ik zie uw reactie tegemoet', en: 'I look forward to your reply' }, { nl: 'Beschikbaar voor gesprek', en: 'Available for an interview' }]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice this closing sentence - it ends every strong cover letter:',
+            phrase: 'I would welcome the opportunity to discuss my application further. I look forward to hearing from you.',
+            phraseNl: 'Ik zie uw uitnodiging voor een gesprek graag tegemoet. Met vriendelijke groet, Chhaya.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'A Dutch cover letter should be how long?',
+            options: ['3-4 pages - show everything', 'Exactly 2 pages', 'One page maximum', 'As long as needed'],
+            correct: 2,
+            feedback: 'One page maximum. Dutch employers are direct and value brevity. A three-paragraph letter that is tight, specific and well-written beats three pages every time.'
+          },
+          {
+            type: 'quiz',
+            question: 'You are applying for a Finance role. Which paragraph 2 opening is stronger?',
+            options: [
+              '"I think I am a good person for this job."',
+              '"My Masters in Finance and practical Excel experience directly match the analytical skills this role requires."',
+              '"I have always loved numbers since I was young."',
+              '"I really need a job and I work very hard."'
+            ],
+            correct: 1,
+            feedback: 'Specific, confident, and directly connected to the job requirements. Dutch employers respond to evidence and specificity - not vague enthusiasm or personal history.'
+          },
+          {
+            type: 'complete', xp: 45,
+            ariaMsg: "Cover letter - complete! You now have the structure, the language, and the confidence to write a compelling Dutch cover letter. One page, three paragraphs, specific and warm. Combined with your CV, this will get you interviews."
+          }
+        ]
+      }
+    ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  11. WORK RIGHTS IN THE NETHERLANDS
+  // ═══════════════════════════════════════════
+  {
+    id: 'work-rights',
+    icon: '⚖️',
+    name: 'Your Work Rights',
+    phase: 'Career',
+    color: '#ef4444',
+    lessons: [
+      {
+        title: 'Contracts, rights and what to know before you sign',
+        time: '7 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "This lesson could protect you from making a costly mistake. Many people - especially those new to the Netherlands - sign contracts without understanding what they say. After this lesson, you will know your rights and you will never be taken advantage of."
+          },
+          {
+            type: 'learn', icon: '📋',
+            title: 'Types of employment contracts in the Netherlands',
+            body: 'Understanding your contract type is essential before you sign anything.',
+            list: [
+              'Vast contract (permanent) - the most secure. No end date. Harder to be dismissed.',
+              'Tijdelijk contract (temporary/fixed-term) - has an end date. Very common to start with.',
+              'Nulurencontract (zero-hours contract) - you work when called. No guaranteed hours. Be careful with this.',
+              'Uitzendcontract (agency contract) - through a temp agency. Normal starting point.',
+              'Zzp / Freelance - you are self-employed. No employee rights. Only accept if you understand the difference.',
+              'Tip: always ask for the contract IN WRITING before your first day'
+            ],
+            dutch: [{ nl: 'Vast contract', en: 'Permanent contract' }, { nl: 'Tijdelijk contract', en: 'Temporary / Fixed-term contract' }, { nl: 'Nulurencontract', en: 'Zero-hours contract' }, { nl: 'Proeftijd', en: 'Trial / Probation period' }]
+          },
+          {
+            type: 'learn', icon: '🏖️',
+            title: 'Holiday leave - your legal rights',
+            body: 'Dutch law gives you minimum holiday rights. Know them.',
+            list: [
+              'Minimum 20 days per year (4 times your weekly hours)',
+              'Most Dutch companies offer 25-28 days',
+              'Vakantiegeld (holiday money) - an extra 8% of your annual salary paid in May/June',
+              'You build up leave from day one, even during probation',
+              'Always request leave in writing (email to your manager)',
+              'You cannot be refused all your leave - employers must let you take it'
+            ],
+            dutch: [{ nl: 'Vakantiedagen', en: 'Holiday days / Annual leave' }, { nl: 'Vakantiegeld', en: 'Holiday allowance (8% bonus in May)' }, { nl: 'Verlof aanvragen', en: 'Request leave' }]
+          },
+          {
+            type: 'learn', icon: '🤒',
+            title: 'Sick leave - what to do when you are ill',
+            body: 'This is very different from many countries. The rules in the Netherlands are strict but protective.',
+            list: [
+              'You MUST call your manager before 9:00 on the first day you are sick - do not email',
+              'Say: "I am not feeling well and I cannot come in today."',
+              'Employer pays 70% of your salary (often 100%) for up to 2 years while sick',
+              'You cannot be dismissed simply for being ill - this is protected by Dutch law',
+              'After a longer illness: the company Arbo doctor (occupational doctor) will contact you',
+              'After 2 years of illness: rules change - get advice from the UWV (benefits office)'
+            ],
+            dutch: [{ nl: 'Ziek melden', en: 'Call in sick (MUST be by phone)' }, { nl: 'Ziekteuitkering', en: 'Sick pay' }, { nl: 'Bedrijfsarts', en: 'Company doctor (Arbo)' }, { nl: 'Arbeidsongeschikt', en: 'Unable to work due to illness' }]
+          },
+          {
+            type: 'learn', icon: '💰',
+            title: 'Salary, payslip and minimum wage',
+            body: 'Understanding your payslip (loonstrook) is essential.',
+            list: [
+              'Minimumloon (minimum wage) - check the current rate on werk.nl. Updated every 6 months.',
+              'Bruto (gross) salary = before tax. Netto (net) = what you actually receive.',
+              'Loonheffing = income tax withheld by employer. Normal.',
+              'Sociale premies = social security contributions. Normal.',
+              'Check your loonstrook every month - errors do happen',
+              'If you are paid less than agreed: email your manager IN WRITING immediately',
+              'BSN number (burgerservicenummer) - you need this to be paid legally. Get it from the gemeente.'
+            ],
+            dutch: [{ nl: 'Loonstrook', en: 'Payslip' }, { nl: 'Bruto', en: 'Gross (before tax)' }, { nl: 'Netto', en: 'Net (after tax, what you receive)' }, { nl: 'Loonheffing', en: 'Income tax (withheld)' }, { nl: 'BSN-nummer', en: 'Citizen service number (needed for work)' }]
+          },
+          {
+            type: 'quiz',
+            question: 'You feel ill on Monday morning. What is the correct thing to do in the Netherlands?',
+            options: ['Send a WhatsApp message to your manager', 'Send an email before 9:00', 'Call your manager before 9:00 and say you are ill', 'Wait and see how you feel at 10:00'],
+            correct: 2,
+            feedback: 'In the Netherlands, you MUST phone your manager before 9:00 on the first day of illness. Not email, not WhatsApp - a phone call. This is the professional and legally expected procedure.'
+          },
+          {
+            type: 'quiz',
+            question: 'Your contract says your bruto salary is €2,800. You receive €2,100 in your bank account. Is this normal?',
+            options: ['No - something has gone wrong', 'Yes - bruto is before tax, netto is after tax deductions', 'You should have received €2,800', 'The employer has made an error'],
+            correct: 1,
+            feedback: 'This is completely normal! Bruto (gross) is before income tax and social security contributions are deducted. Netto (net) is what actually hits your bank account. The deductions go to the tax office (Belastingdienst).'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice calling in sick - Aria will say it, then you repeat:',
+            phrase: 'Good morning, this is Chhaya. I am not feeling well today and I am not able to come in. I will keep you updated.',
+            phraseNl: 'Goedemorgen, u spreekt met Chhaya. Ik ben ziek en kan vandaag niet komen. Ik houd u op de hoogte.',
+            lang: 'en-US'
+          },
+          {
+            type: 'complete', xp: 45,
+            ariaMsg: "Work rights - done! You now know your contract types, your leave entitlements, how to call in sick correctly, and how to read your payslip. This knowledge protects you and gives you confidence in every workplace conversation about your rights."
           }
         ]
       }

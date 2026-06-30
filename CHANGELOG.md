@@ -1,5 +1,23 @@
 # Work Ready — Changelog
 
+## v2.0.0 — 2026-06-30 — Phase 2: Full Professional Curriculum
+
+### New modules (6 modules, 17 lessons, ~90 minutes of content)
+- **Microsoft Outlook** (4 lessons): inbox/folders/shortcuts, professional email writing, CC/BCC/attachments/etiquette, calendar and meeting invites
+- **Microsoft Teams** (4 lessons): layout/channels, chat/status/professional habits, video calls/screen sharing, file sharing and collaboration
+- **Microsoft Excel** (5 lessons): cells/rows/columns, data entry and formatting, SUM/AVERAGE/COUNT formulas, sorting/filtering/charts, practical work scenarios (expense report, team list)
+- **Dutch Language - Deeper** (2 lessons): numbers/time/days/months (including the half-drie rule), writing Dutch business emails with English explanations throughout
+- **Cover Letter** (1 lesson): sollicitatiebrief structure, 3-paragraph format, Dutch-specific rules, call to action
+- **Work Rights NL** (1 lesson): contract types, holiday leave and vakantiegeld, sick leave procedure (phone call rule), bruto vs netto salary, BSN number
+
+### Content improvements
+- All Dutch language lessons now taught in English first for clarity
+- Dutch email lesson includes full template Chhaya can use immediately
+- Excel content specifically acknowledges her Finance Masters degree
+- Work Rights lesson specifically addresses common mistakes made by newcomers to NL
+
+---
+
 ## v1.0.4 — 2026-06-30 — Mood check-in + dynamic themes
 
 ### New
