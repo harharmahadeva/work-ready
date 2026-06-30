@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (user) {
         Storage.setUser(user);
         pinError.textContent = '';
+        if (user.role === 'reviewer') Aria.disable();
+        else Aria.enable();
         initFeedback(user);
         if (Storage.getOnboarded()) {
           goHome();
@@ -397,6 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Logout ──
   window.logout = function() {
     Aria.stop();
+    Aria.enable();
     Storage.clearUser();
     show('login');
     pinEntry = '';

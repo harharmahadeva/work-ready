@@ -1,9 +1,10 @@
-// Aria - Chhaya's AI voice coach
+// Aria - AI voice coach
 const Aria = (() => {
   let synth = window.speechSynthesis;
   let voice = null;
   let speaking = false;
   let indicator = null;
+  let disabled = false;
 
   function pickVoice() {
     const voices = synth.getVoices();
@@ -31,6 +32,7 @@ const Aria = (() => {
   let currentAudio = null;
 
   async function speakEL(text, { onEnd } = {}) {
+    if (disabled) { if (onEnd) onEnd(); return; }
     try {
       if (currentAudio) { currentAudio.pause(); currentAudio = null; }
       speaking = true;
@@ -70,7 +72,7 @@ const Aria = (() => {
   }
 
   function speakFallback(text, { rate = 0.88, pitch = 1.05, onEnd } = {}) {
-    if (!synth) return;
+    if (disabled || !synth) { if (onEnd) onEnd(); return; }
     synth.cancel();
     const utt = new SpeechSynthesisUtterance(text);
     utt.voice = voice || pickVoice();
@@ -88,7 +90,7 @@ const Aria = (() => {
   }
 
   function speakDutch(text, { onEnd } = {}) {
-    if (!synth) return;
+    if (disabled || !synth) { if (onEnd) onEnd(); return; }
     synth.cancel();
     const utt = new SpeechSynthesisUtterance(text);
     const dutchVoice = synth.getVoices().find(v => v.lang.startsWith('nl')) || voice;
@@ -108,6 +110,8 @@ const Aria = (() => {
     if (indicator) indicator.classList.remove('show');
   }
   function isSpeaking() { return speaking; }
+  function disable() { disabled = true; stop(); if (indicator) indicator.style.display = 'none'; }
+  function enable() { disabled = false; if (indicator) indicator.style.display = ''; }
 
   // Pick a random item from an array
   function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -332,5 +336,5 @@ const Aria = (() => {
     }
   }
 
-  return { init, speak, speakDutch, stop, isSpeaking, lines, pick, greet, chat, fetchWeather };
+  return { init, speak, speakDutch, stop, isSpeaking, disable, enable, lines, pick, greet, chat, fetchWeather };
 })();
