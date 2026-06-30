@@ -118,10 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       Storage.setOnboarded();
       goHome();
-      setTimeout(() => {
-        const u = Storage.getUser();
-        Aria.speak(Aria.lines.welcome);
-      }, 500);
     }
   });
 
