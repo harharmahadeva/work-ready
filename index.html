@@ -112,6 +112,19 @@
   </div>
 
   <div class="home-body">
+    <!-- Laptop nudge (mobile only) -->
+    <div class="laptop-nudge hidden" id="laptop-nudge">
+      <div class="ln-top">
+        <div class="ln-icon">💻</div>
+        <div class="ln-close" id="ln-close">✕</div>
+      </div>
+      <div class="ln-title">Most lessons need a laptop</div>
+      <div class="ln-text">You're on your phone right now. That's fine for reading — but for Windows, Word, Excel, Outlook and Teams lessons you will need your laptop. Open Chrome on your laptop and go to:</div>
+      <div class="ln-url" id="ln-url">work-ready.vercel.app</div>
+      <button class="ln-copy" id="ln-copy">📋 Copy link</button>
+      <div class="ln-hint">Your PIN and progress are saved — everything will be there waiting for you.</div>
+    </div>
+
     <!-- Check-in card -->
     <div id="checkin-card" style="display:none"></div>
 
@@ -155,6 +168,7 @@
     </div>
   </div>
   <div class="lesson-prog" id="lesson-prog"></div>
+  <div id="lesson-laptop-banner" style="display:none; padding: 0 16px;"></div>
   <div class="lesson-body" id="lesson-body" style="padding-bottom:24px"></div>
 </div>
 
@@ -193,9 +207,9 @@
 </div>
 
 <script src="/js/storage.js?v=11"></script>
-<script src="/js/aria.js?v=17"></script>
+<script src="/js/aria.js?v=18"></script>
 <script src="/js/speech.js?v=11"></script>
-<script src="/js/lessons.js?v=17"></script>
-<script src="/js/app.js?v=17"></script>
+<script src="/js/lessons.js?v=18"></script>
+<script src="/js/app.js?v=18"></script>
 </body>
 </html>

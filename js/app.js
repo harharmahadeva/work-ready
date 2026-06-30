@@ -307,6 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Laptop nudge for mobile users
+    renderLaptopNudge();
+
     // Late night / early morning check (shows after greeting)
     setTimeout(() => checkLateNight(), 2000);
 
@@ -316,6 +319,60 @@ document.addEventListener('DOMContentLoaded', () => {
       if (h >= 23 || (h >= 0 && h < 5)) return; // late night modal takes priority
       renderCheckIn();
     }, 3500);
+  }
+
+  // ── Laptop nudge ──
+  const LAPTOP_MODULES = ['windows', 'word', 'outlook', 'teams', 'excel'];
+  const APP_URL = 'work-ready.vercel.app';
+
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || window.innerWidth < 768;
+  }
+
+  function shouldShowNudge() {
+    if (!isMobile()) return false;
+    const last = localStorage.getItem('nudge-dismissed');
+    if (!last) return true;
+    // Show again after 24 hours
+    return Date.now() - parseInt(last) > 86400000;
+  }
+
+  function renderLaptopNudge() {
+    const el = document.getElementById('laptop-nudge');
+    if (!el || !shouldShowNudge()) return;
+    el.classList.remove('hidden');
+
+    document.getElementById('ln-close').onclick = () => {
+      el.classList.add('hidden');
+      localStorage.setItem('nudge-dismissed', Date.now());
+    };
+
+    const copyBtn = document.getElementById('ln-copy');
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText('https://' + APP_URL).then(() => {
+        copyBtn.textContent = '✓ Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Copy link';
+          copyBtn.classList.remove('copied');
+        }, 2500);
+      }).catch(() => {
+        // Fallback for older browsers
+        copyBtn.textContent = 'https://' + APP_URL;
+      });
+    };
+  }
+
+  function getLaptopBannerHtml(moduleName) {
+    if (!isMobile()) return '';
+    return `
+      <div class="laptop-banner">
+        <div class="lb-icon">💻</div>
+        <div class="lb-text">
+          <strong>${moduleName}</strong> needs a laptop. Open Chrome on your laptop and go to:
+          <span class="lb-url">${APP_URL}</span>
+        </div>
+      </div>`;
   }
 
   function goOnboard() {
@@ -433,6 +490,18 @@ document.addEventListener('DOMContentLoaded', () => {
     dotsEl.innerHTML = lesson.steps.map((_, i) => `<div class="lesson-prog-dot ${i === 0 ? 'active' : ''}"></div>`).join('');
 
     show('lesson');
+
+    // Inject laptop banner for mobile users on laptop-required modules
+    const bannerEl = document.getElementById('lesson-laptop-banner');
+    if (bannerEl) {
+      if (isMobile() && LAPTOP_MODULES.includes(activeModule.id)) {
+        bannerEl.innerHTML = getLaptopBannerHtml(activeModule.name);
+        bannerEl.style.display = 'block';
+      } else {
+        bannerEl.style.display = 'none';
+      }
+    }
+
     renderStep();
 
     // Aria intro
