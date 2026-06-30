@@ -867,8 +867,33 @@ document.addEventListener('DOMContentLoaded', () => {
     show('login');
   }
 
-  // ── Service worker ──
+  // ── Service worker — auto-update ──
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      // If a new SW is already waiting (downloaded in background), activate it now
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+
+      // When a new SW finishes installing and is waiting, activate it immediately
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            newWorker.postMessage({ type: 'SKIP_WAITING' });
+          }
+        });
+      });
+    }).catch(() => {});
+
+    // When SW changes (new one activated), reload silently to get fresh files
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!refreshing) {
+        refreshing = true;
+        window.location.reload();
+      }
+    });
   }
 });
