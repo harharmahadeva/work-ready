@@ -298,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current) applyMoodTheme(current);
 
     const streak = Storage.updateStreak();
-    const u = Storage.getUser();
     if (u) {
       // Always greet with time + weather first
       Aria.greet(u.name).then(() => {
