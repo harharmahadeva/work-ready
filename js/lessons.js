@@ -2520,5 +2520,416 @@ const MODULES = [
         ]
       }
     ]
+  },
+
+  // ═══════════════════════════════════════════
+  //  14. ENGLISH AT WORK
+  // ═══════════════════════════════════════════
+  {
+    id: 'english-at-work',
+    icon: '🗣️',
+    name: 'English at Work',
+    phase: 'Language',
+    color: '#0369a1',
+    lessons: [
+      {
+        title: 'Beating hesitation - speak without translating',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "I want to talk about something important. When you speak English, do you feel like you are translating from your mother tongue in your head first? That delay - that pause before you answer - is not a sign that your English is bad. It is a habit. And habits can be changed. Today we start breaking it."
+          },
+          {
+            type: 'learn', icon: '🧠',
+            title: 'Why hesitation happens - and how to fix it',
+            body: 'The translate-then-speak loop is the main cause of hesitation. Here is how to break it.',
+            list: [
+              'The loop: you hear English → translate to your language → think of answer → translate back → speak',
+              'The fix: stop translating. Think in short English chunks, not full sentences first',
+              'Start with words you already know well - use them immediately, automatically',
+              'Accept imperfection: a slightly wrong word spoken confidently beats a perfect word spoken too late',
+              'Practice: speak English to yourself out loud - in the car, walking, cooking',
+              'Your brain needs repetition to build automatic English pathways - this app is doing that right now'
+            ]
+          },
+          {
+            type: 'learn', icon: '⏱️',
+            title: 'Filler phrases - buy time without going silent',
+            body: 'These phrases buy you 2-3 seconds to think without awkward silence. Native speakers use them constantly.',
+            list: [
+              '"That is a good question..." - buys time + sounds engaged',
+              '"Let me think about that for a moment..." - completely professional',
+              '"So if I understand correctly..." - buys time + confirms you understood',
+              '"What I mean is..." - use this to rephrase if you started wrong',
+              '"To be honest..." - natural way to begin a genuine answer',
+              '"Actually..." - use to correct yourself or add something',
+              'DO NOT say "sorry sorry" repeatedly - one sorry is enough, then speak'
+            ]
+          },
+          {
+            type: 'learn', icon: '🎯',
+            title: 'Short answer first - then explain',
+            body: 'Dutch workplace culture values directness. Answer first, then explain. This also reduces hesitation.',
+            list: [
+              'Wrong: long pause → "Well... I think... maybe... it could be... yes"',
+              'Right: "Yes." → pause → "Because the report shows..."',
+              'In meetings: give your answer in one sentence first, then support it',
+              '"I agree." / "I disagree." / "I am not sure." - all valid one-word starts',
+              'You do not need a perfect long answer. A clear short answer is better.',
+              'Silence after your answer is fine - do not fill it with extra words'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice the most useful filler phrase - say it naturally, without rushing:',
+            phrase: 'That is a good question. Let me think about that for a moment.',
+            phraseNl: 'Dat is een goede vraag. Laat me daar even over nadenken.',
+            lang: 'en-US'
+          },
+          {
+            type: 'speak',
+            instruction: 'Now practice giving a short confident answer then expanding:',
+            phrase: 'Yes, I agree with that. The main reason is that it saves time for the whole team.',
+            phraseNl: 'Ja, ik ben het daarmee eens. De belangrijkste reden is dat het de hele tijd bespaart.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'Your manager asks a question in a meeting and you need a moment to think. What is the best response?',
+            options: [
+              'Stay silent for 10 seconds while you think',
+              'Say "sorry sorry" and look down',
+              'Say "That is a good question - let me think about that" and take your time',
+              'Say "I do not know" immediately'
+            ],
+            correct: 2,
+            feedback: 'Filler phrases are professional and natural. "That is a good question, let me think about that" tells your manager you are engaged, not confused. Every confident speaker uses these - now you do too.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Hesitation lesson done! Remember: the goal is not perfect English. It is clear, confident English. Filler phrases, short answers first, and thinking in English chunks - these will reduce your hesitation more than any grammar rule ever could. Practice this every day."
+          }
+        ]
+      },
+      {
+        title: 'Speaking in meetings - contribute with confidence',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Meetings in English can feel terrifying when it is not your first language. Everyone speaks fast, conversations overlap, and by the time you have thought of your point - the topic has moved on. I am going to give you exact phrases to use so you never have that feeling again."
+          },
+          {
+            type: 'learn', icon: '🙋',
+            title: 'How to join the conversation',
+            body: 'These phrases let you enter a conversation smoothly without interrupting rudely.',
+            list: [
+              '"Can I add something here?" - polite way to jump in',
+              '"I just want to make a quick point..." - signals you will be brief',
+              '"Building on what [name] said..." - links your point to someone else\'s',
+              '"I have a question about that..." - easy way to contribute even if unsure',
+              '"If I can just come back to something earlier..." - return to a missed point',
+              '"Can I ask - what do you mean by...?" - asking for clarification is always smart'
+            ]
+          },
+          {
+            type: 'learn', icon: '💬',
+            title: 'Responding to ideas - agree, disagree, add',
+            body: 'How you respond to others in a meeting shapes how they see you. These phrases cover every situation.',
+            list: [
+              'AGREE: "I think that is exactly right." / "I completely agree with that."',
+              'PARTLY AGREE: "That is a fair point, though I wonder if..." ',
+              'DISAGREE: "I see it slightly differently." / "I am not sure I agree - my concern is..."',
+              'ADD: "Another thing to consider is..." / "We should also think about..."',
+              'CLARIFY: "Just to make sure I understand - are you saying...?"',
+              'DELAY: "Can we come back to that? I want to think about it more."'
+            ]
+          },
+          {
+            type: 'learn', icon: '⚡',
+            title: 'When the meeting moves too fast',
+            body: 'Fast conversations are the hardest part. Here is what to do when you lose the thread.',
+            list: [
+              '"Sorry, I missed that - could you say it again?" - always acceptable',
+              '"Can you slow down a little? I want to make sure I understand." - professional and honest',
+              '"So to summarise what we have agreed..." - use this to check your understanding',
+              'Write key words as you listen - even one word anchors the conversation for you',
+              'It is okay to ask the same person to repeat twice - once is not enough for fast speakers',
+              'After the meeting: ask a colleague to clarify anything you missed - normal and professional'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice joining a conversation - say this confidently:',
+            phrase: 'Can I add something here? I think we should also consider the timeline.',
+            phraseNl: 'Mag ik hier iets aan toevoegen? Ik denk dat we ook de tijdlijn moeten overwegen.',
+            lang: 'en-US'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice polite disagreement:',
+            phrase: 'I see it slightly differently. My concern is that this might take longer than expected.',
+            phraseNl: 'Ik zie het iets anders. Mijn bezorgdheid is dat dit misschien langer duurt dan verwacht.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'The meeting is moving fast and you missed what was just said. What do you do?',
+            options: [
+              'Nod and pretend you understood',
+              'Say "Sorry, I missed that - could you say it again?"',
+              'Wait until after the meeting and hope it was not important',
+              'Send an email after asking what was discussed'
+            ],
+            correct: 1,
+            feedback: 'Always ask for clarification in the moment - it is professional and shows you are engaged. Nodding when you did not understand leads to mistakes and missed actions. Dutch colleagues respect someone who asks rather than guesses.'
+          },
+          {
+            type: 'complete', xp: 40,
+            ariaMsg: "Meeting English - done! You now have phrases for every meeting situation - joining, agreeing, disagreeing, asking to slow down. Use just one of these in your next meeting and watch how your confidence grows from there."
+          }
+        ]
+      },
+      {
+        title: 'Professional email writing in English',
+        time: '6 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Professional email writing in English has its own rules - different from casual WhatsApp messages and different from very formal letters. The goal is to sound warm, clear, and competent. After this lesson, every email you write will hit exactly that tone."
+          },
+          {
+            type: 'learn', icon: '✍️',
+            title: 'Tone - the difference between formal and natural',
+            body: 'Many non-native writers sound either too stiff or too casual. Here is the right middle ground for Dutch offices.',
+            list: [
+              'TOO STIFF: "I am writing to you to humbly request that you kindly consider..."',
+              'TOO CASUAL: "Hey! So I was thinking maybe we could..."',
+              'JUST RIGHT: "Hi Sandra, I hope you are well. I have a quick question about..."',
+              'Dutch offices are informal - first names, friendly tone, but still professional',
+              'Start with one warm sentence, then get to the point immediately',
+              'End with a clear next step: "Please let me know if you have any questions."'
+            ]
+          },
+          {
+            type: 'learn', icon: '📝',
+            title: 'Phrases that make emails sound natural',
+            body: 'Replace stiff phrases with these natural professional alternatives.',
+            list: [
+              'Instead of "I am writing to inform you" → "I wanted to let you know"',
+              'Instead of "Please be advised that" → "Just to let you know"',
+              'Instead of "As per my previous email" → "As I mentioned earlier"',
+              'Instead of "Please revert at your earliest convenience" → "Let me know when you get a chance"',
+              'Instead of "I beg to differ" → "I see it slightly differently"',
+              'Instead of "Kindly do the needful" → "Could you please..." or just "Please..."'
+            ]
+          },
+          {
+            type: 'learn', icon: '🚫',
+            title: 'Common mistakes to avoid',
+            body: 'These mistakes make emails sound unnatural or unclear in a Dutch professional context.',
+            list: [
+              'Over-apologising: "I am so very sorry to bother you..." → just "I have a quick question"',
+              'Too many exclamation marks: "Great!! Thanks so much!!" → one is enough or none',
+              'Vague subject lines: "Hi" or "Question" → be specific: "Question about Thursday meeting"',
+              'Long paragraphs: Dutch readers skim - keep each paragraph to 2-3 sentences',
+              'Never write in all capitals - it reads as shouting even if that is not your intention',
+              'Do not end with "Kindly revert" - this is not used in Dutch professional English'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice a natural professional email opening:',
+            phrase: 'Hi Sandra, I hope you are well. I have a quick question about the report we discussed on Monday.',
+            phraseNl: 'Hoi Sandra, ik hoop dat het goed met je gaat. Ik heb een korte vraag over het rapport dat we maandag besproken hebben.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'Which email opening sounds most natural in a Dutch professional context?',
+            options: [
+              '"I am writing to humbly request your assistance with the matter at hand."',
+              '"Hey!! Quick q for u - can u check the doc??"',
+              '"Hi Mark, hope you are well. Could you take a look at the attached document?"',
+              '"As per the discussion, please revert with your inputs at the earliest."'
+            ],
+            correct: 2,
+            feedback: 'Option 3 is the right tone - friendly, direct, and professional. Dutch offices use first names, keep it warm but clear. Options 1 and 4 are too formal and stiff. Option 2 is too casual for professional email.'
+          },
+          {
+            type: 'complete', xp: 35,
+            ariaMsg: "Professional email writing - done! Warm, direct, and clear is the Dutch professional English standard. The phrase replacements you just learned will immediately improve how your emails read. Start using them in your next email today."
+          }
+        ]
+      },
+      {
+        title: 'Phone and video calls in English',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Phone calls in a second language are harder than face-to-face conversations. You cannot see facial expressions, you cannot lip-read, and there is social pressure to respond quickly. I want to prepare you so thoroughly for this that phone calls stop feeling scary and start feeling manageable."
+          },
+          {
+            type: 'learn', icon: '📞',
+            title: 'Answering and making calls',
+            body: 'Every professional phone call has the same structure. Once you know it, every call feels familiar.',
+            list: [
+              'ANSWERING: "Good morning, {name} speaking." - always give your name',
+              'MAKING A CALL: "Good morning, this is {name} calling from [company]. May I speak with...?"',
+              'IF THEY ARE BUSY: "No problem - when would be a good time to call back?"',
+              'TAKING A MESSAGE: "I will let them know you called. Could I take your name and number?"',
+              'ENDING: "Thank you very much. Have a good day. Goodbye."',
+              'Tip: stand up or sit straight when on the phone - it genuinely improves your voice and confidence'
+            ]
+          },
+          {
+            type: 'learn', icon: '🔄',
+            title: 'When you did not understand - handling phone English',
+            body: 'The most important skill in phone calls is knowing what to say when you miss something.',
+            list: [
+              '"I am sorry, could you repeat that please?" - always acceptable, say it with confidence',
+              '"Could you speak a little more slowly please?" - completely fine to ask',
+              '"Let me just confirm - you said [repeat what you heard]?" - checks understanding',
+              '"Could you spell that for me please?" - for names, addresses, numbers',
+              '"I want to make sure I have that right - your name is...?" - confirm important details',
+              'If completely lost: "I want to make sure I give you the right information. May I call you back in 10 minutes?" - professional and smart'
+            ]
+          },
+          {
+            type: 'learn', icon: '📹',
+            title: 'Video calls - extra tips for non-native speakers',
+            body: 'Video calls have their own challenges. These habits will make them much easier.',
+            list: [
+              'Join 2 minutes early - use that time to settle and focus before the pressure starts',
+              'Have a notepad ready - write 2-3 key words as you listen to stay anchored',
+              'If the internet cuts out: "Sorry, I lost connection for a moment - could you repeat that?"',
+              'Use the chat function to confirm numbers, names, or actions in writing during the call',
+              'After the call: send a short email confirming what was agreed - protects you and looks professional',
+              'Mute when not speaking - background noise makes understanding harder for everyone'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice answering a professional phone call:',
+            phrase: 'Good morning, {name} speaking. How can I help you?',
+            phraseNl: 'Goedemorgen, u spreekt met {name}. Waarmee kan ik u helpen?',
+            lang: 'en-US'
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice asking for repetition - say this calmly and confidently:',
+            phrase: 'I am sorry, could you repeat that please? I want to make sure I have it right.',
+            phraseNl: 'Excuseert u mij, kunt u dat herhalen? Ik wil zeker weten dat ik het goed heb.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'You are on a work call and completely missed what was just said. What do you do?',
+            options: [
+              'Guess and answer based on what you think they said',
+              'Stay silent and hope they repeat themselves',
+              'Say "I am sorry, could you repeat that? I want to make sure I have it right."',
+              'Hang up and send an email instead'
+            ],
+            correct: 2,
+            feedback: 'Asking for repetition is professional and confident - not weak. The phrase "I want to make sure I have it right" shows you care about accuracy. Native speakers ask for repetition too. Do it every time you need to.'
+          },
+          {
+            type: 'complete', xp: 40,
+            ariaMsg: "Phone and video calls - done! You now have exact phrases for answering, making calls, and handling every difficult moment. The key insight: asking for repetition is a sign of professionalism, not weakness. Practise these phrases out loud until they feel automatic."
+          }
+        ]
+      },
+      {
+        title: 'Business English vocabulary and phrasal verbs',
+        time: '5 min',
+        steps: [
+          {
+            type: 'aria',
+            text: "Office English is full of short phrases called phrasal verbs and business expressions that can sound confusing if you have never heard them before. Your colleague says 'let us circle back on this' and you think - circle back where? After this lesson, you will understand every one of them."
+          },
+          {
+            type: 'learn', icon: '🔄',
+            title: 'Common phrasal verbs in Dutch offices',
+            body: 'These short phrases come up in almost every meeting and email. Learn them and office English becomes much clearer.',
+            list: [
+              '"Follow up" - check on progress after an earlier conversation. "I will follow up on that."',
+              '"Touch base" - make brief contact to check in. "Let us touch base on Friday."',
+              '"Circle back" - return to a topic later. "Can we circle back to that after lunch?"',
+              '"Take this offline" - discuss something privately, not in the meeting. "Let us take this offline."',
+              '"Loop in" - include someone in communication. "Can you loop in Sandra on this email?"',
+              '"Sign off on" - give formal approval. "The manager needs to sign off on this."',
+              '"Roll out" - launch or implement something. "We will roll out the new system next month."'
+            ]
+          },
+          {
+            type: 'learn', icon: '💼',
+            title: 'Essential business vocabulary',
+            body: 'These words appear constantly in Dutch professional environments.',
+            list: [
+              'Deadline - the latest date something must be completed',
+              'Agenda - the list of topics for a meeting (same in Dutch!)',
+              'Action points - tasks agreed in a meeting with a named owner',
+              'Stakeholder - anyone affected by or interested in a project',
+              'KPI (Key Performance Indicator) - a measure of how well you are doing',
+              'Bandwidth - available time or capacity. "I do not have the bandwidth for that."',
+              'Deliverable - a specific output or result that is expected',
+              'Sign off - approval from a senior person',
+              'Capacity - how much work you can take on'
+            ]
+          },
+          {
+            type: 'learn', icon: '⚠️',
+            title: 'False friends - English words that mean something different',
+            body: 'These English words are easy to misuse if your first language is not English.',
+            list: [
+              '"Actually" - means "in fact", not "currently". "Actually, I disagree" = "In fact, I disagree"',
+              '"Eventually" - means "in the end/at some point", not "soon". Do not use it for urgent things.',
+              '"Presently" - in British English means "soon", but "currently" is clearer and safer',
+              '"Sensible" - means "reasonable/logical", not "sensitive". "That is a sensible idea."',
+              '"Discuss about" - wrong! Just say "discuss this" not "discuss about this"',
+              '"Revert" - in standard English means "go back to". It does NOT mean "reply". Use "please reply" instead.'
+            ]
+          },
+          {
+            type: 'speak',
+            instruction: 'Practice using a common office phrase naturally:',
+            phrase: 'Let us circle back on this after the meeting. I want to make sure everyone is aligned.',
+            phraseNl: 'Laten we hier na de vergadering op terugkomen. Ik wil zeker weten dat iedereen het eens is.',
+            lang: 'en-US'
+          },
+          {
+            type: 'quiz',
+            question: 'Your colleague says "Can you loop in Sandra on this?" What does this mean?',
+            options: [
+              'Ask Sandra to join the next meeting',
+              'Add Sandra to the email so she is included in the conversation',
+              'Call Sandra and tell her what happened',
+              'Check if Sandra agrees with your decision'
+            ],
+            correct: 1,
+            feedback: '"Loop in" means include someone in an email or communication chain. "Loop in Sandra" = add Sandra to the CC or forward the email to her. Now you know it, you will hear it everywhere!'
+          },
+          {
+            type: 'quiz',
+            question: 'Your colleague emails: "Please revert with your comments." What should you do?',
+            options: [
+              'Go back to an older version of the document',
+              'Reply to the email with your comments',
+              'Reverse your previous decision',
+              'Ask what "revert" means'
+            ],
+            correct: 1,
+            feedback: '"Revert" is sometimes used to mean "reply" in certain professional contexts, though technically it means "go back". In this context your colleague wants you to reply with your comments. Better to write "please reply" or "please respond" in your own emails.'
+          },
+          {
+            type: 'complete', xp: 40,
+            ariaMsg: "Business English vocabulary - complete! Phrasal verbs, business terms, false friends - you now understand the language that fills Dutch offices every day. When your colleague says 'let us touch base and circle back on the deliverables' - you will know exactly what they mean. And that confidence changes everything."
+          }
+        ]
+      }
+    ]
   }
 ];
