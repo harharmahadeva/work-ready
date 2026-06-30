@@ -336,12 +336,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   #screen-lesson .lesson-header,
   #screen-lesson .lesson-prog,
   #screen-lesson .lesson-body { max-width: 560px; margin-left: auto; margin-right: auto; width: 100%; }
-  #screen-lesson .lesson-header { padding-top: 32px; }
+  #screen-lesson .lesson-header { padding-top: 56px; }
   #screen-aria-chat .aria-header,
   #screen-aria-chat .chat-body,
   #screen-aria-chat .chat-suggestions,
   #screen-aria-chat .chat-input-row { max-width: 560px; margin-left: auto; margin-right: auto; width: 100%; }
-  #screen-aria-chat .aria-header { padding-top: 28px; }
+  #screen-aria-chat .aria-header { padding-top: 56px; }
 
   /* Bottom nav centered */
   .bottom-nav { justify-content: center; gap: 0; }
