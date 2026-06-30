@@ -294,8 +294,11 @@ const Aria = (() => {
     }
 
     const fullGreeting = `${timeGreet}, ${name}!${weatherLine}`;
-    speak(fullGreeting);
-    return { timeGreet, weather };
+    return new Promise(resolve => {
+      speakEL(fullGreeting, { onEnd: resolve }).catch(() => {
+        speakFallback(fullGreeting, { onEnd: resolve });
+      });
+    });
   }
 
   async function chat(userMsg, context = '') {

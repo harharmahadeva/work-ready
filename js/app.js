@@ -296,11 +296,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current) applyMoodTheme(current);
 
     const streak = Storage.updateStreak();
-    if (streak > 1) {
-      setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 1000);
-    } else {
-      const u = Storage.getUser();
-      if (u) setTimeout(() => Aria.greet(u.name), 800);
+    const u = Storage.getUser();
+    if (u) {
+      // Always greet with time + weather first
+      Aria.greet(u.name).then(() => {
+        // After greeting finishes, add streak message if applicable
+        if (streak > 1) {
+          setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 500);
+        }
+      });
     }
 
     // Late night / early morning check (shows after greeting)
