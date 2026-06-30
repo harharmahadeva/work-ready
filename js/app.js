@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── Onboarding slides ──
-  const onboardSlides = [
+  function getOnboardSlides(name) { return [
     {
       emoji: '👋',
-      title: 'Welcome, Chhaya!',
+      title: `Welcome, ${name}!`,
       text: "I'm Aria, your personal work coach. I'll be with you every step of the way - teaching, encouraging, and cheering you on.",
     },
     {
@@ -92,8 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Go at your own pace',
       text: "There are no timers, no failing, no judgement. Just learning, growing, and building your confidence one lesson at a time. You've got this!",
     }
-  ];
+  ]; }
   let obIdx = 0;
+  let onboardSlides = [];
 
   function renderOnboard() {
     const s = onboardSlides[obIdx];
@@ -140,15 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const MOOD_LABELS = { energised: 'Energised', okay: 'Feeling good', stressed: 'A bit stressed', sad: 'Feeling low', overwhelmed: 'Overwhelmed' };
 
   // ── Late night / early morning check ──
-  const lateNightMessages = [
-    { emoji: '🌙', title: "It's quite late, Chhaya!", text: "It's past 11pm and your brain needs rest to remember what you learn. Sleep is actually part of learning - your mind processes everything while you sleep. Can I ask you to rest tonight and come back tomorrow? I'll be here." },
-    { emoji: '🌛', title: "Still up, Chhaya?", text: "It's late in Arnhem! I love that you're dedicated - truly. But a tired brain learns slower and forgets faster. Your future employer needs the best version of you, and that version needs sleep. Rest up, okay?" },
+  function getLateNightMessages(name, city) { return [
+    { emoji: '🌙', title: `It's quite late, ${name}!`, text: `It's past 11pm and your brain needs rest to remember what you learn. Sleep is actually part of learning - your mind processes everything while you sleep. Can I ask you to rest tonight and come back tomorrow? I'll be here.` },
+    { emoji: '🌛', title: `Still up, ${name}?`, text: `It's late in ${city}! I love that you're dedicated - truly. But a tired brain learns slower and forgets faster. Your future employer needs the best version of you, and that version needs sleep. Rest up, okay?` },
     { emoji: '💤', title: "Your brain needs rest!", text: "Learning late at night can feel productive but the memory doesn't stick as well. I care about your progress AND your wellbeing. Please consider getting some sleep - we can pick this up fresh tomorrow morning!" },
-  ];
-  const earlyMorningMessages = [
-    { emoji: '🌅', title: "You're up early, Chhaya!", text: "It's very early - are you okay? Whether you couldn't sleep or you're just super motivated, I'm proud of you. Just make sure you're getting enough rest overall. Your health comes first. Want to do a short lesson or just chat?" },
+  ]; }
+  function getEarlyMorningMessages(name) { return [
+    { emoji: '🌅', title: `You're up early, ${name}!`, text: `It's very early - are you okay? Whether you couldn't sleep or you're just super motivated, I'm proud of you. Just make sure you're getting enough rest overall. Your health comes first. Want to do a short lesson or just chat?` },
     { emoji: '🌄', title: "Early bird!", text: "Good morning! You're up before the sun - that's dedication! Just checking - are you getting enough sleep? Rest is essential for learning and for showing up well at job interviews. Take care of yourself first." },
-  ];
+  ]; }
 
   function checkLateNight() {
     const h = new Date().getHours();
@@ -156,7 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const isEarly = h >= 0 && h < 5;
     if (!isLate && !isEarly) return;
 
-    const pool = isLate ? lateNightMessages : earlyMorningMessages;
+    const u = Storage.getUser();
+    const name = u?.name || 'there';
+    const city = u?.city || 'your city';
+    const pool = isLate ? getLateNightMessages(name, city) : getEarlyMorningMessages(name);
     const msg = pool[Math.floor(Math.random() * pool.length)];
 
     document.getElementById('latenight-emoji').textContent = msg.emoji;
@@ -199,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="checkin-top">
           <div class="checkin-avatar">🎙️</div>
           <div class="checkin-question">
-            <strong>Hey Chhaya, how are you feeling today?</strong>
+            <strong>Hey ${Storage.getUser()?.name || 'there'}, how are you feeling today?</strong>
             Tell me anything - good day, tough day, nervous, excited. I'm here.
           </div>
         </div>
@@ -382,6 +386,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function goOnboard() {
+    const u = Storage.getUser();
+    onboardSlides = getOnboardSlides(u?.name || 'there');
+    obIdx = 0;
     show('onboard');
     renderOnboard();
     setTimeout(() => Aria.speak(onboardSlides[0].text), 500);
@@ -552,8 +559,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const weatherEl = document.getElementById('home-weather');
     if (weatherEl) {
       weatherEl.textContent = '';
-      Aria.fetchWeather().then(w => {
-        if (w) weatherEl.textContent = `${w.emoji} ${w.temp}°C · ${w.label} in Arnhem`;
+      Aria.fetchWeather(u?.lat, u?.lon, u?.timezone).then(w => {
+        if (w) weatherEl.textContent = `${w.emoji} ${w.temp}°C · ${w.label} in ${u?.city || 'your city'}`;
       });
     }
 
@@ -1038,7 +1045,8 @@ document.addEventListener('DOMContentLoaded', () => {
     addTyping();
 
     const progress = Storage.getProgress();
-    const context = `User is Chhaya. Progress: ${JSON.stringify(progress)}. Be warm, encouraging, and helpful about Dutch workplace skills.`;
+    const cu = Storage.getUser();
+    const context = `User is ${cu?.name || 'the learner'}, located in ${cu?.city || 'the Netherlands'}. Progress: ${JSON.stringify(progress)}. Be warm, encouraging, and helpful about Dutch workplace skills.`;
 
     const reply = await Aria.chat(msg, context);
     removeTyping();
