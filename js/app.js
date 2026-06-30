@@ -133,6 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentScreen = id;
     const showNav = ['home', 'aria-chat', 'lesson'].includes(id);
     document.getElementById('bottom-nav').style.display = showNav ? 'flex' : 'none';
+    // Hide speaking indicator on login/onboard so it never covers buttons
+    const indicator = document.getElementById('aria-speaking');
+    if (indicator) indicator.classList.toggle('force-hide', ['login', 'onboard'].includes(id));
   }
 
   // ── Mood theme ──
@@ -388,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Logout ──
   window.logout = function() {
+    Aria.stop();
     Storage.clearUser();
     show('login');
     pinEntry = '';
