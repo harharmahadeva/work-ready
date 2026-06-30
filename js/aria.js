@@ -135,12 +135,12 @@ const Aria = (() => {
     95: { label: 'thunderstorm', emoji: '⛈️' },
   };
 
-  async function fetchWeather() {
+  async function fetchWeather(lat = 51.98, lon = 5.91, timezone = 'Europe/Amsterdam') {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 4000);
       const res = await fetch(
-        'https://api.open-meteo.com/v1/forecast?latitude=51.98&longitude=5.91&current=temperature_2m,weathercode&timezone=Europe/Amsterdam',
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weathercode&timezone=${encodeURIComponent(timezone)}`,
         { signal: controller.signal }
       );
       clearTimeout(timeout);
@@ -281,16 +281,17 @@ const Aria = (() => {
     }
   };
 
-  async function greet(name) {
+  async function greet(name, user = {}) {
     const h = new Date().getHours();
     const timeGreet = h < 5 ? 'Good night' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : h < 21 ? 'Good evening' : 'Good night';
 
+    const city = user.city || 'Arnhem';
     const fallbackWeatherLines = [
-      "I couldn't check the weather in Arnhem right now, but whatever it's like outside - you're in the right place!",
-      "Not sure what the weather is doing in Arnhem today, but rain or shine, you're here learning. That's what counts.",
+      `I couldn't check the weather in ${city} right now, but whatever it's like outside - you're in the right place!`,
+      `Not sure what the weather is doing in ${city} today, but rain or shine, you're here. That's what counts.`,
     ];
 
-    const weather = await fetchWeather();
+    const weather = await fetchWeather(user.lat, user.lon, user.timezone);
     let weatherLine = '';
     if (weather) {
       const { temp, label } = weather;
@@ -300,7 +301,7 @@ const Aria = (() => {
       else if (label.includes('clear') || label.includes('sunny')) bucket = 'sunny';
       else if (temp > 22) bucket = 'warm';
       else bucket = 'cloudy';
-      weatherLine = ' ' + pick(lines.weatherGreets[bucket]);
+      weatherLine = ' ' + pick(lines.weatherGreets[bucket]).replace(/in Arnhem/g, `in ${city}`).replace(/Arnhem/g, city);
     } else {
       weatherLine = ' ' + pick(fallbackWeatherLines);
     }

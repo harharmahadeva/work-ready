@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const streak = Storage.updateStreak();
     if (u) {
       // Always greet with time + weather first
-      Aria.greet(u.name).then(() => {
+      Aria.greet(u.name, u).then(() => {
         // After greeting finishes, add streak message if applicable
         if (streak > 1) {
           setTimeout(() => Aria.speak(Aria.lines.streakDay(streak)), 500);
