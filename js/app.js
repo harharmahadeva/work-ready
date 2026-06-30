@@ -289,6 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function goHome() {
+    const u = Storage.getUser();
+    if (u?.role === 'admin') { renderAdminDashboard(); return; }
     show('home');
     renderHome();
     // Restore saved mood theme
@@ -476,6 +478,64 @@ document.addEventListener('DOMContentLoaded', () => {
       status.textContent = 'Failed to send. Please try again.'; status.className = 'fb-status err';
     }
     btn.textContent = 'Send Feedback'; btn.disabled = false;
+  }
+
+  // ── Admin Dashboard ──
+  async function renderAdminDashboard() {
+    show('home');
+    const u = Storage.getUser();
+    document.getElementById('home-greeting').textContent = 'Admin';
+    document.getElementById('home-name').textContent = u.name;
+    document.getElementById('home-xp').textContent = 'Reviewer Dashboard';
+    document.getElementById('home-prog-pct').textContent = '';
+    document.getElementById('home-prog-fill').style.width = '0%';
+    document.getElementById('home-weather').textContent = '';
+    document.getElementById('home-version').textContent = '';
+    document.getElementById('checkin-card').style.display = 'none';
+    document.getElementById('resume-card').style.display = 'none';
+    document.getElementById('aria-home-card').style.display = 'none';
+    document.getElementById('laptop-nudge').classList.add('hidden');
+
+    const grid = document.getElementById('module-grid');
+    const title = document.querySelector('.section-title');
+    title.textContent = 'Feedback from Reviewers';
+    grid.innerHTML = '<div class="fb-loading">Loading feedback...</div>';
+
+    try {
+      const res = await fetch('/data/feedback.json?t=' + Date.now());
+      const items = await res.json();
+
+      if (!items.length) {
+        grid.innerHTML = '<div class="fb-empty">No feedback yet. Share the app with Dinesh to get started.</div>';
+        return;
+      }
+
+      const typeIcon = { content: '📚', ui: '🎨', bug: '🐛', general: '💬' };
+      grid.innerHTML = [...items].reverse().map(f => `
+        <div class="fb-item" style="grid-column:1/-1">
+          <div class="fb-item-top">
+            <span class="fb-item-type">${typeIcon[f.type] || '💬'} ${f.type}</span>
+            <span class="fb-item-stars">${'★'.repeat(f.rating || 0)}${'☆'.repeat(5 - (f.rating || 0))}</span>
+            <span class="fb-item-who">${f.reviewer} · ${f.screen || ''}</span>
+          </div>
+          ${f.lesson ? `<div class="fb-item-lesson">Lesson: ${f.lesson}</div>` : ''}
+          <div class="fb-item-comment">${f.comment}</div>
+          <div class="fb-item-time">${f.timestamp}</div>
+        </div>
+      `).join('');
+    } catch {
+      grid.innerHTML = '<div class="fb-empty">Could not load feedback.</div>';
+    }
+
+    // Refresh button
+    const refreshBtn = document.createElement('button');
+    refreshBtn.className = 'btn btn-ghost btn-block';
+    refreshBtn.style.marginTop = '8px';
+    refreshBtn.textContent = '↻ Refresh';
+    refreshBtn.onclick = renderAdminDashboard;
+    grid.after(refreshBtn);
+
+    Aria.speak(`Welcome back, ${u.name}. Here is the latest reviewer feedback.`);
   }
 
   // ── Home screen ──

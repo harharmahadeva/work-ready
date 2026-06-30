@@ -14,6 +14,14 @@
       "lang": "en",
       "role": "reviewer",
       "joined": "2026-06-30"
+    },
+    {
+      "id": "sandy",
+      "name": "Sandy",
+      "pin_hash": "bd6ecf2f23cce0df0da077da0d196c7f410a45287b59f1aeaf48404f85f2d3fa",
+      "lang": "en",
+      "role": "admin",
+      "joined": "2026-06-30"
     }
   ]
 }

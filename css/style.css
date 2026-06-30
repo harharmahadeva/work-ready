@@ -444,3 +444,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .fb-status { font-size: 13px; text-align: center; min-height: 18px; }
 .fb-status.ok { color: var(--green); }
 .fb-status.err { color: var(--red); }
+
+/* ── ADMIN FEEDBACK DASHBOARD ── */
+.fb-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.fb-item-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fb-item-type { font-size: 12px; font-weight: 800; background: rgba(79,110,247,0.12); color: var(--accent); border-radius: 6px; padding: 2px 8px; }
+.fb-item-stars { font-size: 13px; color: var(--gold); letter-spacing: 1px; }
+.fb-item-who { font-size: 11px; color: var(--text2); margin-left: auto; }
+.fb-item-lesson { font-size: 11px; color: var(--accent2); font-weight: 600; }
+.fb-item-comment { font-size: 13px; line-height: 1.6; color: var(--text); }
+.fb-item-time { font-size: 10px; color: var(--text2); opacity: 0.6; }
+.fb-loading { font-size: 13px; color: var(--text2); padding: 20px 0; grid-column: 1/-1; text-align: center; }
+.fb-empty { font-size: 13px; color: var(--text2); padding: 20px 0; grid-column: 1/-1; text-align: center; }
